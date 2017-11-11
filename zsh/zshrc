@@ -1,0 +1,155 @@
+################################################################################
+#
+# Maintainer: Gary Shih
+#
+# Sections:
+#     -> zplug
+#     -> general
+#     -> dir colors' setting
+#     -> $PATH settings
+#     -> alias
+#     -> completion
+#     -> override zsh syntax highlighting
+#
+################################################################################
+# zplug {{{
+if ! [[ -f "${HOME}/.zplug/init.zsh" ]]; then
+  curl -sL https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
+zstyle :zplug:tag depth 1
+source "${HOME}/.zplug/init.zsh"
+
+zplug "zplug/zplug"
+zplug "mafredri/zsh-async", use:"async.zsh"
+zplug "leomao/zsh-hooks", use:"*.plugin.zsh"
+zplug "leomao/vim.zsh", use:vim.zsh, defer:1
+zplug "gantheory/gs-prompt", use:gs-prompt.zsh, defer:2
+
+zplug "so-fancy/diff-so-fancy", as:command, use:diff-so-fancy
+
+export ENHANCD_DISABLE_HOME=1
+zplug "b4b4r07/enhancd", use:init.sh
+
+zplug "zsh-users/zsh-completions", use:"*.plugin.zsh"
+zplug "zsh-users/zsh-syntax-highlighting", use:"*.plugin.zsh", defer:3
+zplug "zsh-users/zsh-autosuggestions", use:"*.plugin.zsh"
+
+if ! zplug check --verbose; then
+  zplug install
+fi
+
+zplug load
+# }}}
+# general {{{
+# disable auto-setting termial title
+DISABLE_AUTO_TITLE="true"
+
+# don't record duplicate history
+setopt hist_ignore_dups
+
+# no flow control
+setopt noflowcontrol
+
+# rm confirmation
+setopt rm_star_wait
+
+# Directory Stack settings
+DIRSTACKSIZE=8
+setopt auto_cd
+setopt autopushd pushdminus pushdsilent pushdtohome pushd_ignore_dups
+
+setopt mark_dirs
+setopt multios
+
+# default global editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+# }}}
+# dir colors {{{
+# color
+export CLICOLOR='true'
+export LSCOLORS='exfxcxdxGxegedabagacad'
+# }}}
+# PATH {{{
+# export path
+export PATH=/usr/local/bin:$PATH
+export PATH=/Library/TeX/texbin:$PATH
+# }}}
+# alias {{{
+# general
+alias ll='ls -l'
+alias lla='ls -a -l'
+alias c7='chmod 755'
+alias v='vim'
+alias g++='g++-7'
+alias python="python3"
+alias pip="pip3"
+alias vinit="v ~/Github/dotfiles/vim/init.vim"
+alias zinit="v ~/Github/dotfiles/zsh/zshrc"
+alias sz='source ~/.zshrc'
+alias tinit='v ~/Github/dotfiles/tmux/tmux.conf'
+alias st='tmux source ~/.tmux.conf'
+alias rptmp='cp ~/Github/dotfiles/vim/template/report.tex report.tex && v report.tex'
+alias sltmp='cp ~/Github/dotfiles/vim/template/slides.tex slides.tex && v slides.tex'
+alias fm='vifm . ~/Downloads'
+
+# git
+alias gs='git status'
+alias ga='git add'
+alias gp='git pull'
+alias gd='git diff'
+alias gcm='git commit -m'
+alias gpom='git push origin master'
+alias gb='git branch'
+alias gc='git checkout'
+alias glog='git log --graph --abbrev-commit --decorate --format=format:"%C(dim white)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n""          %C(white)%s%C(reset) -%C(magenta) %an%C(reset)" --all'
+
+# ptt
+alias ptt='ssh bbsu@ptt.cc'
+alias ptt2='ssh bbsu@ptt2.cc'
+
+# ctags
+alias ctags='/usr/local/bin/ctags -R --exclude=.git --exclude=log *'
+# }}}
+# completion {{{
+# Important
+zstyle ':completion:*:default' menu yes=long select=2
+
+# Completing Groping
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:descriptions' format '%F{226}Completing %F{214}%d%f'
+zstyle ':completion:*' group-name ''
+
+# Completing misc
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]} r:|[._-]=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
+zstyle ':completion:*' use-cache true
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+
+# Directory
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+export LS_COLORS='di=00;34:ln=01;35:ex=01;36'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# default: --
+zstyle ':completion:*' list-separator '-->'
+zstyle ':completion:*:manuals' separate-sections true
+# }}}
+# override zsh syntax highlighting {{{
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor line)
+
+ZSH_HIGHLIGHT_STYLES[path]=fg=033 # original [ ,underline ]
+ZSH_HIGHLIGHT_STYLES[command]=fg=081,bold
+ZSH_HIGHLIGHT_STYLES[precommand]=fg=075,underline
+ZSH_HIGHLIGHT_STYLES[alias]=fg=081,bold
+ZSH_HIGHLIGHT_STYLES[builtin]=fg=081,bold
+ZSH_HIGHLIGHT_STYLES[globbing]=fg=061,underline
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=025
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=025
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=063
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=063
+# }}}

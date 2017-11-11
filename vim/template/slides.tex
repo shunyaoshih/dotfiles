@@ -1,0 +1,37 @@
+%! TEX program = xelatex
+% Preamble {{{
+% theme {{{
+\documentclass{beamer}
+\mode<presentation> {
+\usetheme{Antibes}
+\usefonttheme{professionalfonts}
+}
+% }}}
+% packages {{{
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+% }}}
+% 中文環境 {{{
+\usepackage{fontspec}    % 加這個就可以設定字體
+\usepackage[CheckSingle, CJKmath]{xeCJK}  % xelatex 中文
+\usepackage{CJKulem}	% 中文字裝飾
+\setCJKmainfont{Noto Sans CJK TC}
+% }}}
+%}}}
+
+\title[Short title]{Full Title of the Talk}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Overview}
+\tableofcontents
+\end{frame}
+
+\end{document}
