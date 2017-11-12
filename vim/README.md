@@ -85,6 +85,7 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 * [easymotion](https://github.com/easymotion/vim-easymotion)
 * [vim-surround](https://github.com/tpope/vim-surround)
+* [vim-repeat](https://github.com/tpope/vim-repeat)
 
 ### Git related
 
