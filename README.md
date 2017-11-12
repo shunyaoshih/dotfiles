@@ -36,6 +36,13 @@ $ cd ~/Github/dotfiles
 $ ./deploy.sh cask
 ```
 
+#### Workstation
+
+```shell
+# need to install vim and tmux first
+$ ./deploy.sh workstation
+```
+
 ### Vim only
 
 ```shell

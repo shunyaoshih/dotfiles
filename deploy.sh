@@ -25,6 +25,12 @@ elif [ "$1" == "vim_only" ]; then
   bash ./link_vim.sh
   bash ./install_vim.sh
   cd ..
+elif [ "$1" == "workstation" ]; then
+  cd scripts
+  bash ./link_vim.sh
+  bash ./link_tmux.sh
+  bash ./install_vim.sh
+  cd ..
 elif [ "$1" == "update_vim" ]; then
   cd scripts
   bash ./update_vim.sh
