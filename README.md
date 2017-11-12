@@ -53,3 +53,13 @@ $ mkdir Github; cd Github
 $ git clone https://github.com/gantheory/dotfiles.git; cd dotfiles
 $ ./deploy.sh vim_only
 ```
+
+check out my vim shortcuts at [here](https://github.com/gantheory/dotfiles/blob/master/vim/README.md).
+
+#### Update
+
+```shell
+$ cd ~/Github/dotfiles
+$ git pull
+$ ./deploy.sh vim_only
+```
