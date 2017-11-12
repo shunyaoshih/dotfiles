@@ -15,6 +15,9 @@ My vim configuration
 - `>`: `>gv`
 - `Y`: `y$`
 - `Q`: `@q`
+- save file: `<leader>w`
+- quit without saving file: `<leader>q`
+- save file and quit: `<leader>x`
 - remove trailing whitespace: `<leader>rt`
 - clear highlight: `<leader>nh`
 - copy full file path: `<leader>pw`

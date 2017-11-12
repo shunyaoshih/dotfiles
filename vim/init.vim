@@ -310,6 +310,8 @@ let g:vimtex_compiler_latexmk = {'callback' : 0}
 " save (and quit) files
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
+nnoremap <leader>q :q!<CR>
+
 " exchange 0, ^
 noremap 0 ^
 noremap ^ 0
