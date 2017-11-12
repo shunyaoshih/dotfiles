@@ -152,6 +152,7 @@ set splitright
 
 " for macvim
 set guifont=Monaco\ for\ Powerline:h13
+let g:nerdtree_tabs_open_on_gui_startup = 0
 " }}}
 " vim plugins {{{
 call plug#begin()
