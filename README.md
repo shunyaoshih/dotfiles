@@ -10,7 +10,7 @@ macOS Sierra
 
 ### macOS
 
-#### vim + zsh + tmux
+#### vim + zsh + tmux + vifm
 
 ```shell
 $ xcode-select --install

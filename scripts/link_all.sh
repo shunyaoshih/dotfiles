@@ -15,3 +15,6 @@ link_file $SOURCE"/idea/ideavimrc" $HOME"/.ideavimrc"
 link_file $SOURCE'/zsh/zshrc' $HOME'/.zshrc'
 
 link_file $SOURCE'/tmux/tmux.conf' $HOME'/.tmux.conf'
+
+link_file $SOURCE'/vifm/vifmrc' $HOME'/.vifm/vifmrc'
+link_file $SOURCE'/vifm/Gantheory.vifm' $HOME'/.vifm/colors/Gantheory.vifm'
