@@ -10,7 +10,7 @@ link_file $SOURCE'/vim/init.vim' $HOME'/.vimrc'
 mkdir ~/.config
 link_dir $SOURCE'/vim' $HOME'/.config/nvim'
 
-copy_file $SOURCE"/idea/ideavimrc" $HOME"/.ideavimrc"
+link_file $SOURCE"/idea/ideavimrc" $HOME"/.ideavimrc"
 
 link_file $SOURCE'/zsh/zshrc' $HOME'/.zshrc'
 
