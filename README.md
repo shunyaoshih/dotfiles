@@ -8,7 +8,7 @@ macOS Sierra
 
 ## Usage
 
-### macOS
+### macOS (my personal setup)
 
 #### vim + zsh + tmux + vifm
 
@@ -28,3 +28,19 @@ $ tmux source ~/.tmux.conf
 
 - Load iTerm2 settings: `Preferences...` => `General` => `Load preferences from a custom folder or URL`
 - Font for Powerline: `Preferences...` => `Profiles` => `Text` => `Non-ASCII Font`
+
+#### Install cask apps
+
+```shell
+$ cd ~/Github/dotfiles
+$ ./deploy.sh cask
+```
+
+### Vim only
+
+```shell
+# install vim 8.0+
+$ mkdir Github; cd Github
+$ git clone https://github.com/gantheory/dotfiles.git; cd dotfiles
+$ ./deploy.sh vim_only
+```

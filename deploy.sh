@@ -20,6 +20,11 @@ elif [ "$1" == "cask" ]; then
   cd scripts
   bash ./install_homebrew_cask_apps.sh
   cd ..
+elif [ "$1" == "vim_only" ]; then
+  cd scripts
+  bash ./link_vim.sh
+  bash ./install_vim.sh
+  cd ..
 elif [ "$1" == "update_vim" ]; then
   cd scripts
   bash ./update_vim.sh
