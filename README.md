@@ -40,6 +40,8 @@ $ ./deploy.sh cask
 
 ```shell
 # need to install vim and tmux first
+$ mkdir Github; cd Github
+$ git clone https://github.com/gantheory/dotfiles.git; cd dotfiles
 $ ./deploy.sh workstation
 ```
 
