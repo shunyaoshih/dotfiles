@@ -3,6 +3,7 @@ source ./utils.sh
 
 print 'Install Homebrew Apps'
 brew_install 'cmake'
+brew_install 'duti'
 brew_install 'gcc'
 brew_install 'git'
 brew_install 'python'
