@@ -6,6 +6,7 @@ My tmux configuration
 
 - prefix: `Ctrl` + `a`
 - install plugins: `prefix` + `I`
+- clear history" `prefix` + `Ctrl` + `k`
 - save/load tmux environment: `prefix` + `s` / `prefix` + `r`
 
 ## Plugins
