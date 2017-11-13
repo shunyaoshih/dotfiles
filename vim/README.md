@@ -86,6 +86,7 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 * [easymotion](https://github.com/easymotion/vim-easymotion)
 * [vim-surround](https://github.com/tpope/vim-surround)
 * [vim-repeat](https://github.com/tpope/vim-repeat)
+* [vim-autoread](https://github.com/djoshea/vim-autoread)
 
 ### Git related
 

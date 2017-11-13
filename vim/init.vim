@@ -181,8 +181,9 @@ Plug 'honza/vim-snippets'
 " edit
 Plug 'scrooloose/nerdcommenter' " powerful commenter
 Plug 'easymotion/vim-easymotion' " fast motion
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround' " easily change surround
+Plug 'tpope/vim-repeat' " enable '.' in plugins
+Plug 'djoshea/vim-autoread' " files autoread
 
 " git related
 Plug 'tpope/vim-fugitive' " git commands
