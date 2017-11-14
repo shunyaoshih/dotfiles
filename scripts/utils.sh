@@ -23,25 +23,25 @@ function _print {
 
 function print {
   echo -e "\033[1;36m"
-  _print "$1"
+  _print "$*"
   echo -e "\033[0m"
 }
 
 function print_success {
   echo -e "\033[1;32m"
-  _print "$1"
+  _print "$*"
   echo -e "\033[0m"
 }
 
 function print_error {
   echo -e "\033[1;31m"
-  _print "$1"
+  _print "$*"
   echo -e "\033[0m"
 }
 
 function print_installed {
   echo -e "\033[1;32m"
-  str=$1" is already installed!"
+  str=$*" is already installed!"
   _print "$str"
   echo -e "\033[0m"
 }
