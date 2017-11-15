@@ -257,7 +257,8 @@ let g:tagbar_autoclose = 0
 " YouCompleteMe {{{
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = []
-" let g:ycm_min_num_of_chars_for_completion = 5
+" disable pop-up preview window
+set completeopt-=preview
 " }}}
 " snippets {{{
 let g:UltiSnipsExpandTrigger="<c-k>"
