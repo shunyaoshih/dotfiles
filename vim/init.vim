@@ -187,6 +187,7 @@ Plug 'easymotion/vim-easymotion' " fast motion
 Plug 'tpope/vim-surround' " easily change surround
 Plug 'tpope/vim-repeat' " enable '.' in plugins
 Plug 'djoshea/vim-autoread' " files autoread
+Plug 'Raimondi/delimitMate'
 
 " git related
 Plug 'tpope/vim-fugitive' " git commands
@@ -256,7 +257,7 @@ let g:tagbar_autoclose = 0
 " YouCompleteMe {{{
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = []
-let g:ycm_min_num_of_chars_for_completion = 5
+" let g:ycm_min_num_of_chars_for_completion = 5
 " }}}
 " snippets {{{
 let g:UltiSnipsExpandTrigger="<c-k>"
@@ -270,6 +271,8 @@ let g:NERDSpaceDelims = 1
 let g:NERDRemoveExtraSpaces = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
+" workaround for 2 spaces in python
+let g:NERDCustomDelimiters = {'python': {'left': '#'}}
 " }}}
 " vim-easymotion {{{
 " change default trigger
