@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AdjustWindowForFontSizeChange</key>
-	<false/>
+	<true/>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -569,11 +569,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>330 290 620 392 0 0 1280 778 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>228 302 796 473 0 0 1280 800 </string>
+	<string>680 270 796 473 0 0 1280 800 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 194 592 584 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 27 1280 773 0 0 1280 800 </string>
+	<string>0 5 1280 795 0 0 1280 800 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1382,7 +1382,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>1</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/gantheory</string>
 		</dict>
@@ -1463,7 +1463,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-11T06:25:40Z</date>
+	<date>2017-11-14T15:07:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1493,7 +1493,7 @@
 	<key>UseBorder</key>
 	<true/>
 	<key>UseLionStyleFullscreen</key>
-	<false/>
+	<true/>
 	<key>Window Arrangements</key>
 	<dict>
 		<key>Contest</key>
