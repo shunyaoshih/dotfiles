@@ -170,16 +170,20 @@ Plug 'jistr/vim-nerdtree-tabs' " all tabs share one nerdtree
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 " auto-complete
-function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
-    !./install.py --clang-completer
-  endif
-endfunction
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+if has('mac')
+  function! BuildYCM(info)
+    if a:info.status == 'installed' || a:info.force
+      !./install.py --clang-completer
+    endif
+  endfunction
+  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+endif
 
 " snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+if has('python')
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+endif
 
 " edit
 Plug 'scrooloose/nerdcommenter' " powerful commenter
