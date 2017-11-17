@@ -13,6 +13,7 @@
 #
 ################################################################################
 # zplug {{{
+export ZPLUG_HOME=~/.zplug
 if ! [[ -f "${HOME}/.zplug/init.zsh" ]]; then
   curl -sL https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
