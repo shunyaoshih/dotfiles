@@ -192,7 +192,10 @@ Plug 'easymotion/vim-easymotion' " fast motion
 Plug 'tpope/vim-surround' " easily change surround
 Plug 'tpope/vim-repeat' " enable '.' in plugins
 Plug 'djoshea/vim-autoread' " files autoread
-Plug 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate' " auto pairs
+" fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " git related
 Plug 'tpope/vim-fugitive' " git commands
@@ -300,6 +303,9 @@ nmap <leader>l <Plug>(easymotion-overwin-line)
 " }}}
 " vim-signify {{{
 let g:signify_vcs_list = ['git']
+" }}}
+" fzf {{{
+nnoremap <leader>zz <ESC>:Files<CR>
 " }}}
 " ale {{{
 let g:ale_lint_delay = 1000
