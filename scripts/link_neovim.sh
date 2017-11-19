@@ -4,7 +4,7 @@ source ./utils.sh
 SOURCE=$HOME'/Github/dotfiles'
 
 print 'Link Neovim'
-DIR=$HOME"/.test"
+DIR=$HOME"/.config"
 if [ ! -d "$DIR" ]; then
   mkdir "$DIR"
 fi
