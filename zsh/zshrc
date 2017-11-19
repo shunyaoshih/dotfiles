@@ -88,9 +88,12 @@ export PATH=/Library/TeX/texbin:$PATH
 # }}}
 # alias {{{
 # general
+alias ...='cd ../..'
+alias ....='cd ../../../..'
+alias md='mkdir'
 alias ll='ls -l'
 alias lla='ls -a -l'
-alias c7='chmod 755'
+alias cx='chmod +x'
 alias v='vim'
 alias g++='g++-7'
 alias python="python3"
