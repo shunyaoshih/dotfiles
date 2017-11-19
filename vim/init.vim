@@ -157,6 +157,9 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " set scripts to be executable from the shell
 au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent execute "!chmod +x <afile>" | endif | endif
+
+" limited number of suggestions
+set pumheight=5
 " }}}
 " vim plugins {{{
 call plug#begin()
