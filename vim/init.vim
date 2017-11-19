@@ -177,7 +177,7 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 if has('mac')
   function! BuildYCM(info)
     if a:info.status == 'installed' || a:info.force
-      !./install.py --clang-completer
+      !./install.py
     endif
   endfunction
   Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
