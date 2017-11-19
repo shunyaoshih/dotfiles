@@ -229,7 +229,7 @@ let g:lightline_pika_patchfont = {
       \ 'linecolumn': "\ue0a1",
       \ 'readonly': "\ue0a2",
       \ }
-colorscheme pikacode
+silent! colorscheme pikacode
 " }}}
 " nerdtree {{{
 " open new vertical split window: s
