@@ -73,7 +73,7 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 
 ### Autocompletion
 
-* [YouComleteMe](https://github.com/Valloric/YouCompleteMe)
+* [YouComleteMe](https://github.com/Valloric/YouCompleteMe) (macOS only)
 
 ### Snippets
 
@@ -111,4 +111,4 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 
 ### Markdown related
 
-* [vim-xmark](https://github.com/junegunn/vim-xmark)
+* [vim-xmark](https://github.com/junegunn/vim-xmark) (macOS only)
