@@ -6,6 +6,26 @@ My vim configuration
 
 * vim >= 8.0
 
+## Customization
+
+### New Plugins
+
+create a file under `~/.vim/custom` named `plugin.vim`, and add plugins in a
+similar [vim-plug](https://github.com/junegunn/vim-plug) format as following.
+
+```
+Plug 'vim-go'
+```
+
+### Custom Settings
+
+create a file under `~/.vim/custom` named `local.vim`, and add something like
+the following.
+
+```
+set nocursorline
+```
+
 ## Shortcuts
 
 - toggle paste mode: `F2`
@@ -50,6 +70,10 @@ My vim configuration
 
 ### Snippets
 - expand: `Ctrl` + `k`
+
+### FZF
+
+- fuzzy finding (files): `<leader>zz`
 
 ### ale
 

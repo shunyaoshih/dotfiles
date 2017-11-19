@@ -160,6 +160,9 @@ au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent exe
 
 " limited number of suggestions
 set pumheight=5
+
+" keep the cursor on the same column
+set nostartofline
 " }}}
 " vim plugins {{{
 call plug#begin()
@@ -219,6 +222,8 @@ Plug 'lervag/vimtex', { 'for': 'tex' }
 if has('mac')
   Plug 'junegunn/vim-xmark', { 'do': 'make' }
 endif
+
+runtime custom/plugin.vim
 
 call plug#end()
 " }}}
@@ -419,4 +424,7 @@ noremap <silent> ˚ :call DelEmptyLineAbove()<CR>
 noremap <silent> <C-j> :call AddEmptyLineBelow()<CR>
 noremap <silent> <C-k> :call AddEmptyLineAbove()<CR>
 " }}}
+" }}}
+" load custom settings {{{
+runtime custom/local.vim
 " }}}
