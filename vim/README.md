@@ -87,6 +87,8 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 * [vim-surround](https://github.com/tpope/vim-surround)
 * [vim-repeat](https://github.com/tpope/vim-repeat)
 * [vim-autoread](https://github.com/djoshea/vim-autoread)
+* [delimitMate](https://github.com/Raimondi/delimitMate)
+* [fzf](https://github.com/junegunn/fzf.vim)
 
 ### Git related
 
