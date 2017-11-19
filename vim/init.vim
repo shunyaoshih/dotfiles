@@ -17,13 +17,14 @@ let maplocalleader = ' '
 let g:mapleader = ' '
 let g:maplocalleader = ' '
 
+" handled by vim-plug
 " enable syntax highlighting
-syntax on
+" syntax on
+" filetype plugin indent on " make filetype plugin enable
 
 " cursorline make vim slow when scrolling
 set cursorline
 
-filetype plugin indent on " make filetype plugin enable
 set mouse=a
 
 set background=dark
