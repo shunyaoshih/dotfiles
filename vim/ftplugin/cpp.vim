@@ -1,7 +1,7 @@
 if has('unix')
   noremap <buffer><F9> :! g++ -O2 -Wall -Wshadow '%' -o '%<'<CR>
 endif
-if has('macunix')
+if has('mac')
   noremap <buffer><F9> :! g++-7 -O2 -Wall -Wshadow '%' -o '%<'<CR>
 endif
 

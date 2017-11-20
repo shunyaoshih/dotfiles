@@ -10,5 +10,9 @@ if ! cmake --version > /dev/null; then
   if [ "$(uname)" == "Darwin" ]; then
     ./install_homebrew.sh
     brew_install 'cmake'
+    brew_install 'gcc'
+    brew_install 'python'
+    brew_install 'python3'
+    brew_install 'vim'
   fi
 fi
