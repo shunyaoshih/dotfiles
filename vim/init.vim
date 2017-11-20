@@ -331,9 +331,11 @@ let python_highlight_all = 1
 " vimtex {{{
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 " <leader>ll toggle for compile on save
-let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-let g:vimtex_view_general_options = '-r @line @pdf @tex'
-let g:vimtex_view_general_options_latexmk = '-r 1'
+if has('mac')
+  let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
+  let g:vimtex_view_general_options = '-r @line @pdf @tex'
+  let g:vimtex_view_general_options_latexmk = '-r 1'
+endif
 " }}}
 " }}}
 " basic mappings {{{
