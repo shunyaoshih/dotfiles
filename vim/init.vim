@@ -187,7 +187,7 @@ if has('mac')
 endif
 
 " snippets
-if has('python')
+if has('python') || has('python3')
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 endif
