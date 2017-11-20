@@ -14,5 +14,6 @@ if ! cmake --version > /dev/null; then
     brew_install 'python'
     brew_install 'python3'
     brew_install 'vim'
+    cask_install 'skim'
   fi
 fi
