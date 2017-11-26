@@ -52,7 +52,7 @@ set laststatus=2 " Always show the statusline
 
 set wrap " wrap lines
 
-set clipboard+=unnamed " vim use the system clipboard by default
+set clipboard=unnamed " vim use the system clipboard by default
 
 set fileencodings=utf8
 set encoding=utf8
