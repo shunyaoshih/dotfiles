@@ -313,7 +313,7 @@ nmap <leader>l <Plug>(easymotion-overwin-line)
 let g:signify_vcs_list = ['git']
 " }}}
 " delimitMate {{{
-au FileType cpp let b:delimitMate_autoclose = 0
+au FileType cpp let b:loaded_delimitMate = 1
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 au FileType markdown let b:delimitMate_nesting_quotes = ['`']
 " }}}
