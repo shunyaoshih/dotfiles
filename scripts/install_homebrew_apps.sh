@@ -21,3 +21,5 @@ brew_install 'macvim'
 
 cask_install 'iterm2'
 cask_install 'skim'
+
+brew_install 'tldr'
