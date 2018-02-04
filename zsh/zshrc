@@ -95,6 +95,8 @@ alias ll='ls -lh'
 alias lla='ls -a -lh'
 alias cx='chmod +x'
 alias v='vim'
+alias nv='nvim'
+alias mv='mvim'
 alias g++='g++-7'
 alias python="python3"
 alias pip="pip3"
@@ -110,6 +112,7 @@ alias fm='vifm . ~/Downloads'
 # git
 alias gs='git status'
 alias ga='git add'
+alias gps='git push'
 alias gp='git pull'
 alias gd='git diff'
 alias gcm='git commit -m'
