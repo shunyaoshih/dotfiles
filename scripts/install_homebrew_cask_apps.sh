@@ -4,7 +4,7 @@ source ./utils.sh
 print 'Install Homebrew-Cask Apps'
 cask_install 'alfred'
 cask_install 'evernote'
-cask_install 'flux'
+# cask_install 'flux'
 cask_install 'google-chrome'
 cask_install 'intellij-idea-ce'
 cask_install 'java'
