@@ -87,7 +87,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/Library/TeX/texbin:$PATH
 # }}}
 # alias {{{
-# general
+# general {{{
 alias ...='cd ../..'
 alias ....='cd ../../../..'
 alias md='mkdir'
@@ -106,8 +106,8 @@ alias st='tmux source ~/.tmux.conf'
 alias rptmp='cp ~/Github/dotfiles/vim/template/report.tex report.tex && v report.tex'
 alias sltmp='cp ~/Github/dotfiles/vim/template/slides.tex slides.tex && v slides.tex'
 alias fm='vifm . ~/Downloads'
-
-# git
+# }}}
+# git {{{
 alias gs='git status'
 alias ga='git add'
 alias gps='git push'
@@ -118,13 +118,14 @@ alias gpom='git push origin master'
 alias gb='git branch'
 alias gc='git checkout'
 alias glog='git log --graph --abbrev-commit --decorate --format=format:"%C(dim white)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n""          %C(white)%s%C(reset) -%C(magenta) %an%C(reset)" --all'
-
-# ptt
+# }}}
+# ptt {{{
 alias ptt='ssh bbsu@ptt.cc'
 alias ptt2='ssh bbsu@ptt2.cc'
-
-# ctags
+# }}}
+# ctags {{{
 alias ctags='/usr/local/bin/ctags -R --exclude=.git --exclude=log *'
+# }}}
 # }}}
 # completion {{{
 # Important
