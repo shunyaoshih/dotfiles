@@ -1,1 +1,1 @@
-noremap <buffer><F5> :! python3 '%'<CR>
+noremap <buffer><F5> :terminal python3 '%'<CR>
