@@ -91,6 +91,10 @@ set undofile
 
 " use your own cursor
 set guicursor=
+if has('nvim')
+  set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:hor26-Cursor-blinkwait150-blinkon150-blinkoff150/lCursor,r-cr:hor20-Cursor-blinkwait150-blinkon150-blinkoff150/lCursor
+  au VimLeave * set guicursor=a:hor26-Cursor-blinkwait300-blinkon150-blinkoff150
+endif
 
 " Treat long lines as break lines (useful when moving around in them)
 " wrap function {{{
@@ -272,7 +276,7 @@ let g:tagbar_autoclose = 0
 " }}}
 " YouCompleteMe {{{
 let g:ycm_key_list_select_completion = ['<TAB>']
-let g:ycm_key_list_previous_completion = []
+let g:ycm_key_list_previous_completion = ['<S-TAB>']
 " disable pop-up preview window
 set completeopt-=preview
 " }}}
