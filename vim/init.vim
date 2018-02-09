@@ -91,10 +91,10 @@ set undofile
 
 " use your own cursor
 set guicursor=
-if has('nvim')
-  set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:hor26-Cursor-blinkwait150-blinkon150-blinkoff150/lCursor,r-cr:hor20-Cursor-blinkwait150-blinkon150-blinkoff150/lCursor
-  au VimLeave * set guicursor=a:hor26-Cursor-blinkwait300-blinkon150-blinkoff150
-endif
+" if has('nvim')
+"   set guicursor=n-v-c:hor26-Cursor/lCursor-blinkon0,i-ci:hor26-Cursor-blinkwait150-blinkon150-blinkoff150/lCursor,r-cr:hor20-Cursor-blinkwait150-blinkon150-blinkoff150/lCursor
+"   au VimLeave * set guicursor=a:hor26-Cursor-blinkwait300-blinkon150-blinkoff150
+" endif
 
 " Treat long lines as break lines (useful when moving around in them)
 " wrap function {{{
@@ -198,7 +198,7 @@ endif
 
 " edit
 Plug 'scrooloose/nerdcommenter' " powerful commenter
-Plug 'easymotion/vim-easymotion' " fast motion
+Plug 'gantheory/vim-easymotion' " fast motion
 Plug 'tpope/vim-surround' " easily change surround
 Plug 'tpope/vim-repeat' " enable '.' in plugins
 Plug 'djoshea/vim-autoread' " files autoread
