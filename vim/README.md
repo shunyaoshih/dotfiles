@@ -107,7 +107,7 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 ### Edit
 
 * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
-* [easymotion](https://github.com/easymotion/vim-easymotion)
+* [easymotion](https://github.com/gantheory/vim-easymotion)
 * [vim-surround](https://github.com/tpope/vim-surround)
 * [vim-repeat](https://github.com/tpope/vim-repeat)
 * [vim-autoread](https://github.com/djoshea/vim-autoread)
@@ -128,6 +128,7 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 
 * [python-syntax](https://github.com/hdima/python-syntax)
 * [vim-python-pep8-indent](https://github.com/Vimjas/vim-python-pep8-indent)
+* [SimpylFold](https://github.com/tmhedberg/SimpylFold)
 
 ### Latex related
 

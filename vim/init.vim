@@ -218,6 +218,7 @@ Plug 'w0rp/ale'
 " python related
 Plug 'leomao/python-syntax', { 'for': 'python' } " python syntax highlighting
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' } " python indentation
+Plug 'tmhedberg/SimpylFold'
 
 " latex related
 Plug 'lervag/vimtex', { 'for': 'tex' }
@@ -336,6 +337,9 @@ let g:ale_linters = {
 " }}}
 " python {{{
 let python_highlight_all = 1
+" }}}
+" SimpylFold {{{
+let g:SimpylFold_fold_import = 0
 " }}}
 " vimtex {{{
 let g:vimtex_compiler_latexmk = {'callback' : 0}
