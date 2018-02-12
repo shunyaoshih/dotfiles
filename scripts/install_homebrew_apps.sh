@@ -23,3 +23,5 @@ cask_install 'iterm2'
 cask_install 'skim'
 
 brew_install 'tldr'
+brew_install 'pandoc'
+brew_install 'node'
