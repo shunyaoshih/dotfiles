@@ -269,7 +269,7 @@ nmap <leader>j gt
 map <leader><leader> :NERDTreeTabsToggle<CR>
 " }}}
 " tagbar {{{
-nnoremap <silent> <leader>t :TagbarToggle<CR>
+nnoremap <silent> <leader>b :TagbarToggle<CR>
 let g:tagbar_left = 0
 let g:tagbar_width = 25
 let g:tagbar_autofocus = 1
@@ -323,7 +323,7 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 au FileType markdown let b:delimitMate_nesting_quotes = ['`']
 " }}}
 " fzf {{{
-nnoremap <leader>zz <ESC>:Files<CR>
+nnoremap <leader>t <ESC>:Files<CR>
 " }}}
 " ale {{{
 let g:ale_lint_delay = 1000
