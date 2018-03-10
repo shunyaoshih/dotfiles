@@ -228,6 +228,9 @@ if has('mac')
   Plug 'junegunn/vim-xmark', { 'do': 'make' }
 endif
 
+" activity tracking
+Plug 'wakatime/vim-wakatime'
+
 runtime custom/plugin.vim
 
 call plug#end()
@@ -395,6 +398,9 @@ noremap <leader>pw :let @+ = expand('%:p')<CR>
 " copy full path without the file name {{{
 noremap <leader>po :let @+ = expand('%:p:h')<CR>
 " }}}
+" jump to the last position when reopening a file {{{
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" "}}}
 " insert and delete empty line in normal mode {{{
 function! AddEmptyLineBelow()
   call append(line("."), "")
