@@ -319,6 +319,7 @@ nmap <leader>l <Plug>(easymotion-overwin-line)
 " }}}
 " vim-signify {{{
 let g:signify_vcs_list = ['git']
+let g:signify_sign_delete = "-"
 " }}}
 " delimitMate {{{
 au FileType cpp let b:loaded_delimitMate = 1
