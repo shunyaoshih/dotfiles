@@ -66,14 +66,14 @@ set nocursorline
 - go to the next/previous tab: `<leader>j` / `<leader>f`
 
 ### tagbar
-- toggle: `<leader>t`
+- toggle: `<leader>b`
 
 ### Snippets
 - expand: `Ctrl` + `k`
 
 ### FZF
 
-- fuzzy finding (files): `<leader>zz`
+- fuzzy finding (files): `<leader>t`
 
 ### ale
 
