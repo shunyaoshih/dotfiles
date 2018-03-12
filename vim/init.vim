@@ -274,9 +274,9 @@ map <leader><leader> :NERDTreeTabsToggle<CR>
 " tagbar {{{
 nnoremap <silent> <leader>b :TagbarToggle<CR>
 let g:tagbar_left = 0
-let g:tagbar_width = 25
+let g:tagbar_width = 40
 let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 0
+let g:tagbar_autoclose = 1
 " }}}
 " YouCompleteMe {{{
 let g:ycm_key_list_select_completion = ['<TAB>']
