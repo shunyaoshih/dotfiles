@@ -231,6 +231,10 @@ endif
 " activity tracking
 Plug 'wakatime/vim-wakatime'
 
+" clang format
+Plug 'kana/vim-operator-user'
+Plug 'rhysd/vim-clang-format'
+
 runtime custom/plugin.vim
 
 call plug#end()
@@ -336,8 +340,10 @@ let g:ale_sign_warning = 'ø'
 nmap ]f <Plug>(ale_next_wrap)
 nmap [f <Plug>(ale_previous_wrap)
 let g:ale_linters = {
-\   'python': [''],
+      \'cpp': ['cppcheck'],
+      \'python': ['pylint'],
 \}
+nnoremap <leader>a :ALEInfo<CR>
 " }}}
 " python {{{
 let python_highlight_all = 1
@@ -353,6 +359,9 @@ if has('mac')
   let g:vimtex_view_general_options = '-r @line @pdf @tex'
   let g:vimtex_view_general_options_latexmk = '-r 1'
 endif
+" }}}
+" clang-format {{{
+let g:clang_format#auto_format = 1
 " }}}
 " }}}
 " basic mappings {{{
