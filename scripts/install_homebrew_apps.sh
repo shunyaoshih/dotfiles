@@ -28,3 +28,5 @@ cask_install 'skim'
 brew_install 'tldr'
 brew_install 'pandoc'
 brew_install 'node'
+gem install neovim
+npm install -g neovim
