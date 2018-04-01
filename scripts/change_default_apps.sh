@@ -6,6 +6,7 @@ duti -s org.vim.MacVim .c all
 duti -s org.vim.MacVim .cpp all
 duti -s org.vim.MacVim .h all
 duti -s org.vim.MacVim .java all
+duti -s org.vim.MacVim .json all
 duti -s org.vim.MacVim .md all
 duti -s org.vim.MacVim .py all
 duti -s org.vim.MacVim .txt all
