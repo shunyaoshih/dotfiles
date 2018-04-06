@@ -9,8 +9,7 @@ using namespace std;
 ${0}
 
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(0);
+	ios_base::sync_with_stdio(false), cin.tie(0);
 }
 endsnippet
 
@@ -25,12 +24,37 @@ ${0}
 void init() {
 }
 int main() {
-	ios_base::sync_with_stdio(false);
-	cin.tie(0);
+	ios_base::sync_with_stdio(false), cin.tie(0);
 	int tt;
 	cin >> tt;
 	for (int qq = 1; qq <= tt; ++qq) {
 		init();
 	}
 }
+endsnippet
+
+snippet ggtmp "Google Template" b
+// by gantheory™
+#include <bits/stdc++.h>
+
+using namespace std;
+
+${0}
+
+void init() {}
+void run(istream& cin, ostream& cout) {}
+// {{{
+int main() {
+	ios_base::sync_with_stdio(false), cin.tie(0);
+	int tt;
+	cin >> tt;
+	for (int qq = 1; qq <= tt; ++qq) {
+		cout << "Case #" << qq << ": ";
+		time_t _ = clock();
+		init(), run(cin, cout);
+		cerr << "test " << qq << " / " << tt << " solved, time = " << clock() - _
+         << " ms" << endl;
+	}
+}
+// }}}
 endsnippet
