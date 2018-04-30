@@ -91,10 +91,6 @@ set undofile
 
 " use your own cursor
 set guicursor=
-" if has('nvim')
-"   set guicursor=n-v-c:hor26-Cursor/lCursor-blinkon0,i-ci:hor26-Cursor-blinkwait150-blinkon150-blinkoff150/lCursor,r-cr:hor20-Cursor-blinkwait150-blinkon150-blinkoff150/lCursor
-"   au VimLeave * set guicursor=a:hor26-Cursor-blinkwait300-blinkon150-blinkoff150
-" endif
 
 " Treat long lines as break lines (useful when moving around in them)
 " wrap function {{{
