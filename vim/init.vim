@@ -229,7 +229,7 @@ if has('mac')
 endif
 
 " activity tracking
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 
 " clang format
 Plug 'kana/vim-operator-user'
