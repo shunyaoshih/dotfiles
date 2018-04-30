@@ -4,10 +4,11 @@
 "
 " Sections:
 "     -> basic settings
-"     -> basic mappings
 "     -> vim plugins
 "     -> plugins' settings
+"     -> basic mappings
 "     -> other useful functions or mappings
+"     -> load custome settings
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " basic settings {{{
