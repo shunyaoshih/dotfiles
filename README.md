@@ -29,6 +29,13 @@ $ tmux source ~/.tmux.conf
 - Load iTerm2 settings: `Preferences...` => `General` => `Load preferences from a custom folder or URL`
 - Font for Powerline: `Preferences...` => `Profiles` => `Text` => `Non-ASCII Font`
 
+#### kitty
+
+```shell
+$ cd ~/Github/dotfiles
+$ cp ./kitty/kitty.conf ~/.config/kitty/kitty.conf
+```
+
 #### Install cask apps
 
 ```shell
