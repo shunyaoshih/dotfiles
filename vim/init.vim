@@ -450,8 +450,8 @@ function! DelEmptyLineAbove()
   end
 endfunction
 
-noremap <silent> ∆ :call DelEmptyLineBelow()<CR>
-noremap <silent> ˚ :call DelEmptyLineAbove()<CR>
+noremap <silent> <A-j> :call DelEmptyLineBelow()<CR>
+noremap <silent> <A-k> :call DelEmptyLineAbove()<CR>
 noremap <silent> <C-j> :call AddEmptyLineBelow()<CR>
 noremap <silent> <C-k> :call AddEmptyLineAbove()<CR>
 " }}}

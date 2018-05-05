@@ -106,6 +106,7 @@ alias st='tmux source ~/.tmux.conf'
 alias rptmp='cp ~/Github/dotfiles/vim/template/report.tex report.tex && v report.tex'
 alias sltmp='cp ~/Github/dotfiles/vim/template/slides.tex slides.tex && v slides.tex'
 alias fm='vifm . ~/Downloads'
+alias tmux='tmux -u'
 # }}}
 # git {{{
 alias gs='git status'
