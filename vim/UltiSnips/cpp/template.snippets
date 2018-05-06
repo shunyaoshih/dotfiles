@@ -10,6 +10,7 @@ ${0}
 
 int main() {
 	ios_base::sync_with_stdio(false), cin.tie(0);
+	cout.setf(ios::fixed), cout.precision(12);
 }
 endsnippet
 
@@ -25,30 +26,9 @@ void init() {}
 void run() {}
 int main() {
 	ios_base::sync_with_stdio(false), cin.tie(0);
+	cout.setf(ios::fixed), cout.precision(12);
 	int tt;
 	cin >> tt;
-	for (int qq = 1; qq <= tt; ++qq) { init(), run; }
+	for (int qq = 1; qq <= tt; ++qq) { init(), run(); }
 }
-endsnippet
-
-snippet ggtmp "Google Template" b
-#include <bits/stdc++.h>
-
-using namespace std;
-
-${0}
-
-void init() {}
-void run() {}
-// {{{
-int main() {
-	ios_base::sync_with_stdio(false), cin.tie(0);
-	int tt;
-	cin >> tt;
-	for (int qq = 1; qq <= tt; ++qq) {
-		cout << "Case #" << qq << ": ";
-		init(), run();
-	}
-}
-// }}}
 endsnippet
