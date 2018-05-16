@@ -75,6 +75,7 @@ setopt multios
 # default global editor
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export LC_CTYPE=en_US.UTF-8
 # }}}
 # dir colors {{{
 # color
