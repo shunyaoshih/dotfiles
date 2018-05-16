@@ -164,6 +164,9 @@ set pumheight=5
 
 " keep the cursor on the same column
 set nostartofline
+
+" custome file extension
+au! BufRead,BufNewFile *.in setfiletype in
 " }}}
 " vim plugins {{{
 call plug#begin()
@@ -226,7 +229,7 @@ if has('mac')
 endif
 
 " activity tracking
-" Plug 'wakatime/vim-wakatime'
+Plug 'wakatime/vim-wakatime'
 
 " clang format
 Plug 'kana/vim-operator-user'
