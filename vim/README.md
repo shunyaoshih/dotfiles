@@ -44,12 +44,14 @@ set nocursorline
 - copy full file path without the file name: `<leader>po`
 - insert an empty line below/above: `Ctrl` + `j` / `Ctrl` + `k`
 - delete an empty line below/above: `Alt` + `j` / `Alt` + `k`
+- show highlight group: `<leader>sh`
 
 ### C/C++
 - compile: `F9`
 - execute: `F5`
 - execute with file input: `F6`
 - execute with file input/output: `F7`
+- jump to corresponding input file: `F8`
 
 ### Python
 - execute: `F5`
@@ -72,7 +74,6 @@ set nocursorline
 - expand: `Ctrl` + `k`
 
 ### FZF
-
 - fuzzy finding (files): `<leader>t`
 
 ### ale
@@ -98,6 +99,7 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 ### Autocompletion
 
 * [YouComleteMe](https://github.com/Valloric/YouCompleteMe) (macOS only)
+* [Deoplete](https://github.com/Shougo/deoplete.nvim)
 
 ### Snippets
 
@@ -137,3 +139,11 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 ### Markdown related
 
 * [vim-xmark](https://github.com/junegunn/vim-xmark) (macOS only)
+
+### Activity tracking
+
+* [vim-wakatime](https://github.com/wakatime/vim-wakatime)
+
+### Clang format
+
+* [vim-clang-format](https://github.com/rhysd/vim-clang-format)

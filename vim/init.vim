@@ -181,13 +181,20 @@ Plug 'jistr/vim-nerdtree-tabs' " all tabs share one nerdtree
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 " auto-complete
-if has('mac')
-  function! BuildYCM(info)
-    if a:info.status == 'installed' || a:info.force
-      !./install.py
-    endif
-  endfunction
-  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+" if has('mac')
+"   function! BuildYCM(info)
+"     if a:info.status == 'installed' || a:info.force
+"       !./install.py
+"     endif
+"   endfunction
+"   Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+" endif
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 " snippets
@@ -287,6 +294,10 @@ let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
 " disable pop-up preview window
 set completeopt-=preview
+" }}}
+" Deoplete {{{
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:deoplete#enable_at_startup = 1
 " }}}
 " snippets {{{
 let g:UltiSnipsExpandTrigger="<c-k>"
@@ -394,9 +405,6 @@ nnoremap <silent> <leader>rt :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar
 " clear highliht {{{
 noremap <leader>nh :noh<CR>
 " }}}
-" reload file {{{
-noremap <leader>e :edit<CR>
-" }}}
 " show highlight groups {{{
 nmap <leader>sh :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
 \ '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -412,10 +420,12 @@ noremap <leader>po :let @+ = expand('%:p:h')<CR>
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 " "}}}
 " insert and delete empty line in normal mode {{{
+" add empty line below {{{
 function! AddEmptyLineBelow()
   call append(line("."), "")
 endfunction
-
+" }}}
+" add empty line above {{{
 function! AddEmptyLineAbove()
   let l:scrolloffsave = &scrolloff
   " Avoid jerky scrolling with ^E at top of window
@@ -426,7 +436,8 @@ function! AddEmptyLineAbove()
   end
   let &scrolloff = l:scrolloffsave
 endfunction
-
+" }}}
+" delete empty line below {{{
 function! DelEmptyLineBelow()
   if line(".") == line("$")
     return
@@ -439,7 +450,8 @@ function! DelEmptyLineBelow()
     call cursor(line("."), l:colsave)
   end
 endfunction
-
+" }}}
+" delete empty line above {{{
 function! DelEmptyLineAbove()
   if line(".") == 1
     return
@@ -452,7 +464,7 @@ function! DelEmptyLineAbove()
     call cursor(line("."), l:colsave)
   end
 endfunction
-
+" }}}
 noremap <silent> <A-j> :call DelEmptyLineBelow()<CR>
 noremap <silent> <A-k> :call DelEmptyLineAbove()<CR>
 noremap <silent> <C-j> :call AddEmptyLineBelow()<CR>
