@@ -210,6 +210,7 @@ Plug 'tpope/vim-surround' " easily change surround
 Plug 'tpope/vim-repeat' " enable '.' in plugins
 Plug 'djoshea/vim-autoread' " files autoread
 Plug 'Raimondi/delimitMate' " auto pairs
+Plug 'Yggdroot/indentLine' " show indent line
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -340,6 +341,10 @@ let g:signify_sign_delete = "-"
 au FileType cpp let b:loaded_delimitMate = 1
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 au FileType markdown let b:delimitMate_nesting_quotes = ['`']
+" }}}
+" indentLine {{
+let g:indentLine_char = '⎸'
+let g:indentLine_concealcursor=0
 " }}}
 " fzf {{{
 nnoremap <leader>t <ESC>:Files<CR>
