@@ -10,3 +10,4 @@ print 'Link Dotfiles'
 ./link_zsh.sh
 ./link_tmux.sh
 ./link_vifm.sh
+./link_hyper.sh
