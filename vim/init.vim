@@ -153,7 +153,7 @@ set foldmethod=marker
 set splitright
 
 " for macvim
-set guifont=Monaco\ for\ Powerline:h13
+set guifont=DejaVu\ Sans\ Mono\ for\ PowerLine:h13
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " set scripts to be executable from the shell
@@ -167,6 +167,9 @@ set nostartofline
 
 " custome file extension
 au! BufRead,BufNewFile *.in setfiletype in
+
+" disable pop-up preview window
+set completeopt-=preview
 " }}}
 " vim plugins {{{
 call plug#begin()
@@ -214,6 +217,7 @@ Plug 'Yggdroot/indentLine' " show indent line
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/limelight.vim'
 
 " git related
 Plug 'tpope/vim-fugitive' " git commands
@@ -227,6 +231,8 @@ Plug 'w0rp/ale'
 Plug 'leomao/python-syntax', { 'for': 'python' } " python syntax highlighting
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' } " python indentation
 Plug 'tmhedberg/SimpylFold'
+" Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'ambv/black'
 
 " latex related
 Plug 'lervag/vimtex', { 'for': 'tex' }
@@ -248,6 +254,18 @@ runtime custom/plugin.vim
 call plug#end()
 " }}}
 " plugins' settings {{{
+" Limelight {{{
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+nmap <Leader>v <Plug>(Limelight)
+xmap <Leader>v <Plug>(Limelight)
+" }}}
 " pikatheme {{{
 let g:lightline = {
       \ 'colorscheme': 'pikacode'
@@ -293,8 +311,6 @@ let g:tagbar_autoclose = 1
 " YouCompleteMe {{{
 let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>']
-" disable pop-up preview window
-set completeopt-=preview
 " }}}
 " Deoplete {{{
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -342,7 +358,7 @@ au FileType cpp let b:loaded_delimitMate = 1
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 au FileType markdown let b:delimitMate_nesting_quotes = ['`']
 " }}}
-" indentLine {{
+" indentLine {{{
 let g:indentLine_char = '⎸'
 let g:indentLine_concealcursor=0
 " }}}
@@ -366,6 +382,15 @@ let python_highlight_all = 1
 " }}}
 " SimpylFold {{{
 let g:SimpylFold_fold_import = 0
+" }}}
+" yapf {{{
+" map <leader>y :call yapf#YAPF()<cr>
+" autocmd BufWritePost *.py execute 'call yapf#YAPF()'
+" }}}
+" black {{{
+let g:black_linelength=80
+map <leader>p :Black<CR>
+" autocmd BufWritePost *.py execute ':Black'
 " }}}
 " vimtex {{{
 let g:vimtex_compiler_latexmk = {'callback' : 0}
@@ -470,10 +495,14 @@ function! DelEmptyLineAbove()
   end
 endfunction
 " }}}
-noremap <silent> <A-j> :call DelEmptyLineBelow()<CR>
-noremap <silent> <A-k> :call DelEmptyLineAbove()<CR>
-noremap <silent> <C-j> :call AddEmptyLineBelow()<CR>
-noremap <silent> <C-k> :call AddEmptyLineAbove()<CR>
+nnoremap <silent> <A-j> :call DelEmptyLineBelow()<CR>
+nnoremap <silent> <A-k> :call DelEmptyLineAbove()<CR>
+nnoremap <silent> <C-j> :call AddEmptyLineBelow()<CR>
+nnoremap <silent> <C-k> :call AddEmptyLineAbove()<CR>
+" }}}
+" move block up and down {{{
+vnoremap <S-j> :m'>+<CR>:echo "move block down"<CR>gv
+vnoremap <S-k> :m'<-2<CR>:echo "move block up"<CR>gv
 " }}}
 " }}}
 " load custom settings {{{
