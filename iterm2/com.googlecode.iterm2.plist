@@ -503,7 +503,7 @@
 		</dict>
 	</dict>
 	<key>HideActivityIndicator</key>
-	<false/>
+	<true/>
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>HideScrollbar</key>
@@ -579,7 +579,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>623 606 770 429 0 0 1680 1050 </string>
+	<string>623 561 1018 447 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 23 1680 1027 0 0 1680 1050 </string>
 	<key>New Bookmarks</key>
@@ -1313,7 +1313,7 @@
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -1377,6 +1377,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>4</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -1404,7 +1406,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>A1A1D65C-30E3-4A04-AE53-8AE2AC46D607</string>
 	<key>NoSyncLastTipTime</key>
-	<real>547579152.46796</real>
+	<real>549910262.30909503</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1440,6 +1442,7 @@
 		<string>0021</string>
 		<string>0022</string>
 		<string>0023</string>
+		<string>0024</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
@@ -1509,7 +1512,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-09T17:19:12Z</date>
+	<date>2018-06-05T17:00:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
