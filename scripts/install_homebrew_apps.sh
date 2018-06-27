@@ -13,6 +13,7 @@ brew_install 'python'
 brew_install 'python3'
 pip3 install pylint
 brew_install 'reattach-to-user-namespace'
+pip3 install yapf
 
 brew_install 'vim'
 brew_install 'neovim'
@@ -31,3 +32,4 @@ brew_install 'pandoc'
 brew_install 'node'
 gem install neovim
 npm install -g neovim
+# npm install -g hyperterm-summon

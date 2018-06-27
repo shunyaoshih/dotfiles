@@ -2,8 +2,8 @@
 source ./utils.sh
 
 print 'Install Homebrew-Cask Apps'
-# cask_install 'alfred'
-cask_install 'docker'
+cask_install 'alfred'
+# cask_install 'docker'
 # cask_install 'evernote'
 cask_install 'franz'
 # cask_install 'flux'
