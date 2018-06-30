@@ -3,6 +3,7 @@ source ./utils.sh
 
 print 'Install Homebrew-Cask Apps'
 cask_install 'alfred'
+cask_install 'bettertouchtool'
 # cask_install 'docker'
 # cask_install 'evernote'
 cask_install 'franz'
