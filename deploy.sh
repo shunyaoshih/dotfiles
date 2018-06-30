@@ -10,6 +10,7 @@ if [ "$1" == "all" ]; then
   cd scripts
   bash ./install_homebrew.sh
   bash ./install_homebrew_apps.sh
+  bash ./install_kitty.sh
   bash ./link_all.sh
   bash ./change_default_apps.sh
   bash ./install_vim.sh
