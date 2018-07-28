@@ -181,20 +181,20 @@ Plug 'leomao/lightline-pika' " pika settings of lightline
 " file explorer
 Plug 'scrooloose/nerdtree' " file tree
 Plug 'jistr/vim-nerdtree-tabs' " all tabs share one nerdtree
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+" Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 " auto-complete
-" if has('mac')
-"   function! BuildYCM(info)
-"     if a:info.status == 'installed' || a:info.force
-"       !./install.py
-"     endif
-"   endfunction
-"   Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-" endif
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+if has('mac')
+  function! BuildYCM(info)
+    if a:info.status == 'installed' || a:info.force
+      !./install.py
+    endif
+  endfunction
+  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 endif
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" endif
 
 " snippets
 if has('python') || has('python3')
@@ -213,12 +213,12 @@ Plug 'Yggdroot/indentLine' " show indent line
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/limelight.vim'
+" Plug 'junegunn/limelight.vim'
 
 " git related
-Plug 'tpope/vim-fugitive' " git commands
-Plug 'junegunn/gv.vim' " git commit brows
-Plug 'mhinz/vim-signify' " asynchronously show diff
+" Plug 'tpope/vim-fugitive' " git commands
+" Plug 'junegunn/gv.vim' " git commit brows
+" Plug 'mhinz/vim-signify' " asynchronously show diff
 
 " asynchronous linter
 Plug 'w0rp/ale'
@@ -228,18 +228,17 @@ Plug 'leomao/python-syntax', { 'for': 'python' } " python syntax highlighting
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' } " python indentation
 Plug 'tmhedberg/SimpylFold'
 " Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
-Plug 'ambv/black'
 
 " latex related
-Plug 'lervag/vimtex', { 'for': 'tex' }
+" Plug 'lervag/vimtex', { 'for': 'tex' }
 
 " markdown preview
-if has('mac')
-  Plug 'junegunn/vim-xmark', { 'do': 'make' }
-endif
+" if has('mac')
+"   Plug 'junegunn/vim-xmark', { 'do': 'make' }
+" endif
 
 " activity tracking
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 
 " clang format
 Plug 'kana/vim-operator-user'
@@ -326,6 +325,7 @@ let g:NERDRemoveExtraSpaces = 1
 let g:NERDDefaultAlign = 'left'
 " workaround for 2 spaces in python
 let g:NERDCustomDelimiters = {'python': {'left': '#'}}
+map <leader>/ <plug>NERDCommenterToggle
 " }}}
 " vim-easymotion {{{
 " change default trigger
