@@ -24,7 +24,7 @@ brew_install 'vifm'
 brew_install 'macvim'
 
 # cask_install 'iterm2'
-cask_install 'hyper'
+# cask_install 'hyper'
 cask_install 'skim'
 
 brew_install 'tldr'
