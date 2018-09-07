@@ -170,10 +170,6 @@ au! BufRead,BufNewFile *.in setfiletype in
 
 " disable pop-up preview window
 set completeopt-=preview
-
-" move to the next of previous buffer
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bn :bn<CR>
 " }}}
 " vim plugins {{{
 call plug#begin()
@@ -427,6 +423,10 @@ nnoremap Y y$
 
 " use Macro easily
 nnoremap Q @q
+
+" move to the next of previous buffer
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bn :bn<CR>
 " }}}
 " other useful functions or mappings {{{
 " remove trailing spaces {{{
