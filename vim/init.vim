@@ -8,7 +8,7 @@
 "     -> plugins' settings
 "     -> basic mappings
 "     -> other useful functions or mappings
-"     -> load custome settings
+"     -> load custom settings
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " basic settings {{{
