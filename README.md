@@ -24,6 +24,8 @@ $ tmux source ~/.tmux.conf
 # install tmux plugins: prefix + I
 ```
 
+To use `diff-so-fancy` in zsh, please check [so-fancy/diff-so/fancy](https://github.com/so-fancy/diff-so-fancy#usage)
+
 #### iTerm2
 
 - Load iTerm2 settings: `Preferences...` => `General` => `Load preferences from a custom folder or URL`
