@@ -3,17 +3,17 @@
 # Maintainer: Gary Shih
 #
 # Sections:
+#     -> fzf
 #     -> zplug
 #     -> general
-#     -> dir colors' setting
-#     -> $PATH settings
+#     -> dir colors
+#     -> $PATH
 #     -> alias
 #     -> completion
 #     -> override zsh syntax highlighting
 #
 ################################################################################
-# zplug {{{
-# fzf
+# fzf {{{
 if ! [[ -f ~/.fzf.zsh ]] ; then
   if ! [[ -f ~/.fzf/install ]] ; then
     rm -rf ~/.fzf
@@ -22,7 +22,8 @@ if ! [[ -f ~/.fzf.zsh ]] ; then
   ~/.fzf/install --all
 fi
 source ~/.fzf.zsh
-
+# }}}
+# zplug {{{
 export ZPLUG_HOME=~/.zplug
 if ! [[ -f "${HOME}/.zplug/init.zsh" ]]; then
   curl -sL https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
