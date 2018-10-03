@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 source ./utils.sh
 
 UNDODIR=$HOME"/Github/dotfiles/vim/.undodir"

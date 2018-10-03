@@ -4,7 +4,7 @@ My configuration files
 
 ## Environment
 
-macOS High Sierra
+macOS Mojave
 
 ## Usage
 

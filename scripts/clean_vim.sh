@@ -1,4 +1,4 @@
-# !bin/bash
+#! /bin/bash
 source ./utils.sh
 
 print "Clean Unused Vim Plugins"

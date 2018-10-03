@@ -210,6 +210,7 @@ Plug 'tpope/vim-repeat' " enable '.' in plugins
 Plug 'djoshea/vim-autoread' " files autoread
 Plug 'Raimondi/delimitMate' " auto pairs
 Plug 'Yggdroot/indentLine' " show indent line
+Plug 'mgee/lightline-bufferline' " tabline as bufferine
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -218,7 +219,7 @@ Plug 'junegunn/fzf.vim'
 " git related
 " Plug 'tpope/vim-fugitive' " git commands
 " Plug 'junegunn/gv.vim' " git commit brows
-" Plug 'mhinz/vim-signify' " asynchronously show diff
+Plug 'mhinz/vim-signify' " asynchronously show diff
 
 " asynchronous linter
 Plug 'w0rp/ale'
@@ -230,7 +231,7 @@ Plug 'tmhedberg/SimpylFold'
 " Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 
 " latex related
-" Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'lervag/vimtex', { 'for': 'tex' }
 
 " markdown preview
 " if has('mac')
@@ -400,6 +401,12 @@ endif
 " clang-format {{{
 let g:clang_format#auto_format = 1
 " }}}
+" lightline-bufferline {{{
+set showtabline=2
+let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
+" }}}
 " }}}
 " basic mappings {{{
 " save (and quit) files
@@ -425,8 +432,9 @@ nnoremap Y y$
 nnoremap Q @q
 
 " move to the next of previous buffer
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bn :bn<CR>
+nnoremap <C-p> :bp<CR>
+nnoremap <C-n> :bn<CR>
+nnoremap <C-c> :bd<CR>
 " }}}
 " other useful functions or mappings {{{
 " remove trailing spaces {{{

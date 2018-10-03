@@ -1,4 +1,4 @@
-# !bin/bash
+#! /bin/bash
 source ./utils.sh
 
 ./check_vim_dependencies.sh

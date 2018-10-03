@@ -45,6 +45,8 @@ set nocursorline
 - insert an empty line below/above: `Ctrl` + `j` / `Ctrl` + `k`
 - delete an empty line below/above: `Alt` + `j` / `Alt` + `k`
 - show highlight group: `<leader>sh`
+- move to previous/next buffer: `Ctrl` + `p` / `Ctrl` + `n`
+- remove the current buffer: `Ctrl` + `c`
 
 ### C/C++
 - compile: `F9`

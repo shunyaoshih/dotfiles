@@ -1,4 +1,4 @@
-# !bin/bash
+#! /bin/bash
 function _print {
   now_str=$1
   strlen=${#now_str}
