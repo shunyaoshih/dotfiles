@@ -16,8 +16,8 @@ brew_install 'python3'
 brew_install 'mas'
 brew_install 'node'
 brew_install 'tldr'
-# unsupported in Mojave
-# brew_install 'reattach-to-user-namespace'
+brew_install 'reattach-to-user-namespace'
+brew_install 'watch'
 
 brew_install 'vim'
 brew_install 'neovim'
