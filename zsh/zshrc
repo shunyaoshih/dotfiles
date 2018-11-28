@@ -74,6 +74,9 @@ setopt multios
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+eval "$(pyenv init -)"
 # }}}
 # dir colors {{{
 # color
@@ -95,8 +98,6 @@ alias lla='ls -a -lh'
 alias cx='chmod +x'
 alias v='nvim'
 alias g++='g++-8'
-alias python="python3"
-alias pip="pip3"
 alias vinit="v ~/Github/dotfiles/vim/init.vim"
 alias zinit="v ~/Github/dotfiles/zsh/zshrc"
 alias sz='source ~/.zshrc'
