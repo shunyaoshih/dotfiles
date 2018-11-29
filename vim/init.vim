@@ -211,6 +211,7 @@ Plug 'djoshea/vim-autoread' " files autoread
 Plug 'Raimondi/delimitMate' " auto pairs
 Plug 'Yggdroot/indentLine' " show indent line
 Plug 'mgee/lightline-bufferline' " tabline as bufferine
+Plug 'unblevable/quick-scope'
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -228,7 +229,7 @@ Plug 'w0rp/ale'
 Plug 'leomao/python-syntax', { 'for': 'python' } " python syntax highlighting
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' } " python indentation
 Plug 'tmhedberg/SimpylFold'
-" Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 
 " latex related
 Plug 'lervag/vimtex', { 'for': 'tex' }
@@ -370,8 +371,9 @@ nmap ]f <Plug>(ale_next_wrap)
 nmap [f <Plug>(ale_previous_wrap)
 let g:ale_linters = {
       \'cpp': ['cppcheck'],
-      \'python': ['pylint'],
+      \'python': [],
 \}
+" ['pylint']
 nnoremap <leader>a :ALEInfo<CR>
 " }}}
 " python {{{
@@ -381,8 +383,8 @@ let python_highlight_all = 1
 let g:SimpylFold_fold_import = 0
 " }}}
 " yapf {{{
-" map <leader>y :call yapf#YAPF()<cr>
-" autocmd BufWritePost *.py execute 'call yapf#YAPF()'
+map <leader>y :YAPF<cr>
+" autocmd BufWritePost *.py execute 'YAPF'
 " }}}
 " black {{{
 let g:black_linelength=80
