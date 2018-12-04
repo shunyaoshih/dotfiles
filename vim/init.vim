@@ -211,7 +211,7 @@ Plug 'djoshea/vim-autoread' " files autoread
 Plug 'Raimondi/delimitMate' " auto pairs
 Plug 'Yggdroot/indentLine' " show indent line
 Plug 'mgee/lightline-bufferline' " tabline as bufferine
-Plug 'unblevable/quick-scope'
+" Plug 'unblevable/quick-scope'
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
