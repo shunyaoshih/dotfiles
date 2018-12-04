@@ -26,3 +26,7 @@ brew_install 'zsh'
 brew_install 'tmux'
 brew_install 'vifm'
 brew_install 'macvim'
+
+print 'Homebrew Tap Fonts'
+run_cmd 'brew tap caskroom/fonts'
+cask_install 'font-hack-nerd-font'
