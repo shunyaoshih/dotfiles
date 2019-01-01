@@ -17,6 +17,7 @@ brew_install 'pyenv'
 brew_install 'mas'
 brew_install 'node'
 brew_install 'tldr'
+brew_install 'tree'
 brew_install 'reattach-to-user-namespace'
 brew_install 'watch'
 
