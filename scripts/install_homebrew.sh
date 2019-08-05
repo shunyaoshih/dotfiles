@@ -9,9 +9,3 @@ else
     print 'Update Homebrew'
     brew update
   fi
-
-print 'Homebrew Tap Cask'
-run_cmd 'brew tap caskroom/cask'
-
-print 'Homebrew Tap universal-ctags/universal-ctags'
-run_cmd 'brew tap universal-ctags/universal-ctags'

@@ -6,9 +6,10 @@ if [ $# -eq 0 ]; then
   exit
 fi;
 
+bash ./install_homebrew.sh
+
 if [ "$1" == "all" ]; then
   cd scripts
-  bash ./install_homebrew.sh
   bash ./install_homebrew_apps.sh
   bash ./install_python_packages.sh
   bash ./link_all.sh
@@ -19,21 +20,10 @@ if [ "$1" == "all" ]; then
 elif [ "$1" == "cask" ]; then
   cd scripts
   bash ./install_homebrew_cask_apps.sh
-elif [ "$1" == "vim_only" ]; then
+elif [ "$1" == "vim" ]; then
   cd scripts
   bash ./link_vim.sh
   bash ./install_vim.sh
-elif [ "$1" == "workstation" ]; then
-  cd scripts
-  bash ./link_vim.sh
-  bash ./link_tmux.sh
-  bash ./install_vim.sh
-elif [ "$1" == "update_vim" ]; then
-  cd scripts
-  bash ./update_vim.sh
-elif [ "$1" == "clean_vim" ]; then
-  cd scripts
-  bash ./clean_vim.sh
 elif [ "$1" == "zsh" ]; then
   cd scripts
   bash ./deploy_zsh.sh
