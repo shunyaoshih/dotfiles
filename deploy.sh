@@ -37,4 +37,7 @@ elif [ "$1" == "clean_vim" ]; then
 elif [ "$1" == "zsh" ]; then
   cd scripts
   bash ./deploy_zsh.sh
+elif [ "$1" == "tmux" ]; then
+  cd scripts
+  bash ./deploy_tmux.sh
 fi;

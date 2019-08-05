@@ -2,6 +2,18 @@
 
 My tmux configuration
 
+## Usage
+
+```shell
+$ xcode-select --install
+$ mkdir Github; cd Github
+$ git clone https://github.com/gantheory/dotfiles.git; cd dotfiles
+$ ./deploy.sh tmux
+$ tmux
+$ tmux source ~/.tmux.conf
+# install tmux plugins: prefix + I
+```
+
 ## Shortcuts
 
 - prefix: `Ctrl` + `a`
