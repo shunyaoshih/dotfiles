@@ -31,6 +31,11 @@ brew_install 'node'
 brew_install 'vim'
 brew_install 'neovim'
 
+print 'Install Python Packages'
+pip3 install pylint
+pip3 install yapf
+pip3 install neovim
+
 print "Install Vim Plugins"
 cmd='vim +PlugInstall +qall'
 run_cmd '$cmd'
