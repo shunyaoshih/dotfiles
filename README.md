@@ -10,7 +10,7 @@ macOS Mojave
 
 ### macOS (my personal setup)
 
-#### vim + zsh + tmux + vifm
+#### vim + zsh + tmux + vifm + iterm2
 
 ```shell
 $ xcode-select --install
@@ -24,51 +24,10 @@ $ tmux source ~/.tmux.conf
 # install tmux plugins: prefix + I
 ```
 
-To use `diff-so-fancy` in zsh, please check [so-fancy/diff-so/fancy](https://github.com/so-fancy/diff-so-fancy#usage)
-
 #### iTerm2
 
 - Load iTerm2 settings: `Preferences...` => `General` => `Load preferences from a custom folder or URL`
-- Font for Powerline: `Preferences...` => `Profiles` => `Text` => `Non-ASCII Font`
 
-#### kitty
+### Vim/Zsh/Tmux only
 
-```shell
-$ cd ~/Github/dotfiles
-$ cp ./kitty/kitty.conf ~/.config/kitty/kitty.conf
-```
-
-#### Install cask apps
-
-```shell
-$ cd ~/Github/dotfiles
-$ ./deploy.sh cask
-```
-
-#### Workstation
-
-```shell
-# need to install vim and tmux first
-$ mkdir Github; cd Github
-$ git clone https://github.com/gantheory/dotfiles.git; cd dotfiles
-$ ./deploy.sh workstation
-```
-
-### Vim only
-
-```shell
-# install vim 8.0+
-$ mkdir Github; cd Github
-$ git clone https://github.com/gantheory/dotfiles.git; cd dotfiles
-$ ./deploy.sh vim_only
-```
-
-check out my vim shortcuts at [here](https://github.com/gantheory/dotfiles/blob/master/vim/README.md).
-
-#### Update
-
-```shell
-$ cd ~/Github/dotfiles
-$ git pull
-$ ./deploy.sh vim_only
-```
+If you just want to install vim, zsh, or tmux specifically, you can check out README files in the corresponding directory.
