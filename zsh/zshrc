@@ -4,11 +4,15 @@
 #
 # Sections:
 #     -> fzf
-#     -> zplug
+#     -> zplugin
 #     -> general
 #     -> dir colors
-#     -> $PATH
+#     -> PATH
 #     -> alias
+#        -> general
+#        -> git
+#        -> ptt
+#        -> ctags
 #     -> completion
 #     -> override zsh syntax highlighting
 #
@@ -23,33 +27,25 @@ if ! [[ -f ~/.fzf.zsh ]] ; then
 fi
 source ~/.fzf.zsh
 # }}}
-# zplug {{{
-export ZPLUG_HOME=~/.zplug
-if ! [[ -f "${HOME}/.zplug/init.zsh" ]]; then
-  curl -sL https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# zplugin {{{
+if ! [[ -f "${HOME}/.zplugin/bin/zplugin.zsh" ]]; then
+  mkdir ~/.zplugin
+  # "--depth 10" from zdharma/zplugin/doc/install.sh
+  git clone --depth 10 https://github.com/zdharma/zplugin.git ~/.zplugin/bin
 fi
-zstyle :zplug:tag depth 1
-source "${HOME}/.zplug/init.zsh"
+source "${HOME}/.zplugin/bin/zplugin.zsh"
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
 
-zplug "zplug/zplug"
-zplug "mafredri/zsh-async", use:"async.zsh"
-zplug "leomao/vim.zsh", use:vim.zsh, defer:1
-zplug "gantheory/gs-prompt", use:gs-prompt.zsh, defer:2
-
-zplug "so-fancy/diff-so-fancy", as:command, use:diff-so-fancy
-
-export ENHANCD_DISABLE_HOME=1
-zplug "b4b4r07/enhancd", use:init.sh
-
-zplug "zsh-users/zsh-completions", use:"*.plugin.zsh"
-zplug "zsh-users/zsh-syntax-highlighting", use:"*.plugin.zsh", defer:3
-zplug "zsh-users/zsh-autosuggestions", use:"*.plugin.zsh"
-
-if ! zplug check --verbose; then
-  zplug install
-fi
-
-zplug load
+zplugin light mafredri/zsh-async
+zplugin light leomao/vim.zsh
+zplugin light gantheory/gs-prompt
+zplugin light b4b4r07/enhancd
+zplugin light zsh-users/zsh-completions
+zplugin light zsh-users/zsh-syntax-highlighting
+zplugin light zsh-users/zsh-autosuggestions
+autoload -Uz compinit
+compinit
 # }}}
 # general {{{
 # don't record duplicate history
