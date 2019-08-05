@@ -2,9 +2,14 @@
 
 My vim configuration
 
-## Requirements
+## Usage
 
-* vim >= 8.0
+```shell
+$ xcode-select --install
+$ mkdir Github; cd Github
+$ git clone https://github.com/gantheory/dotfiles.git; cd dotfiles
+$ ./deploy.sh vim
+```
 
 ## Customization
 
@@ -62,18 +67,12 @@ set nocursorline
 - toggle continuous compile mode: `<leader>ll`
 - preview: `<leader>lv`
 
-### Markdown
-- open live preview window: `<leader>o`(macOS only)
-
 ### nerdtree
 - toggle: `<leader><leader>`
 - go to the next/previous tab: `<leader>j` / `<leader>f`
 
-### tagbar
-- toggle: `<leader>b`
-
 ### Snippets
-- expand: `Ctrl` + `k`
+- expand: `Ctrl` + `l`
 
 ### FZF
 - fuzzy finding (files): `<leader>t`
@@ -96,12 +95,10 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 
 * [nerdtree](https://github.com/scrooloose/nerdtree)
 * [nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs)
-* [tagbar](https://github.com/majutsushi/tagbar)
 
 ### Autocompletion
 
-* [YouComleteMe](https://github.com/Valloric/YouCompleteMe) (macOS only)
-* [Deoplete](https://github.com/Shougo/deoplete.nvim)
+* [coc.nvim](https://github.com/neoclide/coc.nvim)
 
 ### Snippets
 
@@ -120,8 +117,6 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 
 ### Git related
 
-* [vim-fugitive](https://github.com/tpope/vim-fugitive)
-* [gv.vim](https://github.com/junegunn/gv.vim)
 * [vim-signify](https://github.com/mhinz/vim-signify)
 
 ### Asynchronous linter
@@ -133,18 +128,6 @@ Managed by [vim-plug](https://github.com/junegunn/vim-plug)
 * [python-syntax](https://github.com/hdima/python-syntax)
 * [vim-python-pep8-indent](https://github.com/Vimjas/vim-python-pep8-indent)
 * [SimpylFold](https://github.com/tmhedberg/SimpylFold)
-
-### Latex related
-
-* [vimtex](https://github.com/lervag/vimtex)
-
-### Markdown related
-
-* [vim-xmark](https://github.com/junegunn/vim-xmark) (macOS only)
-
-### Activity tracking
-
-* [vim-wakatime](https://github.com/wakatime/vim-wakatime)
 
 ### Clang format
 

@@ -22,8 +22,7 @@ elif [ "$1" == "cask" ]; then
   bash ./install_homebrew_cask_apps.sh
 elif [ "$1" == "vim" ]; then
   cd scripts
-  bash ./link_vim.sh
-  bash ./install_vim.sh
+  bash ./deploy_vim.sh
 elif [ "$1" == "zsh" ]; then
   cd scripts
   bash ./deploy_zsh.sh

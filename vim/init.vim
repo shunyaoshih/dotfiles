@@ -184,14 +184,15 @@ Plug 'jistr/vim-nerdtree-tabs' " all tabs share one nerdtree
 " Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 " auto-complete
-if has('mac')
-  function! BuildYCM(info)
-    if a:info.status == 'installed' || a:info.force
-      !./install.py
-    endif
-  endfunction
-  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-endif
+" if has('mac')
+"   function! BuildYCM(info)
+"     if a:info.status == 'installed' || a:info.force
+"       !./install.py
+"     endif
+"   endfunction
+"   Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+" endif
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 " if has('nvim')
 "   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " endif
@@ -232,7 +233,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 
 " latex related
-Plug 'lervag/vimtex', { 'for': 'tex' }
+" Plug 'lervag/vimtex', { 'for': 'tex' }
 
 " markdown preview
 " if has('mac')
@@ -314,9 +315,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:deoplete#enable_at_startup = 1
 " }}}
 " snippets {{{
-let g:UltiSnipsExpandTrigger="<c-k>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 " }}}
 " nerdcommenter {{{
 " <leader>cc => comment
