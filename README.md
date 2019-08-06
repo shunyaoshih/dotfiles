@@ -22,6 +22,8 @@ $ chsh -s /usr/local/bin/zsh
 $ tmux
 $ tmux source ~/.tmux.conf
 # install tmux plugins: prefix + I
+# If plugins of vim are not installed, please execute the following command.
+$ vim +PlugInstall +qall
 ```
 
 #### iTerm2
