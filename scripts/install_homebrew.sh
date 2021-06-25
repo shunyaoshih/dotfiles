@@ -8,4 +8,4 @@ if [[ $? != 0 ]] ; then
 else
     print 'Update Homebrew'
     brew update
-  fi
+fi
