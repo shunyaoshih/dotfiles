@@ -1,4 +1,5 @@
 " Maintainer: Gary Shih
+" Last updated: 2021-06-25
 
 syn keyword pythonConstant None True False
 hi def link pythonConstant Constant
