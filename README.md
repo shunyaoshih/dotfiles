@@ -44,11 +44,9 @@ $ chsh -s /usr/local/bin/fish
 
 ```shell
 $ ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 $ brew install tmux
 $ tmux
 $ tmux source ~/.tmux.conf
-# install tmux plugins: prefix + I
 ```
 
 ### iTerm2
