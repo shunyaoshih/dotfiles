@@ -152,6 +152,9 @@ set rtp+=/usr/local/opt/fzf
 
 " Jump to the last position when reopening a file.
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Set Python used by Neovim.
+let g:python3_host_prog="/usr/local/bin/python3"
 " }}}
 " Neovim Plugins {{{
 call plug#begin()
