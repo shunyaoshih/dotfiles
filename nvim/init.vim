@@ -138,7 +138,7 @@ set splitright
 
 " Set scripts to be executable if the first line starts with "#!" or
 " contains "/bin/"
-au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent execute "!chmod +x <afile>" | endif | endif
+autocmd BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent execute "!chmod +x <afile>" | endif | endif
 
 " Maximum number of suggestions shown in the popup menu.
 set pumheight=5
@@ -151,7 +151,7 @@ set nostartofline
 set rtp+=/usr/local/opt/fzf
 
 " Jump to the last position when reopening a file.
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Set Python used by Neovim.
 let g:python3_host_prog="/usr/local/bin/python3"
@@ -181,6 +181,9 @@ Plug 'wakatime/vim-wakatime'
 
 " Go.
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Rust.
+Plug 'rust-lang/rust.vim'
 
 runtime custom/local_plugin.vim
 
@@ -229,9 +232,9 @@ nmap <leader>l <Plug>(easymotion-overwin-line)
 autocmd OptionSet guicursor noautocmd set guicursor=
 " }}}
 " delimitMate {{{
-au FileType cpp let b:loaded_delimitMate = 1
-au FileType python let b:delimitMate_nesting_quotes = ['"']
-au FileType markdown let b:delimitMate_nesting_quotes = ['`']
+autocmd FileType cpp let b:loaded_delimitMate = 1
+autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
+autocmd FileType markdown let b:delimitMate_nesting_quotes = ['`']
 " }}}
 " indentLine {{{
 let g:indentLine_char = '⎸'

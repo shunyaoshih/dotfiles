@@ -30,6 +30,17 @@ $ brew install neovim
 $ nvim +PlugInstall +qall
 ```
 
+#### Formatter
+
+```shell
+# For C, C++, proto, JavaScript, and Arduino.
+$ brew install clang-format
+# For Python.
+$ brew install yapf
+# For CSS, JSON, GraphQL, Markdown, YAML.
+$ brew install prettier
+```
+
 ### Fish
 
 ```shell
