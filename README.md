@@ -1,35 +1,66 @@
 # dotfiles
 
-My configuration files
+My configuration files.
 
 ## Environment
 
-macOS Mojave
+macOS Catalina
 
-## Usage
+## Install
 
-### macOS (my personal setup)
+```shell
+$ cd ~; git clone https://github.com/gantheory/dotfiles.git
+```
 
-#### vim + zsh + tmux + vifm + iterm2
+### macOS
 
 ```shell
 $ xcode-select --install
-$ mkdir Github; cd Github
-$ git clone https://github.com/gantheory/dotfiles.git; cd dotfiles
-$ ./deploy.sh all
-# add /usr/local/bin/zsh to /etc/shells
-$ chsh -s /usr/local/bin/zsh
+$ ./install_homebrew.sh
+```
+
+### Neovim
+
+```shell
+$ ln -s ~/dotfiles/nvim ~/.config/nvim
+# Python 3 provider for Neovim.
+$ brew install python3
+$ pip3 install pynvim
+$ brew install neovim
+$ nvim +PlugInstall +qall
+```
+
+### Fish
+
+```shell
+$ ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
+$ ln -s ~/dotfiles/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+$ brew install fish
+# add /usr/local/bin/fish to /etc/shells
+$ chsh -s /usr/local/bin/fish
+```
+
+### Tmux
+
+```shell
+$ ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+$ brew install tmux
 $ tmux
 $ tmux source ~/.tmux.conf
 # install tmux plugins: prefix + I
-# If plugins of vim are not installed, please execute the following command.
-$ vim +PlugInstall +qall
 ```
 
-#### iTerm2
+### iTerm2
+
+```shell
+$ brew install --cask font-hack-nerd-font iterm2
+```
 
 - Load iTerm2 settings: `Preferences...` => `General` => `Load preferences from a custom folder or URL`
 
-### Vim/Zsh/Tmux only
+### Cask Apps
 
-If you just want to install vim, zsh, or tmux specifically, you can check out README files in the corresponding directory.
+```shell
+$ ./dotfiles/scripts/install_homebrew_cask_apps.sh
+```
