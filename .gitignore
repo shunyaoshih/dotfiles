@@ -3,3 +3,5 @@ plugged
 .undodir
 custom
 .netrwhist
+fish/fish_variables
+fish/functions/fish_mode_prompt.fish
