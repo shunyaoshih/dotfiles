@@ -44,8 +44,7 @@ $ brew install prettier
 ### Fish
 
 ```shell
-$ ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
-$ ln -s ~/dotfiles/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+$ ln -s ~/dotfiles/fish ~/.config/fish
 $ brew install fish
 # add /usr/local/bin/fish to /etc/shells
 $ chsh -s /usr/local/bin/fish
