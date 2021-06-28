@@ -179,9 +179,6 @@ Plug 'junegunn/fzf.vim'
 " Activity tracking.
 Plug 'wakatime/vim-wakatime'
 
-" Go.
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 " Rust.
 Plug 'rust-lang/rust.vim'
 
