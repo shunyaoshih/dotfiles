@@ -1,5 +1,5 @@
 " Maintainer: Gary Shih
-" Last updated: 2021-06-25
+" Last updated: 2021-06-29
 
 " Basic Settings {{{
 let mapleader = ' '
