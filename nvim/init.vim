@@ -154,7 +154,7 @@ set rtp+=/usr/local/opt/fzf
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " Set Python used by Neovim.
-let g:python3_host_prog="/usr/local/bin/python3"
+let g:python3_host_prog = "/usr/local/bin/python3"
 " }}}
 " Neovim Plugins {{{
 call plug#begin()
@@ -178,6 +178,9 @@ Plug 'junegunn/fzf.vim'
 
 " Activity tracking.
 Plug 'wakatime/vim-wakatime'
+
+" Go.
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Rust.
 Plug 'rust-lang/rust.vim'
@@ -235,7 +238,7 @@ autocmd FileType markdown let b:delimitMate_nesting_quotes = ['`']
 " }}}
 " indentLine {{{
 let g:indentLine_char = '⎸'
-let g:indentLine_concealcursor=''
+let g:indentLine_concealcursor = ''
 " }}}
 " lightline-bufferline {{{
 set showtabline=2
@@ -246,6 +249,14 @@ let g:lightline.component_type   = {'buffers': 'tabsel'}
 " fzf {{{
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>m :Marks<CR>
+" }}}
+" vim-go {{{
+" Disable on-save operations.
+let g:go_fmt_autosave = 0
+let g:go_gopls_enabled = 0
+let g:go_imports_autosave = 0
+let g:go_mod_fmt_autosave = 0
+let g:go_metalinter_autosave_enabled = []
 " }}}
 " }}}
 " Basic Mappings {{{
