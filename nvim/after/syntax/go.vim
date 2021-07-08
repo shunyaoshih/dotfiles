@@ -6,9 +6,5 @@ syn match   goOperator "[/][^/*]"
 hi def link goOperator Operator
 
 syn keyword goImport import
-hi def link goImport Include
 
-syn keyword goPredefinedIdentifiers nil iota
-syn keyword goBoolean               true false
-hi def link goPredefinedIdentifiers goBoolean
-hi def link goBoolean Boolean
+hi link goReceiver Operator

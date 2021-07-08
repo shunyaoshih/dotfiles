@@ -1,5 +1,5 @@
 " Maintainer: Gary Shih
-" Last updated: 2021-06-29
+" Last updated: 2021-07-07
 
 " Basic Settings {{{
 let mapleader = ' '
@@ -257,6 +257,9 @@ let g:go_gopls_enabled = 0
 let g:go_imports_autosave = 0
 let g:go_mod_fmt_autosave = 0
 let g:go_metalinter_autosave_enabled = []
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
 " }}}
 " }}}
 " Basic Mappings {{{
