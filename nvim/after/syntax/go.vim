@@ -1,10 +1,12 @@
 " Maintainer: Gary Shih
-" Last udpated: 2021-06-29
+" Last udpated: 2021-07-08
 
-syn match   goOperator "[+\-*%&|^<>=!:.()[\]{},;]"
-syn match   goOperator "[/][^/*]"
+" Disable syn region defined in vim-go.
+syn clear    goImport
+syn keyword  goImport import
+hi! def link goImport Statement
+
+syn match goOperator "[()[\]{}]"
 hi def link goOperator Operator
-
-syn keyword goImport import
 
 hi link goReceiver Operator
