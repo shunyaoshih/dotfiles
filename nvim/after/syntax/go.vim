@@ -6,7 +6,7 @@ syn clear    goImport
 syn keyword  goImport import
 hi! def link goImport Statement
 
-syn match goOperator "[()[\]{}]"
+syn match goOperator "[.,:;()[\]{}]"
 hi def link goOperator Operator
 
 hi link goReceiver Operator
