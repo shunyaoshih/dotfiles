@@ -4,8 +4,8 @@
 lua require('user.options')
 
 " Basic Settings {{{
-let mapleader = ' '
-let maplocalleader = ' '
+" let mapleader = ' '
+" let maplocalleader = ' '
 
 " Show the screen line of the cursor. Useful to easily spot the cursor.
 " set cursorline
@@ -18,12 +18,12 @@ let maplocalleader = ' '
 
 " When a file has been detected to have been changed outside of Vim and
 " it has not been changed inside of Vim, automatically read it again.
-set autoread
+" set autoread
 
 " Toggle for paste mode. Pasting text into a terminal running Vim
 " with automatic indentation enabled can destroy the indentation
 " of the pasted text.
-set pastetoggle=<F2>
+" set pastetoggle=<F2>
 
 " A magic search method.
 " See `:help ignorecase` and `:help smartcase` for more details.
@@ -34,7 +34,7 @@ set pastetoggle=<F2>
 " set noshowmode
 
 " Allow virtual editing in Visual block mode.
-set virtualedit=block
+" set virtualedit=block
 
 " While typing a search command, show where the pattern, as it was typed
 " so far, matches.  The matched string is highlighted.
@@ -50,7 +50,7 @@ set virtualedit=block
 " set relativenumber
 
 " Show the colored column on the 80-th character.
-set colorcolumn=80
+" set colorcolumn=80
 
 " No backup mode.
 " set nobackup
@@ -69,18 +69,18 @@ set colorcolumn=80
 " set cindent " smarter indent, remain the position what you just add comment one a new line
 
 " Round indent to multiple of 'shiftwidth'.
-set shiftround
+" set shiftround
 
 " Show tab and trailing space as »· and ·.
-set list listchars=tab:»·,trail:·
+" set list listchars=tab:»·,trail:·
 
 " Pesistent undo.
-set undodir=~/.config/nvim/.undodir
+" set undodir=~/.config/nvim/.undodir
 " set undofile
 
 " Disable the cursor style configured by Neovim.
 " Use the one configured by the terminal emulator.
-set guicursor=
+" set guicursor=
 
 " Treat long lines as break lines (useful when moving around in them)
 " Wrap function {{{
@@ -88,6 +88,7 @@ function! ToggleWrap()
   if &wrap
     echo "Wrap OFF"
     setlocal nowrap
+    setlocal sidescrolloff=8
   else
     echo "Wrap ON"
     setlocal wrap
@@ -133,7 +134,7 @@ endfunction
 autocmd BufRead,BufNewFile * call SetWrapKeyMapping()
 
 " Markers are used to specify folds.
-set foldmethod=marker
+" set foldmethod=marker
 
 " Split to the right with :vs (:vsplit).
 " set splitright
@@ -147,7 +148,7 @@ autocmd BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silen
 
 " Keep the cursor on the same column if possible
 " after executing some commands.
-set nostartofline
+" set nostartofline
 
 " Use fzf in Vim.
 set rtp+=/usr/local/opt/fzf
@@ -243,7 +244,7 @@ let g:indentLine_char = '⎸'
 let g:indentLine_concealcursor = ''
 " }}}
 " lightline-bufferline {{{
-set showtabline=2
+" set showtabline=2
 let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type   = {'buffers': 'tabsel'}
