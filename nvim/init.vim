@@ -2,6 +2,7 @@
 " Last updated: 2021-07-07
 
 lua require('user.options')
+lua require('user.keymaps')
 
 " Basic Settings {{{
 " let mapleader = ' '
@@ -267,35 +268,35 @@ let g:go_highlight_functions = 1
 " }}}
 " Basic Mappings {{{
 " Save and quit files.
-nnoremap <leader>w :w<CR>
-nnoremap <leader>x :x<CR>
-nnoremap <leader>q :q!<CR>
-nnoremap <leader>a :qa!<CR>
+" nnoremap <leader>w :w<CR>
+" nnoremap <leader>x :x<CR>
+" nnoremap <leader>q :q!<CR>
+" nnoremap <leader>a :qa!<CR>
 
-noremap 0 ^
-noremap ^ 0
+" noremap 0 ^
+" noremap ^ 0
 
 " Toggle for wrapping lines.
 noremap <silent><F3> :call ToggleWrap()<CR>
 
 " Move code blocks easily.
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 
 " Make Y behave like other capitals.
-nnoremap Y y$
+" nnoremap Y y$
 
 " Use macro easily.
-nnoremap Q @q
+" nnoremap Q @q
 
 " Move buffers.
-nnoremap <C-p> :bp<CR>
-nnoremap <C-n> :bn<CR>
-nnoremap <C-c> :bd<CR>
+" nnoremap <C-p> :bp<CR>
+" nnoremap <C-n> :bn<CR>
+" nnoremap <C-c> :bd<CR>
 " }}}
 " Useful Functions & Mappings {{{
 " Clear highliht. {{{
-noremap <leader>nh :noh<CR>
+" noremap <leader>nh :noh<CR>
 " }}}
 " Show highlight groups. {{{
 nmap <leader>sh :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
@@ -303,10 +304,10 @@ nmap <leader>sh :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " }}}
 " Copy full path. {{{
-noremap <leader>pw :let @+ = expand('%:p')<CR>
+" noremap <leader>pw :let @+ = expand('%:p')<CR>
 " }}}
 " Copy full path without the file name. {{{
-noremap <leader>po :let @+ = expand('%:p:h')<CR>
+" noremap <leader>po :let @+ = expand('%:p:h')<CR>
 " }}}
 " Insert & delete empty lines in normal mode. {{{
 " Add empty line below. {{{
@@ -360,8 +361,8 @@ nnoremap <silent> <C-j> :call AddEmptyLineBelow()<CR>
 nnoremap <silent> <C-k> :call AddEmptyLineAbove()<CR>
 " }}}
 " Move block up and down. {{{
-vnoremap <S-j> :m'>+<CR>:echo "move block down"<CR>gv
-vnoremap <S-k> :m'<-2<CR>:echo "move block up"<CR>gv
+" vnoremap <S-k> :m'<-2<CR>:echo "move block up"<CR>gv
+" vnoremap <S-j> :m'>+<CR>:echo "move block down"<CR>gv
 " }}}
 " }}}
 " Load Custom Settings {{{

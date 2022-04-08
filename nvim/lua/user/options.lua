@@ -1,8 +1,4 @@
 -- Please use ":help options" for more details.
--- Set leader key.
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
 -- Make indenting smarter.
 vim.opt.cindent = true
 
