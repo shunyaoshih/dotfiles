@@ -15,6 +15,7 @@ augroup autoformat_settings
   autocmd FileType python AutoFormatBuffer yapf
   autocmd FileType rust AutoFormatBuffer rustfmt
   autocmd FileType vue AutoFormatBuffer prettier
+  autocmd FileType lua AutoFormatBuffer formatter
 augroup END
 
 " Enable format on save.

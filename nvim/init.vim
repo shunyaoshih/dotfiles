@@ -1,18 +1,20 @@
 " Maintainer: Gary Shih
 " Last updated: 2021-07-07
 
+lua require('user.options')
+
 " Basic Settings {{{
 let mapleader = ' '
 let maplocalleader = ' '
 
 " Show the screen line of the cursor. Useful to easily spot the cursor.
-set cursorline
+" set cursorline
 
 " Enable mouse in normal, visual, insert, and command-line mode.
-set mouse=a
+" set mouse=a
 
 " Enable 24-bit RGB color.
-set termguicolors " true color support
+" set termguicolors " true color support
 
 " When a file has been detected to have been changed outside of Vim and
 " it has not been changed inside of Vim, automatically read it again.
@@ -25,46 +27,46 @@ set pastetoggle=<F2>
 
 " A magic search method.
 " See `:help ignorecase` and `:help smartcase` for more details.
-set ignorecase
-set smartcase
+" set ignorecase
+" set smartcase
 
 " Do not display mode in the bottom line.
-set noshowmode
+" set noshowmode
 
 " Allow virtual editing in Visual block mode.
 set virtualedit=block
 
 " While typing a search command, show where the pattern, as it was typed
 " so far, matches.  The matched string is highlighted.
-set incsearch
+" set incsearch
 
 " Let Neovim always use the system clipboard.
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 
 " Time in milliseconds to wait for a mapped sequence to complete.
-set timeoutlen=500
+" set timeoutlen=500
 
 " Show relative line number.
-set relativenumber
+" set relativenumber
 
 " Show the colored column on the 80-th character.
 set colorcolumn=80
 
 " No backup mode.
-set nobackup
-set nowritebackup
+" set nobackup
+" set nowritebackup
 
 " No swap file.
-set noswapfile
+" set noswapfile
 
 " Number of spaces that a <Tab> in the file counts for.
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
+" set expandtab
 
 " Use C indenting rules.
-set cindent " smarter indent, remain the position what you just add comment one a new line
+" set cindent " smarter indent, remain the position what you just add comment one a new line
 
 " Round indent to multiple of 'shiftwidth'.
 set shiftround
@@ -74,7 +76,7 @@ set list listchars=tab:»·,trail:·
 
 " Pesistent undo.
 set undodir=~/.config/nvim/.undodir
-set undofile
+" set undofile
 
 " Disable the cursor style configured by Neovim.
 " Use the one configured by the terminal emulator.
@@ -134,14 +136,14 @@ autocmd BufRead,BufNewFile * call SetWrapKeyMapping()
 set foldmethod=marker
 
 " Split to the right with :vs (:vsplit).
-set splitright
+" set splitright
 
 " Set scripts to be executable if the first line starts with "#!" or
 " contains "/bin/"
 autocmd BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent execute "!chmod +x <afile>" | endif | endif
 
 " Maximum number of suggestions shown in the popup menu.
-set pumheight=5
+" set pumheight=5
 
 " Keep the cursor on the same column if possible
 " after executing some commands.
