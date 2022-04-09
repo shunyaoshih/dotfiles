@@ -3,6 +3,7 @@ lua require('user.custom_functions')
 lua require('user.keymaps')
 lua require('user.plugins')
 lua require('user.colorscheme')
+lua require('user.colorizer')
 
 " Basic Settings {{{
 " let mapleader = ' '

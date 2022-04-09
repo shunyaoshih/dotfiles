@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use 'leomao/pikacode.vim'
   use 'itchyny/lightline.vim'
   use 'leomao/lightline-pika'
+  use 'norcalli/nvim-colorizer.lua'
 
   -- Basic editing.
   use 'scrooloose/nerdcommenter'
