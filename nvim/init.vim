@@ -1,6 +1,8 @@
 lua require('user.options')
 lua require('user.custom_functions')
 lua require('user.keymaps')
+lua require('user.plugins')
+lua require('user.colorscheme')
 
 " Basic Settings {{{
 " let mapleader = ' '
@@ -159,37 +161,37 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 let g:python3_host_prog = "/usr/local/bin/python3"
 " }}}
 " Neovim Plugins {{{
-call plug#begin()
+" call plug#begin()
 
-" Color theme.
-Plug 'leomao/pikacode.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'leomao/lightline-pika'
+" " Color theme.
+" Plug 'leomao/pikacode.vim'
+" Plug 'itchyny/lightline.vim'
+" Plug 'leomao/lightline-pika'
 
-" Basic editing.
-Plug 'scrooloose/nerdcommenter'
-Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'djoshea/vim-autoread'
-Plug 'Raimondi/delimitMate'
-Plug 'Yggdroot/indentLine'
-Plug 'mgee/lightline-bufferline'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" " Basic editing.
+" Plug 'scrooloose/nerdcommenter'
+" Plug 'easymotion/vim-easymotion'
+" Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-repeat'
+" Plug 'djoshea/vim-autoread'
+" Plug 'Raimondi/delimitMate'
+" Plug 'Yggdroot/indentLine'
+" Plug 'mgee/lightline-bufferline'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 
-" Activity tracking.
-Plug 'wakatime/vim-wakatime'
+" " Activity tracking.
+" Plug 'wakatime/vim-wakatime'
 
-" Go.
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" " Go.
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
-" Rust.
-Plug 'rust-lang/rust.vim'
+" " Rust.
+" Plug 'rust-lang/rust.vim'
 
-runtime custom/local_plugin.vim
+" runtime custom/local_plugin.vim
 
-call plug#end()
+" call plug#end()
 " }}}
 " Plugin Settings {{{
 " pikatheme {{{
@@ -205,7 +207,7 @@ let g:lightline_pika_patchfont = {
       \ 'linecolumn': "\ue0a1",
       \ 'readonly': "\ue0a2",
       \ }
-silent! colorscheme pikacode
+" silent! colorscheme pikacode
 " }}}
 " nerdcommenter {{{
 " <leader>cc => comment
@@ -364,5 +366,5 @@ nnoremap <silent> <C-k> :call AddEmptyLineAbove()<CR>
 " }}}
 " }}}
 " Load Custom Settings {{{
-runtime custom/local.vim
+" runtime custom/local.vim
 " }}}
