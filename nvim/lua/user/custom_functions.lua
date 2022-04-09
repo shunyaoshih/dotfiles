@@ -1,7 +1,9 @@
 local M = {}
 
+local fn = vim.fn
+
 function M.AddEmptyLineBelow()
-  vim.fn.append(vim.fn.line("."), "")
+  fn.append(fn.line("."), "")
 end
 
 return M

@@ -1,9 +1,6 @@
-" Maintainer: Gary Shih
-" Last updated: 2021-07-07
-
+lua require('user.options')
 lua require('user.custom_functions')
 lua require('user.keymaps')
-lua require('user.options')
 
 " Basic Settings {{{
 " let mapleader = ' '
