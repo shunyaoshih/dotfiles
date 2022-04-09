@@ -66,7 +66,6 @@ vim.opt.timeoutlen = 500
 
 -- Enable persistent undo.
 vim.opt.undofile = true
-vim.opt.undodir = "~/.config/nvim/.undodir"
 
 -- Faster completion.
 vim.opt.updatetime = 300

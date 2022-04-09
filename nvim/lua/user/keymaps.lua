@@ -25,12 +25,6 @@ keymap("n", "<leader>x", ":x<CR>", opts)
 keymap("n", "<leader>q", ":q!<CR>", opts)
 keymap("n", "<leader>a", ":qa!<CR>", opts)
 
--- Better window navigation.
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-
 -- Resize with arrows.
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -58,6 +52,9 @@ keymap("n", "<leader>nh", ":noh<CR>", opts)
 -- Copy file path with/without the file name.
 keymap("n", "<leader>pw", ":let @+ = expand('%:p')<CR>", opts)
 keymap("n", "<leader>po", ":let @+ = expand('%:p:h')<CR>", opts)
+
+-- Add/Remove empty lines above/below.
+keymap("n", "<C-j>", ":lua require(\"user.custom_functions\").AddEmptyLineBelow()<CR>", opts)
 
 ------------------------------------ Visual ------------------------------------
 -- Keep the register the same after pasting.
