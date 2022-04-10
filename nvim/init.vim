@@ -4,6 +4,7 @@ lua require('user.keymaps')
 lua require('user.plugins')
 lua require('user.colorscheme')
 lua require('user.colorizer')
+lua require('user.treesitter')
 
 " Basic Settings {{{
 " let mapleader = ' '

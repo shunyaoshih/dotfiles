@@ -46,10 +46,15 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- Color theme.
-  use 'leomao/pikacode.vim'
-  use 'itchyny/lightline.vim'
-  use 'leomao/lightline-pika'
+  use 'shunyaoshih/pikacode.nvim'
   use 'norcalli/nvim-colorizer.lua'
+
+  -- Syntax parser.
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use 'nvim-treesitter/playground'
 
   -- Basic editing.
   use 'scrooloose/nerdcommenter'
