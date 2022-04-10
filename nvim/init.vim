@@ -302,9 +302,9 @@ noremap <silent><F3> :call ToggleWrap()<CR>
 " noremap <leader>nh :noh<CR>
 " }}}
 " Show highlight groups. {{{
-nmap <leader>sh :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
-\ '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" nmap <leader>sh :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") .
+" \ '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+" \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 " }}}
 " Copy full path. {{{
 " noremap <leader>pw :let @+ = expand('%:p')<CR>

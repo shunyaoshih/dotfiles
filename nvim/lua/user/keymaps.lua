@@ -53,6 +53,9 @@ keymap("n", "<leader>nh", ":noh<CR>", opts)
 keymap("n", "<leader>pw", ":let @+ = expand('%:p')<CR>", opts)
 keymap("n", "<leader>po", ":let @+ = expand('%:p:h')<CR>", opts)
 
+-- Show highlight groups.
+keymap("n", "<leader>sh", ":TSHighlightCapturesUnderCursor<CR>", opts)
+
 -- Add/Remove empty lines above/below.
 keymap("n", "<C-j>", ":lua require(\"user.custom_functions\").AddEmptyLineBelow()<CR>", opts)
 
