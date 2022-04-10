@@ -5,6 +5,7 @@ lua require('user.plugins')
 lua require('user.colorscheme')
 lua require('user.colorizer')
 lua require('user.treesitter')
+lua require('user.bufferline')
 
 " Basic Settings {{{
 " let mapleader = ' '
