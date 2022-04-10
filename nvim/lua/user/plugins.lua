@@ -50,53 +50,53 @@ return packer.startup(function(use)
   }
 
   -- Color theme.
-  use 'shunyaoshih/pikacode.nvim'
-  use 'norcalli/nvim-colorizer.lua'
+  use "shunyaoshih/pikacode.nvim"
+  use "norcalli/nvim-colorizer.lua"
 
   -- Syntax parser.
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-  use 'nvim-treesitter/playground'
+  use "nvim-treesitter/playground"
 
   -- Buffer line.
   use {
-    'akinsho/bufferline.nvim',
+    "akinsho/bufferline.nvim",
     tag = "*",
     requires = {
-      'kyazdani42/nvim-web-devicons',
+      "kyazdani42/nvim-web-devicons",
       "moll/vim-bbye"
     }
   }
 
   -- Basic editing.
-  use 'scrooloose/nerdcommenter'
-  use 'easymotion/vim-easymotion'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-repeat'
-  use 'djoshea/vim-autoread'
-  use 'Raimondi/delimitMate'
-  use 'Yggdroot/indentLine'
-  use 'mgee/lightline-bufferline'
+  use "scrooloose/nerdcommenter"
+  use "easymotion/vim-easymotion"
+  use "tpope/vim-surround"
+  use "tpope/vim-repeat"
+  use "djoshea/vim-autoread"
+  use "Raimondi/delimitMate"
+  use "Yggdroot/indentLine"
+  use "mgee/lightline-bufferline"
 
   -- Activity tracking.
-  use 'wakatime/vim-wakatime'
+  use "wakatime/vim-wakatime"
 
   -- Go.
   use {
-    'fatih/vim-go',
-    run = ':GoUpdateBinaries',
-    ft = 'go'
+    "fatih/vim-go",
+    run = ":GoUpdateBinaries",
+    ft = "go"
   }
 
   -- Rust.
   use {
-    'rust-lang/rust.vim',
-    ft = 'rust'
+    "rust-lang/rust.vim",
+    ft = "rust"
   }
 
-  if fn.has('mac') then
+  if fn.has("mac") then
   end
 
   -- Automatically set up your configuration after cloning packer.nvim

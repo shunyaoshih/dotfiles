@@ -1,11 +1,11 @@
-lua require('user.options')
-lua require('user.custom_functions')
-lua require('user.keymaps')
-lua require('user.plugins')
-lua require('user.colorscheme')
-lua require('user.colorizer')
-lua require('user.treesitter')
-lua require('user.bufferline')
+lua require("user.options")
+lua require("user.custom_functions")
+lua require("user.keymaps")
+lua require("user.plugins")
+lua require("user.colorscheme")
+lua require("user.colorizer")
+lua require("user.treesitter")
+lua require("user.bufferline")
 
 " Basic Settings {{{
 " let mapleader = ' '
@@ -369,5 +369,5 @@ nnoremap <silent> <C-k> :call AddEmptyLineAbove()<CR>
 " }}}
 " }}}
 " Load Custom Settings {{{
-" runtime custom/local.vim
+runtime custom/local.vim
 " }}}

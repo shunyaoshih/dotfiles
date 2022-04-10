@@ -1,21 +1,21 @@
 " Maintainer: Gary Shih
 " Last updated: 2021-06-25
 
-" Preprocs
+" " Preprocs
 " syn keyword cDefined defined contained containedin=cDefine
 " hi def link cDefined cDefine
 
-" Booleans
+" " Booleans
 " syn keyword cBoolean true false TRUE FALSE
 
-" Links
+" " Links
 " hi def link cFunction   Function
 " hi def link cIdentifier Identifier
 " hi def link cBoolean    Boolean
 
 " hi link cIncluded Include
 
-" Operators
+" " Operators
 " if !exists('g:c_syntax_operator_highlight') || g:c_syntax_operator_highlight == 1
 "   syn match cOperator "\(<<\|>>\|[-+*/%&^|<>!=]\)="
 "   syn match cOperator "<<\|>>\|&&\|||\|++\|--\|->"
