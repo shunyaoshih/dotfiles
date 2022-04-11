@@ -73,8 +73,10 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-  use "nvim-treesitter/playground"
-
+  use {
+    "nvim-treesitter/playground",
+    requires = { "nvim-treesitter/nvim-treesitter" }
+  }
 
   -- Basic editing.
   use "scrooloose/nerdcommenter"
