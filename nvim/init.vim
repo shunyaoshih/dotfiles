@@ -6,6 +6,7 @@ lua require("user.colorscheme")
 lua require("user.colorizer")
 lua require("user.treesitter")
 lua require("user.bufferline")
+lua require("user.lualine")
 
 " Basic Settings {{{
 " let mapleader = ' '
@@ -249,9 +250,9 @@ let g:indentLine_concealcursor = ''
 " }}}
 " lightline-bufferline {{{
 " set showtabline=2
-let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
-let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-let g:lightline.component_type   = {'buffers': 'tabsel'}
+" let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+" let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+" let g:lightline.component_type   = {'buffers': 'tabsel'}
 " }}}
 " fzf {{{
 nnoremap <leader>f :Files<CR>

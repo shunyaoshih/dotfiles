@@ -40,8 +40,8 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
+  -- Plugin manager.
+  use "wbthomason/packer.nvim"
 
   -- Popup window.
   use {
@@ -78,7 +78,13 @@ return packer.startup(function(use)
   use "djoshea/vim-autoread"
   use "Raimondi/delimitMate"
   use "Yggdroot/indentLine"
-  use "mgee/lightline-bufferline"
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true
+    }
+  }
 
   -- Activity tracking.
   use "wakatime/vim-wakatime"
