@@ -52,15 +52,6 @@ return packer.startup(function(use)
   -- Color theme.
   use "shunyaoshih/pikacode.nvim"
   use "norcalli/nvim-colorizer.lua"
-
-  -- Syntax parser.
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-  use "nvim-treesitter/playground"
-
-  -- Buffer line.
   use {
     "akinsho/bufferline.nvim",
     tag = "*",
@@ -69,6 +60,21 @@ return packer.startup(function(use)
       "moll/vim-bbye"
     }
   }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true
+    }
+  }
+
+  -- Syntax parser.
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "nvim-treesitter/playground"
+
 
   -- Basic editing.
   use "scrooloose/nerdcommenter"
@@ -78,13 +84,6 @@ return packer.startup(function(use)
   use "djoshea/vim-autoread"
   use "Raimondi/delimitMate"
   use "Yggdroot/indentLine"
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = {
-      'kyazdani42/nvim-web-devicons',
-      opt = true
-    }
-  }
 
   -- Activity tracking.
   use "wakatime/vim-wakatime"
