@@ -199,18 +199,18 @@ let g:python3_host_prog = "/usr/local/bin/python3"
 " }}}
 " Plugin Settings {{{
 " pikatheme {{{
-let g:lightline = {
-      \ 'colorscheme': 'pikacode'
-      \ }
-let g:lightline_pika_patchfont = {
-      \ 'leftsep': "\ue0b0",
-      \ 'leftsubsep': "\ue0b1",
-      \ 'rightsep': "\ue0b2",
-      \ 'rightsubsep': "\ue0b3",
-      \ 'branch': "\ue0a0",
-      \ 'linecolumn': "\ue0a1",
-      \ 'readonly': "\ue0a2",
-      \ }
+" let g:lightline = {
+"       \ 'colorscheme': 'pikacode'
+"       \ }
+" let g:lightline_pika_patchfont = {
+"       \ 'leftsep': "\ue0b0",
+"       \ 'leftsubsep': "\ue0b1",
+"       \ 'rightsep': "\ue0b2",
+"       \ 'rightsubsep': "\ue0b3",
+"       \ 'branch': "\ue0a0",
+"       \ 'linecolumn': "\ue0a1",
+"       \ 'readonly': "\ue0a2",
+"       \ }
 " silent! colorscheme pikacode
 " }}}
 " nerdcommenter {{{
@@ -255,8 +255,8 @@ let g:indentLine_concealcursor = ''
 " let g:lightline.component_type   = {'buffers': 'tabsel'}
 " }}}
 " fzf {{{
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>m :Marks<CR>
+" nnoremap <leader>f :Files<CR>
+" nnoremap <leader>m :Marks<CR>
 " }}}
 " vim-go {{{
 " Disable on-save operations.
