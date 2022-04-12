@@ -12,6 +12,7 @@ lua require("user.hop")
 lua require("user.impatient")
 lua require("user.indentline")
 lua require("user.comment")
+lua require("user.autopairs")
 
 " Basic Settings {{{
 " let mapleader = ' '
@@ -243,9 +244,9 @@ let g:python3_host_prog = "/usr/local/bin/python3"
 " autocmd OptionSet guicursor noautocmd set guicursor=
 " }}}
 " delimitMate {{{
-autocmd FileType cpp let b:loaded_delimitMate = 1
-autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
-autocmd FileType markdown let b:delimitMate_nesting_quotes = ['`']
+" autocmd FileType cpp let b:loaded_delimitMate = 1
+" autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
+" autocmd FileType markdown let b:delimitMate_nesting_quotes = ['`']
 " }}}
 " indentLine {{{
 " let g:indentLine_char = '⎸'
