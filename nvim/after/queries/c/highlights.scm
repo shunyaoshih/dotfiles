@@ -22,3 +22,5 @@
 
 ;; #define FOO
 (preproc_def name: (identifier) @TSPreproc)
+
+"const" @TSType
