@@ -3,6 +3,12 @@ if not status_ok then
   return
 end
 
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+
+keymap("n", "<leader>tsh", ":TSHighlightCapturesUnderCursor<CR>", opts)
+keymap("n", "<leader>tsp", ":TSPlaygroundToggle<CR>", opts)
+
 configs.setup {
   ensure_installed = "all",
   -- Install parsers asynchronously.

@@ -22,8 +22,7 @@ vim.g.maplocalleader = " "
 -- Save and quit files.
 keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>x", ":x<CR>", opts)
-keymap("n", "<leader>q", ":q!<CR>", opts)
-keymap("n", "<leader>a", ":qa!<CR>", opts)
+keymap("n", "<leader>q", ":qa!<CR>", opts)
 
 -- Resize with arrows.
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -52,12 +51,6 @@ keymap("n", "<leader>nh", ":noh<CR>", opts)
 -- Copy file path with/without the file name.
 keymap("n", "<leader>pw", ":let @+ = expand('%:p')<CR>", opts)
 keymap("n", "<leader>po", ":let @+ = expand('%:p:h')<CR>", opts)
-
--- Show highlight groups.
-keymap("n", "<leader>sh", ":TSHighlightCapturesUnderCursor<CR>", opts)
-
--- Add/Remove empty lines above/below.
-keymap("n", "<C-j>", ":lua require(\"user.custom_functions\").AddEmptyLineBelow()<CR>", opts)
 
 ------------------------------------ Visual ------------------------------------
 -- Keep the register the same after pasting.
