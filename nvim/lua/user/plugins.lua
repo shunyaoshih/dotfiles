@@ -78,16 +78,18 @@ return packer.startup(function(use)
     requires = { "nvim-treesitter/nvim-treesitter" }
   }
 
-  -- Auto-completion.
-  use "hrsh7th/nvim-cmp"
-  use "hrsh7th/cmp-buffer"
-  use "hrsh7th/cmp-path"
-  use "hrsh7th/cmp-cmdline"
+  if fn.has("mac") then
+    -- Auto-completion.
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-cmdline"
 
-  -- Snippets.
-  use "L3MON4D3/LuaSnip"
-  use "saadparwaiz1/cmp_luasnip"
-  use "rafamadriz/friendly-snippets"
+    -- Snippets.
+    use "L3MON4D3/LuaSnip"
+    use "saadparwaiz1/cmp_luasnip"
+    use "rafamadriz/friendly-snippets"
+  end
 
   -- Easy motion.
   use {
@@ -118,9 +120,6 @@ return packer.startup(function(use)
     "rust-lang/rust.vim",
     ft = "rust"
   }
-
-  if fn.has("mac") then
-  end
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
