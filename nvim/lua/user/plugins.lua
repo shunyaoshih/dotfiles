@@ -43,7 +43,7 @@ return packer.startup(function(use)
   -- Plugin manager.
   use "wbthomason/packer.nvim"
 
-  -- General sppedup.
+  -- General speedup.
   use 'lewis6991/impatient.nvim'
 
   -- Popup window.
