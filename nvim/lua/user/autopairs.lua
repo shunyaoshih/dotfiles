@@ -14,6 +14,16 @@ npairs.setup {
   },
   disable_filetype = { "TelescopePrompt" },
   enable_check_bracket_line = true,
+  fast_wrap = {
+    map = '<A-e>',
+    chars = { '{', '[', '(', '"', "'" },
+    pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], '%s+', ''),
+    end_key = '$',
+    keys = 'qwertyuiopzxcvbnmasdfghjkl',
+    check_comma = true,
+    highlight = 'Search',
+    highlight_grey='Comment'
+  },
 }
 
 local cmp_autopairs = require "nvim-autopairs.completion.cmp"
