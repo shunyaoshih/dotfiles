@@ -22,7 +22,8 @@ vim.g.maplocalleader = " "
 -- Save and quit files.
 keymap("n", "<leader>w", ":w<CR>", opts)
 keymap("n", "<leader>x", ":x<CR>", opts)
-keymap("n", "<leader>q", ":qa!<CR>", opts)
+keymap("n", "<leader>q", ":q!<CR>", opts)
+keymap("n", "<leader>a", ":qa!<CR>", opts)
 
 -- Resize with arrows.
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
