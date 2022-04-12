@@ -101,12 +101,14 @@ return packer.startup(function(use)
   }
 
   -- Basic editing.
+  use "lukas-reineke/indent-blankline.nvim"
+
+  -- legacy basic editing.
   use "scrooloose/nerdcommenter"
   use "tpope/vim-surround"
   use "tpope/vim-repeat"
   use "djoshea/vim-autoread"
   use "Raimondi/delimitMate"
-  use "Yggdroot/indentLine"
 
   -- Activity tracking.
   use "wakatime/vim-wakatime"

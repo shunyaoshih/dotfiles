@@ -10,6 +10,7 @@ lua require("user.lualine")
 lua require("user.cmp")
 lua require("user.hop")
 lua require("user.impatient")
+lua require("user.indentline")
 
 " Basic Settings {{{
 " let mapleader = ' '
@@ -248,8 +249,8 @@ autocmd FileType python let b:delimitMate_nesting_quotes = ['"']
 autocmd FileType markdown let b:delimitMate_nesting_quotes = ['`']
 " }}}
 " indentLine {{{
-let g:indentLine_char = '⎸'
-let g:indentLine_concealcursor = ''
+" let g:indentLine_char = '⎸'
+" let g:indentLine_concealcursor = ''
 " }}}
 " lightline-bufferline {{{
 " set showtabline=2
