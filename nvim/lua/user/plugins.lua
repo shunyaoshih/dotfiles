@@ -43,6 +43,9 @@ return packer.startup(function(use)
   -- Plugin manager.
   use "wbthomason/packer.nvim"
 
+  -- General sppedup.
+  use 'lewis6991/impatient.nvim'
+
   -- Popup window.
   use {
     "nvim-lua/popup.nvim",
