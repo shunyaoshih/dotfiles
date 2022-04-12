@@ -11,6 +11,7 @@ lua require("user.cmp")
 lua require("user.hop")
 lua require("user.impatient")
 lua require("user.indentline")
+lua require("user.comment")
 
 " Basic Settings {{{
 " let mapleader = ' '
@@ -218,30 +219,28 @@ let g:python3_host_prog = "/usr/local/bin/python3"
 " silent! colorscheme pikacode
 " }}}
 " nerdcommenter {{{
-" <leader>cc => comment
-" <leader>cu => uncomment
-let g:NERDSpaceDelims = 1
-let g:NERDRemoveExtraSpaces = 1
+" let g:NERDSpaceDelims = 1
+" let g:NERDRemoveExtraSpaces = 1
 " Align line-wise comment delimiters flush left instead of
 " following code indentation.
-let g:NERDDefaultAlign = 'left'
+" let g:NERDDefaultAlign = 'left'
 " Workaround for 2 spaces in Python.
-let g:NERDCustomDelimiters = {'python': {'left': '#'}}
-map <leader>/ <plug>NERDCommenterToggle
+" let g:NERDCustomDelimiters = {'python': {'left': '#'}}
+" map <leader>/ <plug>NERDCommenterToggle
 " }}}
 " vim-easymotion {{{
-" Change default trigger.
-map <leader> <Plug>(easymotion-prefix)
-
-" <leader>s{char}{char} to move to {char}{char}
-nmap <leader>s <Plug>(easymotion-overwin-f2)
-
-" Move to line.
-map <leader>l <Plug>(easymotion-bd-jk)
-nmap <leader>l <Plug>(easymotion-overwin-line)
-
-" Workaround for Easymotion cursor issue in Neovim.
-autocmd OptionSet guicursor noautocmd set guicursor=
+" " Change default trigger.
+" map <leader> <Plug>(easymotion-prefix)
+"
+" " <leader>s{char}{char} to move to {char}{char}
+" nmap <leader>s <Plug>(easymotion-overwin-f2)
+"
+" " Move to line.
+" map <leader>l <Plug>(easymotion-bd-jk)
+" nmap <leader>l <Plug>(easymotion-overwin-line)
+"
+" " Workaround for Easymotion cursor issue in Neovim.
+" autocmd OptionSet guicursor noautocmd set guicursor=
 " }}}
 " delimitMate {{{
 autocmd FileType cpp let b:loaded_delimitMate = 1

@@ -101,13 +101,13 @@ return packer.startup(function(use)
   }
 
   -- Basic editing.
+  use "djoshea/vim-autoread"
   use "lukas-reineke/indent-blankline.nvim"
+  use 'numToStr/Comment.nvim'
 
   -- legacy basic editing.
-  use "scrooloose/nerdcommenter"
   use "tpope/vim-surround"
   use "tpope/vim-repeat"
-  use "djoshea/vim-autoread"
   use "Raimondi/delimitMate"
 
   -- Activity tracking.
