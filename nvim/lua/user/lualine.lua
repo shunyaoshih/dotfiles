@@ -87,18 +87,11 @@ local branch = {
   icon = "",
 }
 
-local location = {
-  "location",
-  padding = 0,
-}
-
 local progress = function()
   local current_line = vim.fn.line(".")
   local total_lines = vim.fn.line("$")
-  local chars = { "__", "▁▁", "▂▂", "▃▃", "▄▄", "▅▅", "▆▆", "▇▇", "██" }
-  local line_ratio = current_line / total_lines
-  local index = math.ceil(line_ratio * #chars)
-  return chars[index]
+  local percentage = math.ceil(current_line / total_lines * 100)
+  return tostring(percentage) .. '%%'
 end
 
 local spaces = function()
@@ -120,7 +113,7 @@ lualine.setup({
     lualine_c = {},
     lualine_x = { diff, spaces, "encoding" },
     lualine_y = { filetype, progress },
-    lualine_z = { location },
+    lualine_z = { "location" },
   },
   inactive_sections = {
     lualine_a = {},
