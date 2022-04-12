@@ -7,6 +7,7 @@ lua require("user.colorizer")
 lua require("user.treesitter")
 lua require("user.bufferline")
 lua require("user.lualine")
+lua require("user.cmp")
 
 " Basic Settings {{{
 " let mapleader = ' '
