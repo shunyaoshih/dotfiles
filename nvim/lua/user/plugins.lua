@@ -89,9 +89,14 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip"
   use "rafamadriz/friendly-snippets"
 
+  -- Easy motion.
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v1'
+  }
+
   -- Basic editing.
   use "scrooloose/nerdcommenter"
-  use "easymotion/vim-easymotion"
   use "tpope/vim-surround"
   use "tpope/vim-repeat"
   use "djoshea/vim-autoread"

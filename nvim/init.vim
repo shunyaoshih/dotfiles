@@ -8,6 +8,7 @@ lua require("user.treesitter")
 lua require("user.bufferline")
 lua require("user.lualine")
 lua require("user.cmp")
+lua require("user.hop")
 
 " Basic Settings {{{
 " let mapleader = ' '
