@@ -11,6 +11,7 @@
     (import_spec
       path: (interpreted_string_literal) @TSInclude)))
 
+;; Overwrite the default @constant query in some cases.
 (literal_value
   (keyed_element
     (literal_element
