@@ -9,7 +9,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 
 -- Auto-Completion behavior.
-vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.completeopt = {"menuone", "noselect"}
 
 -- Show the screen line of the cursor. Useful to easily spot the cursor.
 vim.opt.cursorline = true

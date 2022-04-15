@@ -14,6 +14,7 @@ lua require("user.indentline")
 lua require("user.comment")
 lua require("user.autopairs")
 lua require("user.nvim-tree")
+lua require("user.vim-lua-format")
 
 " Basic Settings {{{
 " let mapleader = ' '
