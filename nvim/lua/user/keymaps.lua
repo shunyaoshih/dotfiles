@@ -21,7 +21,7 @@ vim.g.maplocalleader = " "
 ------------------------------------ Normal ------------------------------------
 -- Save and quit files.
 keymap("n", "<leader>w", ":w<CR>", opts)
-keymap("n", "<leader>x", ":x<CR>", opts)
+keymap("n", "<leader>x", ":wq<CR>", opts)
 keymap("n", "<leader>q", ":q!<CR>", opts)
 keymap("n", "<leader>a", ":qa!<CR>", opts)
 
