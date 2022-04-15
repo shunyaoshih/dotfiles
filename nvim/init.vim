@@ -13,6 +13,7 @@ lua require("user.impatient")
 lua require("user.indentline")
 lua require("user.comment")
 lua require("user.autopairs")
+lua require("user.nvim-tree")
 
 " Basic Settings {{{
 " let mapleader = ' '
