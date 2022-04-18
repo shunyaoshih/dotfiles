@@ -30,7 +30,7 @@ bufferline.setup {
         show_tab_indicators = false,
         persist_buffer_sort = true,
         separator_style = "thin",
-        enforce_regular_tabs = true,
+        enforce_regular_tabs = false,
         always_show_bufferline = true
     },
     highlights = {
