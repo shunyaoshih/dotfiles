@@ -1,6 +1,5 @@
-" " Maintainer: Gary Shih
-" " Last udpated: 2021-06-25
-"
-" syn match protoOperator "[+\-*%&|^<>=!:.()[\]{},;]"
-" syn match protoOperator "[/][^/*]"
-" hi def link protoOperator Operator
+" Keep this syntax change in vim since proto is not supported in
+" nvim-treesitter.
+syn match protoOperator "[+\-*%&|^<>=!:.()[\]{},;]"
+syn match protoOperator "[/][^/*]"
+hi def link protoOperator Operator
