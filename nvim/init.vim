@@ -326,16 +326,16 @@ noremap <silent><F3> :call ToggleWrap()<CR>
 " endfunction
 " }}}
 " Add empty line above. {{{
-function! AddEmptyLineAbove()
-  let l:scrolloffsave = &scrolloff
-  " Avoid jerky scrolling with ^E at top of window
-  set scrolloff=0
-  call append(line(".") - 1, "")
-  if winline() != winheight(0)
-    silent normal! <C-e>
-  end
-  let &scrolloff = l:scrolloffsave
-endfunction
+" function! AddEmptyLineAbove()
+"   let l:scrolloffsave = &scrolloff
+"   " Avoid jerky scrolling with ^E at top of window
+"   set scrolloff=0
+"   call append(line(".") - 1, "")
+"   if winline() != winheight(0)
+"     silent normal! <C-e>
+"   end
+"   let &scrolloff = l:scrolloffsave
+" endfunction
 " }}}
 " Delete empty line below. {{{
 function! DelEmptyLineBelow()
@@ -368,7 +368,7 @@ endfunction
 nnoremap <silent> <A-j> :call DelEmptyLineBelow()<CR>
 nnoremap <silent> <A-k> :call DelEmptyLineAbove()<CR>
 " nnoremap <silent> <C-j> :call AddEmptyLineBelow()<CR>
-nnoremap <silent> <C-k> :call AddEmptyLineAbove()<CR>
+" nnoremap <silent> <C-k> :call AddEmptyLineAbove()<CR>
 " }}}
 " Move block up and down. {{{
 " vnoremap <S-k> :m'<-2<CR>:echo "move block up"<CR>gv
