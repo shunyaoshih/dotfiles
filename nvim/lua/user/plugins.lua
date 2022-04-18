@@ -74,6 +74,9 @@ return packer.startup(function(use)
         use "saadparwaiz1/cmp_luasnip"
         use "rafamadriz/friendly-snippets"
 
+        -- Lua.
+        use "andrejlevkovitch/vim-lua-format"
+
         -- Rust.
         use {"rust-lang/rust.vim", ft = "rust"}
     end
@@ -86,13 +89,12 @@ return packer.startup(function(use)
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "lukas-reineke/indent-blankline.nvim"
-    use "numToStr/Comment.nvim"
+    use {"numToStr/Comment.nvim", commit = "0aaea32"}
     use "windwp/nvim-autopairs"
     use {
         "kyazdani42/nvim-tree.lua",
         requires = {"kyazdani42/nvim-web-devicons", opt = true}
     }
-    use "andrejlevkovitch/vim-lua-format"
 
     -- Activity tracking.
     use "wakatime/vim-wakatime"
