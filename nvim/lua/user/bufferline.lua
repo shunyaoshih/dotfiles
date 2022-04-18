@@ -42,6 +42,10 @@ bufferline.setup {
             guifg = {attribute = "fg", highlight = "TabLine"},
             guibg = {attribute = "bg", highlight = "Normal"}
         },
+        modified_visible = {
+            guifg = {attribute = "fg", highlight = "TabLine"},
+            guibg = {attribute = "bg", highlight = "Normal"}
+        },
         modified_selected = {
             guifg = {attribute = "fg", highlight = "Normal"},
             guibg = {attribute = "bg", highlight = "Normal"}
