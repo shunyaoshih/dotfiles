@@ -1,25 +1,25 @@
-local status_ok, comment = pcall(require, "Comment")
-if not status_ok then return end
+local ok, comment = pcall(require, "Comment")
+if not ok then return end
 
 comment.setup {
     toggler = {
-        ---Line-comment toggle keymap
+        -- Line-comment toggle keymap.
         line = '<leader>//',
-        ---Block-comment toggle keymap
+        -- Block-comment toggle keymap.
         block = '<leader>b/'
     },
     opleader = {
-        ---Line-comment keymap
+        -- Line-comment keymap.
         line = '<leader>/',
-        ---Block-comment keymap
+        -- Block-comment keymap.
         block = '<leader>b'
     },
     extra = {
-        ---Add comment on the line above
+        -- Add comment on the line above.
         above = '<leader>/O',
-        ---Add comment on the line below
+        -- Add comment on the line below.
         below = '<leader>/o',
-        ---Add comment at the end of line
+        -- Add comment at the end of line.
         eol = '<leader>/A'
     }
 }

@@ -1,6 +1,6 @@
 local fn = vim.fn
 
--- Automatically install packer
+-- Automatically install packer.
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
@@ -11,7 +11,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
     vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
+-- Use a protected call so we don't error out on first use.
+local ok, packer = pcall(require, "packer")
+if not ok then return end
+
+-- Autocommand that reloads neovim whenever you save the plugins.lua file.
 vim.cmd [[
   augroup packer_user_config
     autocmd!
@@ -19,11 +23,7 @@ vim.cmd [[
   augroup end
 ]]
 
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then return end
-
--- Have packer use a popup window
+-- Have packer use a popup window.
 packer.init {
     display = {
         open_fn = function()
@@ -32,7 +32,6 @@ packer.init {
     }
 }
 
--- Install your plugins here
 return packer.startup(function(use)
     -- Plugin manager.
     use "wbthomason/packer.nvim"

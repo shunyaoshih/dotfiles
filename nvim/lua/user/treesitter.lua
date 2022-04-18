@@ -1,15 +1,8 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then return end
-
-local opts = {noremap = true, silent = true}
-local keymap = vim.api.nvim_set_keymap
-
-keymap("n", "<leader>tsh", ":TSHighlightCapturesUnderCursor<CR>", opts)
-keymap("n", "<leader>tsp", ":TSPlaygroundToggle<CR>", opts)
+local ok, configs = pcall(require, "nvim-treesitter.configs")
+if not ok then return end
 
 configs.setup {
     ensure_installed = "all",
-    -- Install parsers asynchronously.
     sync_install = false,
     -- List of parsers to ignore installing.
     ignore_install = {""},
@@ -23,3 +16,9 @@ configs.setup {
     indent = {enable = true, disable = {"yaml"}},
     playground = {enable = true}
 }
+
+local opts = {noremap = true, silent = true}
+local keymap = vim.api.nvim_set_keymap
+
+keymap("n", "<leader>tsh", ":TSHighlightCapturesUnderCursor<CR>", opts)
+keymap("n", "<leader>tsp", ":TSPlaygroundToggle<CR>", opts)

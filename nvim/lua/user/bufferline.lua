@@ -1,19 +1,15 @@
-local status_ok, bufferline = pcall(require, "bufferline")
-if not status_ok then return end
+local ok, bufferline = pcall(require, "bufferline")
+if not ok then return end
 
 bufferline.setup {
     options = {
-        numbers = "none",
+        numbers = "buffer_id",
         close_command = "Bdelete! %d",
 
-        -- Mouse actions.
         right_mouse_command = "Bdelete! %d",
         left_mouse_command = "buffer %d",
         middle_mouse_command = nil,
 
-        -- NOTE: this plugin is designed with this icon in mind,
-        -- and so changing this is NOT recommended, this is intended
-        -- as an escape hatch for people who cannot bear it for whatever reason
         indicator_icon = "▎",
         buffer_close_icon = "",
         modified_icon = "●",
@@ -22,12 +18,12 @@ bufferline.setup {
         right_trunc_marker = "",
 
         max_name_length = 30,
-        max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
+        max_prefix_length = 30,
         tab_size = 21,
         diagnostics = false,
         diagnostics_update_in_insert = false,
 
-        offsets = {{filetype = "NvimTree", text = "", padding = 1}},
+        offsets = {{filetype = "NvimTree", text = ""}},
         show_buffer_icons = true,
         show_buffer_close_icons = true,
         show_close_icon = false,
@@ -38,74 +34,15 @@ bufferline.setup {
         always_show_bufferline = true
     },
     highlights = {
-        fill = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
-        },
-        background = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
-        },
-        buffer_visible = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
-        },
-        close_button = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
-        },
-        close_button_visible = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
-        },
-        tab_selected = {
+        indicator_selected = {
             guifg = {attribute = "fg", highlight = "Normal"},
             guibg = {attribute = "bg", highlight = "Normal"}
-        },
-        tab = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
-        },
-        tab_close = {
-            guifg = {attribute = "fg", highlight = "Normal"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
-        },
-        duplicate_selected = {
-            guifg = {attribute = "fg", highlight = "TabLineSel"},
-            guibg = {attribute = "bg", highlight = "TabLineSel"},
-            gui = "italic"
-        },
-        duplicate_visible = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"},
-            gui = "italic"
-        },
-        duplicate = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"},
-            gui = "italic"
         },
         modified = {
             guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
+            guibg = {attribute = "bg", highlight = "Normal"}
         },
         modified_selected = {
-            guifg = {attribute = "fg", highlight = "Normal"},
-            guibg = {attribute = "bg", highlight = "Normal"}
-        },
-        modified_visible = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
-        },
-        separator = {
-            guifg = {attribute = "bg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "TabLine"}
-        },
-        separator_selected = {
-            guifg = {attribute = "bg", highlight = "Normal"},
-            guibg = {attribute = "bg", highlight = "Normal"}
-        },
-        indicator_selected = {
             guifg = {attribute = "fg", highlight = "Normal"},
             guibg = {attribute = "bg", highlight = "Normal"}
         }

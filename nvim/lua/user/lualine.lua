@@ -1,5 +1,5 @@
-local status_ok, lualine = pcall(require, "lualine")
-if not status_ok then return end
+local ok, lualine = pcall(require, "lualine")
+if not ok then return end
 
 local colors = {
     light_red = "#FF548C",
@@ -86,7 +86,7 @@ local spaces = function()
     return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
-lualine.setup({
+lualine.setup {
     options = {
         icons_enabled = true,
         theme = theme,
@@ -113,4 +113,4 @@ lualine.setup({
     },
     tabline = {},
     extensions = {}
-})
+}

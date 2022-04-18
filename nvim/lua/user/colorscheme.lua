@@ -1,7 +1,7 @@
 local colorscheme = "pikacode"
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
+local ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not ok then
     vim.notify("colorscheme " .. colorscheme .. " not found!")
     return
 end
