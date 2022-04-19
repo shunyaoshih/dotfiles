@@ -9,6 +9,7 @@ indent_blankline.setup {
     space_char_blankline = " ",
     show_current_context = true,
     show_first_indent_level = false,
-    use_treesitter = true,
+    -- Disable treesitter for now since it's slow on large files.
+    use_treesitter = false,
     char_highlight_list = {"IndentBlanklineIndent1"}
 }
