@@ -30,7 +30,7 @@ keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers.
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<C-c>", ":Bdelete<CR>", opts)
+keymap("n", "<C-c>", ":bdelete<CR>", opts)
 
 -- Use macro easily.
 keymap("n", "Q", "@q", opts)

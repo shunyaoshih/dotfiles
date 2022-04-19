@@ -4,9 +4,9 @@ if not ok then return end
 bufferline.setup {
     options = {
         numbers = "buffer_id",
-        close_command = "Bdelete! %d",
+        close_command = "bdelete! %d",
 
-        right_mouse_command = "Bdelete! %d",
+        right_mouse_command = "bdelete! %d",
         left_mouse_command = "buffer %d",
         middle_mouse_command = nil,
 

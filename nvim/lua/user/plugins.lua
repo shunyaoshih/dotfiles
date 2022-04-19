@@ -48,7 +48,7 @@ return packer.startup(function(use)
     use {
         "akinsho/bufferline.nvim",
         tag = "*",
-        requires = {"kyazdani42/nvim-web-devicons", "moll/vim-bbye"}
+        requires = {"kyazdani42/nvim-web-devicons"}
     }
     use {
         'nvim-lualine/lualine.nvim',
@@ -61,25 +61,6 @@ return packer.startup(function(use)
         "nvim-treesitter/playground",
         requires = {"nvim-treesitter/nvim-treesitter"}
     }
-
-    if fn.has("mac") then
-        -- Auto-completion.
-        use "hrsh7th/nvim-cmp"
-        use "hrsh7th/cmp-buffer"
-        use "hrsh7th/cmp-path"
-        use "hrsh7th/cmp-cmdline"
-
-        -- Snippets.
-        use "L3MON4D3/LuaSnip"
-        use "saadparwaiz1/cmp_luasnip"
-        use "rafamadriz/friendly-snippets"
-
-        -- Lua.
-        use "andrejlevkovitch/vim-lua-format"
-
-        -- Rust.
-        use {"rust-lang/rust.vim", ft = "rust"}
-    end
 
     -- Easy motion.
     use {'phaazon/hop.nvim', branch = 'v1'}
@@ -101,6 +82,22 @@ return packer.startup(function(use)
 
     -- Go.
     use {"fatih/vim-go", run = ":GoUpdateBinaries", ft = "go"}
+
+    if fn.has("mac") then
+        -- Auto-completion.
+        use "hrsh7th/nvim-cmp"
+        use "hrsh7th/cmp-buffer"
+        use "hrsh7th/cmp-path"
+        use "hrsh7th/cmp-cmdline"
+
+        -- Snippets.
+        use "L3MON4D3/LuaSnip"
+        use "saadparwaiz1/cmp_luasnip"
+        use "rafamadriz/friendly-snippets"
+
+        -- Lua.
+        use "andrejlevkovitch/vim-lua-format"
+    end
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
