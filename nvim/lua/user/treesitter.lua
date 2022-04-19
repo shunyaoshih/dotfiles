@@ -13,7 +13,7 @@ configs.setup {
         disable = {"go"},
         additional_vim_regex_highlighting = false
     },
-    indent = {enable = true, disable = {"go"}},
+    indent = {enable = true, disable = {"cpp", "go"}},
     playground = {enable = true}
 }
 
