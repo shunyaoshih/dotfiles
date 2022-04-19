@@ -15,7 +15,6 @@ lua require("user.comment")
 lua require("user.autopairs")
 lua require("user.nvim-tree")
 lua require("user.vim-lua-format")
-lua require("user.go")
 
 " Basic Settings {{{
 " let mapleader = ' '

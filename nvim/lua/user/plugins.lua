@@ -80,9 +80,6 @@ return packer.startup(function(use)
     -- Activity tracking.
     use "wakatime/vim-wakatime"
 
-    -- Go.
-    use {"fatih/vim-go", run = ":GoUpdateBinaries", ft = "go"}
-
     if fn.has("mac") then
         -- Auto-completion.
         use "hrsh7th/nvim-cmp"
