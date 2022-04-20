@@ -1,7 +1,4 @@
-.DS_STORE
-plugged
-.undodir
-custom
-.netrwhist
+.DS_Store
 fish/fish_variables
-nvim/plugin
+packer_compiled.lua
+nvim/local
