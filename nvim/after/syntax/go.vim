@@ -5,8 +5,8 @@ highlight def link goImport Statement
 
 highlight link goReceiver Operator
 
-syntax match goPunctBracket "[()[\]{}]"
+syntax match goPunctBracket /[()[\]{}]/
 highlight def link goPunctBracket Operator
 
-syntax match goPunctSpecial "[.,:;]"
+syntax match goPunctSpecial /[.,:;]/
 highlight def link goPunctSpecial Operator
