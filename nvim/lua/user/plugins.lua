@@ -78,6 +78,15 @@ return packer.startup(function(use)
     }
     use {'goolord/alpha-nvim'}
 
+    -- Fuzzy finder.
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {
+            {'nvim-lua/plenary.nvim'},
+            {"kyazdani42/nvim-web-devicons", opt = true}
+        }
+    }
+
     -- Activity tracking.
     use "wakatime/vim-wakatime"
 
