@@ -74,7 +74,7 @@ vim.opt.updatetime = 300
 vim.opt.virtualedit = "block"
 
 -- Do not wrap text by default.
-vim.opt.wrap = false
+vim.wo.wrap = true
 
 -- No backup.
 vim.opt.writebackup = false
@@ -94,3 +94,22 @@ vim.opt.signcolumn = "yes"
 -- Space left for scrolling vertically and horizontally.
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
+
+-- Jump to the last position when reopening a file.
+vim.cmd [[
+  augroup restore_cursor
+    autocmd!
+    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  augroup end
+]]
+
+-- Python3 executable path.
+vim.g.python3_host_prog = "/usr/local/bin/python3"
+
+-- File type specific autocmd.
+vim.cmd [[
+  augroup sh_config
+    autocmd!
+    autocmd FileType sh silent execute "!chmod +x <afile>"
+  augroup end
+]]
