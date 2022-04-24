@@ -5,10 +5,10 @@ snippet tf "test function"
 
 snippet ttb "test table"
 	tests := []struct {
-		desc string
+		name string
 	}{
 		{
-			desc: "${2:test description}",
+			name: "${2:test name}",
 		},
 	}
 
@@ -21,3 +21,7 @@ snippet ttb "test table"
 		})
 	}
 
+snippet pd "proto diff"
+	if diff := cmp.Diff(${1:want}, ${2:got}, protocmp.Transform()); diff != {
+		t.Errorf("${3:Foo()} returned unexpected difference in protobuf message (-want +got):\n%s", ${0}diff)
+	}
