@@ -4,22 +4,20 @@ snippet tf "test function"
 	}
 
 snippet ttb "test table"
-	func Test${1:name}(t *testing.T) {
-		tests := []struct {
-			desc string
-		}{
-			{
-				desc: "${2:test description}",
-			},
-		}
+	tests := []struct {
+		desc string
+	}{
+		{
+			desc: "${2:test description}",
+		},
+	}
 
-		for _, tc := range tests {
-			tc := tc
-			t.Run(test.name, func(t *testing.T) {
-				t.Parallel()
+	for _, tc := range tests {
+		tc := tc
+		t.Run(test.name, func(t *testing.T) {
+			t.Parallel()
 
-				${0}
-			})
-		}
+			${0}
+		})
 	}
 

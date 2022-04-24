@@ -80,7 +80,14 @@ return packer.startup(function(use)
         requires = {"kyazdani42/nvim-web-devicons", opt = true}
     }
     use {'goolord/alpha-nvim'}
+
+    -- Auto-completion.
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-cmdline"
     use "L3MON4D3/LuaSnip"
+    use "saadparwaiz1/cmp_luasnip"
 
     -- Fuzzy finder.
     use {
@@ -99,13 +106,6 @@ return packer.startup(function(use)
     use {"fatih/vim-go", ft = "go"}
 
     if fn.has("mac") then
-        -- Auto-completion.
-        use "hrsh7th/nvim-cmp"
-        use "hrsh7th/cmp-buffer"
-        use "hrsh7th/cmp-path"
-        use "hrsh7th/cmp-cmdline"
-        use "saadparwaiz1/cmp_luasnip"
-
         -- Lua.
         use "andrejlevkovitch/vim-lua-format"
     end
