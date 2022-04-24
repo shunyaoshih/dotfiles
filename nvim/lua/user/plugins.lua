@@ -70,17 +70,22 @@ return packer.startup(function(use)
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "lukas-reineke/indent-blankline.nvim"
-    use {"numToStr/Comment.nvim", commit = "0aaea32"}
+    use {
+        "numToStr/Comment.nvim",
+        commit = "0aaea32f27315e2a99ba4c12ab9def5cbb4842e4"
+    }
     use "windwp/nvim-autopairs"
     use {
         "kyazdani42/nvim-tree.lua",
         requires = {"kyazdani42/nvim-web-devicons", opt = true}
     }
     use {'goolord/alpha-nvim'}
+    use "L3MON4D3/LuaSnip"
 
     -- Fuzzy finder.
     use {
         'nvim-telescope/telescope.nvim',
+        commit = "d88094fbfd84b297178252230f6faf0e7d2f7650",
         requires = {
             {'nvim-lua/plenary.nvim'},
             {"kyazdani42/nvim-web-devicons", opt = true}
@@ -91,7 +96,7 @@ return packer.startup(function(use)
     use "wakatime/vim-wakatime"
 
     -- Golang.
-    use {"fatih/vim-go", run = ":GoUpdateBinaries", ft = "go"}
+    use {"fatih/vim-go", ft = "go"}
 
     if fn.has("mac") then
         -- Auto-completion.
@@ -99,11 +104,7 @@ return packer.startup(function(use)
         use "hrsh7th/cmp-buffer"
         use "hrsh7th/cmp-path"
         use "hrsh7th/cmp-cmdline"
-
-        -- Snippets.
-        use "L3MON4D3/LuaSnip"
         use "saadparwaiz1/cmp_luasnip"
-        use "rafamadriz/friendly-snippets"
 
         -- Lua.
         use "andrejlevkovitch/vim-lua-format"
