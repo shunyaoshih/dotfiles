@@ -5,16 +5,16 @@ snippet tf "test function"
 
 snippet ttb "test table"
 	tests := []struct {
-		desc string
+		name string
 	}{
 		{
-			desc: "${2:test name}",
+			name: "${2:test name}",
 		},
 	}
 
 	for _, tc := range tests {
 		tc := tc
-		t.Run(tc.desc, func(t *testing.T) {
+		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
 
 			${0}
