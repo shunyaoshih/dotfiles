@@ -11,7 +11,6 @@ snippet ttb "test table"
 			name: "${2:test name}",
 		},
 	}
-
 	for _, tc := range tests {
 		tc := tc
 		t.Run(tc.name, func(t *testing.T) {
