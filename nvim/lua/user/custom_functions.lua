@@ -44,12 +44,16 @@ function M.SetWrapKeyMapping()
         buf_keymap(0, "o", "j", "gj", opts)
         buf_keymap(0, "o", "k", "gk", opts)
     else
-        vim.api.nvim_buf_del_keymap(0, "n", "j")
-        vim.api.nvim_buf_del_keymap(0, "n", "k")
-        vim.api.nvim_buf_del_keymap(0, "n", "0")
-        vim.api.nvim_buf_del_keymap(0, "n", "$")
-        vim.api.nvim_buf_del_keymap(0, "o", "j")
-        vim.api.nvim_buf_del_keymap(0, "o", "k")
+        -- Only check if there is a key mapping for "j" since
+        -- it should be enough.
+        if fn.maparg("j", "n") ~= "" then
+            vim.api.nvim_buf_del_keymap(0, "n", "j")
+            vim.api.nvim_buf_del_keymap(0, "n", "k")
+            vim.api.nvim_buf_del_keymap(0, "n", "0")
+            vim.api.nvim_buf_del_keymap(0, "n", "$")
+            vim.api.nvim_buf_del_keymap(0, "o", "j")
+            vim.api.nvim_buf_del_keymap(0, "o", "k")
+        end
     end
 end
 
@@ -68,7 +72,6 @@ vim.cmd [[
   augroup wrap_line
     autocmd!
     autocmd BufRead,BufNewFile * execute "lua require(\"user.custom_functions\").SetWrapKeyMapping()"
-    " autocmd BufRead,BufNewFile * lua M.SetWrapKeyMapping()<CR>
   augroup end
 ]]
 
