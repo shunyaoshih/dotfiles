@@ -1,7 +1,7 @@
 # Alias.
 alias md=mkdir
 alias v=nvim
-alias vinit='v ~/.config/nvim/init.vim'
+alias vinit='v ~/.config/nvim/init.lua'
 alias tinit='v ~/.tmux.conf'
 alias st='tmux source ~/.tmux.conf'
 alias finit='v ~/.config/fish/config.fish'
