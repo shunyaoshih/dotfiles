@@ -31,27 +31,6 @@ vim.cmd [[highlight NvimTreeGitRenamed guifg=#D7005F gui=bold]]
 vim.cmd [[highlight NvimTreeGitNew guifg=#51A500 gui=bold]]
 vim.cmd [[highlight NvimTreeGitDeleted guifg=#D7005F gui=bold]]
 
-vim.g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
-    git = {
-        unstaged = "",
-        staged = "S",
-        unmerged = "",
-        renamed = "➜",
-        deleted = "",
-        untracked = "",
-        ignored = "◌"
-    },
-    folder = {
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = ""
-    }
-}
-
 nvim_tree.setup {
     disable_netrw = true,
     update_cwd = true,
@@ -60,7 +39,31 @@ nvim_tree.setup {
         icons = {hint = "", info = "", warning = "", error = ""}
     },
     update_focused_file = {enable = true, update_cwd = true, ignore_list = {}},
-    show_icons = {git = 1, folders = 1, files = 1, folder_arrows = 1}
+    renderer = {
+        icons = {
+            glyphs = {
+                default = "",
+                symlink = "",
+                git = {
+                    unstaged = "",
+                    staged = "S",
+                    unmerged = "",
+                    renamed = "➜",
+                    deleted = "",
+                    untracked = "",
+                    ignored = "◌"
+                },
+                folder = {
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = ""
+                }
+            },
+            show = {file = true, folder = true, folder_arrow = true, git = true}
+        }
+    }
 }
 
 local opts = {noremap = true, silent = true}
