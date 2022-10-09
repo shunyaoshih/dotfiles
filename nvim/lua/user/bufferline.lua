@@ -10,7 +10,7 @@ bufferline.setup {
         left_mouse_command = "buffer %d",
         middle_mouse_command = nil,
 
-        indicator_icon = "▎",
+        indicator = {style = "icon", icon = "▎"},
         buffer_close_icon = "",
         modified_icon = "●",
         close_icon = "",
@@ -35,20 +35,20 @@ bufferline.setup {
     },
     highlights = {
         indicator_selected = {
-            guifg = {attribute = "fg", highlight = "Normal"},
-            guibg = {attribute = "bg", highlight = "Normal"}
+            fg = {attribute = "fg", highlight = "Normal"},
+            bg = {attribute = "bg", highlight = "Normal"}
         },
         modified = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "Normal"}
+            fg = {attribute = "fg", highlight = "TabLine"},
+            bg = {attribute = "bg", highlight = "Normal"}
         },
         modified_visible = {
-            guifg = {attribute = "fg", highlight = "TabLine"},
-            guibg = {attribute = "bg", highlight = "Normal"}
+            fg = {attribute = "fg", highlight = "TabLine"},
+            bg = {attribute = "bg", highlight = "Normal"}
         },
         modified_selected = {
-            guifg = {attribute = "fg", highlight = "Normal"},
-            guibg = {attribute = "bg", highlight = "Normal"}
+            fg = {attribute = "fg", highlight = "Normal"},
+            bg = {attribute = "bg", highlight = "Normal"}
         }
     }
 }
