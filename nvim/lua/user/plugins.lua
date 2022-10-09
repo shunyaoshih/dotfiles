@@ -70,10 +70,7 @@ return packer.startup(function(use)
     use "tpope/vim-surround"
     use "tpope/vim-repeat"
     use "lukas-reineke/indent-blankline.nvim"
-    use {
-        "numToStr/Comment.nvim",
-        commit = "0aaea32f27315e2a99ba4c12ab9def5cbb4842e4"
-    }
+    use {"numToStr/Comment.nvim"}
     use "windwp/nvim-autopairs"
     use {
         "kyazdani42/nvim-tree.lua",
@@ -92,7 +89,6 @@ return packer.startup(function(use)
     -- Fuzzy finder.
     use {
         'nvim-telescope/telescope.nvim',
-        commit = "d88094fbfd84b297178252230f6faf0e7d2f7650",
         requires = {
             {'nvim-lua/plenary.nvim'},
             {"kyazdani42/nvim-web-devicons", opt = true}
@@ -106,7 +102,7 @@ return packer.startup(function(use)
     use {"fatih/vim-go", ft = "go"}
 
     if fn.has("mac") then
-        -- Lua.
+        -- Lua formatter.
         use "andrejlevkovitch/vim-lua-format"
     end
 
