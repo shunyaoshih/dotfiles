@@ -13,3 +13,5 @@ alias gcm='git commit -m'
 
 # Remove default Fish greeting.
 set fish_greeting
+
+fish_add_path $HOME/.cargo/bin
