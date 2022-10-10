@@ -16,8 +16,10 @@ require("user.lualine")
 require("user.nvim-tree")
 require("user.telescope")
 require("user.treesitter")
-require("user.vim-lua-format")
 
-if vim.fn.has("mac") == 1 then require("user.lsp") end
+if vim.fn.has("mac") == 1 then
+    require("user.lsp")
+    require("user.vim-lua-format")
+end
 
-vim.cmd [[ runtime custom/local.vim ]]
+vim.cmd [[runtime custom/local.vim]]
