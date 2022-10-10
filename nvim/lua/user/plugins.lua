@@ -104,7 +104,7 @@ return packer.startup(function(use)
     -- Golang.
     use {"fatih/vim-go", ft = "go"}
 
-    if fn.has("mac") then
+    if fn.has("mac") == 1 then
         -- Lua formatter.
         use "andrejlevkovitch/vim-lua-format"
     end
