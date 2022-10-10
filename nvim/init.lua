@@ -12,11 +12,12 @@ require("user.go")
 require("user.hop")
 require("user.impatient")
 require("user.indentline")
-require("user.lsp")
 require("user.lualine")
 require("user.nvim-tree")
 require("user.telescope")
 require("user.treesitter")
 require("user.vim-lua-format")
+
+if vim.fn.has("mac") then require("user.lsp") end
 
 vim.cmd [[ runtime custom/local.vim ]]
