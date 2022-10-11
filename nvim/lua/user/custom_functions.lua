@@ -75,14 +75,14 @@ vim.cmd [[
   augroup end
 ]]
 
-keymap("n", "<C-j>",
-       ":lua require(\"user.custom_functions\").AddEmptyLineBelow()<CR>", opts)
-keymap("n", "<C-k>",
-       ":lua require(\"user.custom_functions\").AddEmptyLineAbove()<CR>", opts)
 keymap("n", "<A-j>",
+       ":lua require(\"user.custom_functions\").AddEmptyLineBelow()<CR>", opts)
+keymap("n", "<A-k>",
+       ":lua require(\"user.custom_functions\").AddEmptyLineAbove()<CR>", opts)
+keymap("n", "<A-J>",
        ":lua require(\"user.custom_functions\").DeleteEmptyLineBelow()<CR>",
        opts)
-keymap("n", "<A-k>",
+keymap("n", "<A-K>",
        ":lua require(\"user.custom_functions\").DeleteEmptyLineAbove()<CR>",
        opts)
 keymap("n", "<F3>", ":lua require(\"user.custom_functions\").ToggleWrap()<CR>",
