@@ -87,6 +87,7 @@ return packer.startup(function(use)
     -- LSP client config.
     use 'hrsh7th/cmp-nvim-lsp'
     use 'neovim/nvim-lspconfig'
+    use 'simrat39/rust-tools.nvim'
 
     -- Auto-completion.
     use 'hrsh7th/nvim-cmp'
