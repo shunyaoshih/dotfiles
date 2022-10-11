@@ -79,14 +79,22 @@ return packer.startup(function(use)
     use {'goolord/alpha-nvim'}
 
     -- Semantic language support.
+    -- External tooling manager such as
+    -- LSP servers, DAP servers, linters, and formatters.
+    use 'williamboman/mason.nvim'
+    -- Automatically install LSP servers.
+    use 'williamboman/mason-lspconfig.nvim'
+    -- LSP client config.
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'neovim/nvim-lspconfig'
+
+    -- Auto-completion.
+    use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/vim-vsnip'
-    use 'neovim/nvim-lspconfig'
     use 'onsails/lspkind.nvim'
 
     -- Fuzzy finder.
