@@ -1,4 +1,4 @@
-local opts = {noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Remap space as leader key.
@@ -59,5 +59,5 @@ keymap("v", ">", ">gv", opts)
 
 --------------------------------- Visual Block ---------------------------------
 -- Move text up and down
-keymap("x", "<S-j>", ":move '>+<CR>:echo \"move block down\"<CR>gv", opts)
-keymap("x", "<S-k>", ":move '<-2<CR>:echo \"move block up\"<CR>gv", opts)
+keymap("x", "<S-j>", ':move \'>+<CR>:echo "move block down"<CR>gv', opts)
+keymap("x", "<S-k>", ':move \'<-2<CR>:echo "move block up"<CR>gv', opts)

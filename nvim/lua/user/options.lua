@@ -9,7 +9,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 
 -- Auto-Completion behavior.
-vim.opt.completeopt = {"menuone", "noselect"}
+vim.opt.completeopt = { "menuone", "noselect" }
 
 -- Show the screen line of the cursor. Useful to easily spot the cursor.
 vim.opt.cursorline = true
@@ -96,20 +96,20 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 -- Jump to the last position when reopening a file.
-vim.cmd [[
+vim.cmd([[
   augroup restore_cursor
     autocmd!
     autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
   augroup end
-]]
+]])
 
 -- Python3 executable path.
 vim.g.python3_host_prog = "/usr/local/bin/python3"
 
 -- File type specific autocmd.
-vim.cmd [[
+vim.cmd([[
   augroup sh_config
     autocmd!
     autocmd FileType sh silent execute "!chmod +x <afile>"
   augroup end
-]]
+]])
