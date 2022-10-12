@@ -60,3 +60,12 @@ cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
 })
+
+vim.g.vsnip_snippet_dir = "~/dotfiles/nvim/vsnip"
+vim.cmd([[
+    " Jump forward or backward
+    imap <expr> <C-n> vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)' : '<C-n>'
+    smap <expr> <C-n> vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)' : '<C-n>'
+    imap <expr> <C-p> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)' : '<C-p>'
+    smap <expr> <C-p> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)' : '<C-p>'
+]])
