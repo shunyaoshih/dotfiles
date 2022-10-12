@@ -75,8 +75,6 @@ local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_clie
 lspconfig.sumneko_lua.setup({
 	settings = {
 		Lua = {
-			-- Didn't use the LSP formatter since I don't like its style.
-			-- Use "andrejlevkovitch/vim-lua-format" instead.
 			runtime = {
 				-- Tell the language server which version of Lua you're using
 				-- (most likely LuaJIT in the case of Neovim).
