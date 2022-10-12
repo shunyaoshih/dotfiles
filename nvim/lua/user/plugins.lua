@@ -114,8 +114,8 @@ return packer.startup(function(use)
     use {"fatih/vim-go", ft = "go"}
 
     if fn.has("mac") == 1 then
-        -- Lua formatter.
-        use "andrejlevkovitch/vim-lua-format"
+        -- Formatting.
+        use {"jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim"}
     end
 
     -- Automatically set up your configuration after cloning packer.nvim

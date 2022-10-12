@@ -20,7 +20,6 @@ require("user.treesitter")
 
 if vim.fn.has("mac") == 1 then
     require("user.lsp")
-    require("user.vim-lua-format")
 end
 
 vim.cmd [[runtime custom/local.vim]]

@@ -13,7 +13,7 @@ mason.setup({
 local mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not mason_lspconfig_ok then return end
 mason_lspconfig.setup({
-    ensure_installed = {"sumneko_lua", "rust_analyzer"},
+    ensure_installed = {"sumneko_lua", "rust_analyzer", "stylua"},
 
     -- Whether servers that are set up (via lspconfig) should be automatically
     -- installed if they're not already installed.
@@ -95,4 +95,14 @@ rt.setup({
         },
         capabilities = capabilities
     }
+})
+
+-- Formatting setup.
+-- Formatter can be installed by ":LspInstall".
+local null_ls_ok, null_ls = pcall(require, "null-ls")
+if not null_ls_ok then return end
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.stylua,
+    },
 })
