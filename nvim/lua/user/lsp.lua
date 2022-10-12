@@ -24,7 +24,7 @@ mason_lspconfig.setup({
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_ok then return end
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -40,11 +40,23 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-    vim.keymap.set("n", "<leader>f",
-                   function() vim.lsp.buf.format {async = true} end, bufopts)
 
     vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, bufopts)
     vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
+
+    -- Format on save.
+    -- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#sync-formatting.
+    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+    if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.format({bufnr = bufnr})
+            end,
+        })
+    end
 end
 
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -102,6 +114,7 @@ rt.setup({
 local null_ls_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_ok then return end
 null_ls.setup({
+    on_attach = on_attach,
     sources = {
         null_ls.builtins.formatting.stylua,
     },
