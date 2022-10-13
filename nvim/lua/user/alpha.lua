@@ -1,10 +1,10 @@
-local ok, alpha = pcall(require, "alpha")
-if not ok then
+local alpha_ok, alpha = pcall(require, "alpha")
+if not alpha_ok then
 	return
 end
 
-local ok, dashboard = pcall(require, "alpha.themes.dashboard")
-if not ok then
+local dashboard_ok, dashboard = pcall(require, "alpha.themes.dashboard")
+if not dashboard_ok then
 	return
 end
 

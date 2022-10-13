@@ -1,14 +1,7 @@
-local ok, nvim_tree = pcall(require, "nvim-tree")
-if not ok then
+local nvim_tree_ok, nvim_tree = pcall(require, "nvim-tree")
+if not nvim_tree_ok then
 	return
 end
-
-local ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not ok then
-	return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
 
 vim.cmd([[highlight NvimTreeSymlink guifg=#D7005F gui=None]])
 vim.cmd([[highlight NvimTreeFolderName guifg=#00AFFF gui=None]])
