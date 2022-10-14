@@ -49,14 +49,8 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
 
-	-- vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, bufopts)
-	-- vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
-	vim.keymap.set("n", "<leader>dj", function()
-		vim.diagnostic.goto_next({ float = { border = border.border } })
-	end, bufopts)
-	vim.keymap.set("n", "<leader>dk", function()
-		vim.diagnostic.goto_prev({ float = { border = border.border } })
-	end, bufopts)
+	vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, bufopts)
+	vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
 end
 
 local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
