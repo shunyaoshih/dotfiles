@@ -20,11 +20,6 @@ if not mason_lspconfig_ok then
 end
 mason_lspconfig.setup({
 	ensure_installed = { "sumneko_lua", "rust_analyzer", "stylua" },
-
-	-- Whether servers that are set up (via lspconfig) should be automatically
-	-- installed if they're not already installed.
-	-- This setting has no relation with the `ensure_installed` setting.
-	automatic_installation = true,
 })
 
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
