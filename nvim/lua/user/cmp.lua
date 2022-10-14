@@ -2,10 +2,14 @@ local lspkind_ok, lspkind = pcall(require, "lspkind")
 if not lspkind_ok then
 	return
 end
--- lspkind.init()
 
 local cmp_ok, cmp = pcall(require, "cmp")
 if not cmp_ok then
+	return
+end
+
+local border_ok, border = pcall(require, "user.border")
+if not border_ok then
 	return
 end
 
@@ -18,7 +22,8 @@ cmp.setup({
 	},
 	window = {
 		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+			border = border.border,
+			winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
 		},
 	},
 	mapping = {

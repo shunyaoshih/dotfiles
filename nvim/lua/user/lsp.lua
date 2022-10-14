@@ -1,11 +1,16 @@
+local border_ok, border = pcall(require, "user.border")
+if not border_ok then
+  return
+end
+
 local mason_ok, mason = pcall(require, "mason")
 if not mason_ok then
 	return
 end
-local border = "rounded"
+
 mason.setup({
 	ui = {
-		border = border,
+		border = border.border,
 		icons = {
 			package_installed = "✓",
 			package_pending = "➜",
@@ -47,10 +52,10 @@ local on_attach = function(_, bufnr)
 	-- vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, bufopts)
 	-- vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev, bufopts)
 	vim.keymap.set("n", "<leader>dj", function()
-		vim.diagnostic.goto_next({ float = { border = border } })
+		vim.diagnostic.goto_next({ float = { border = border.border } })
 	end, bufopts)
 	vim.keymap.set("n", "<leader>dk", function()
-		vim.diagnostic.goto_prev({ float = { border = border } })
+		vim.diagnostic.goto_prev({ float = { border = border.border } })
 	end, bufopts)
 end
 
@@ -135,19 +140,3 @@ null_ls.setup({
 		null_ls.builtins.formatting.rustfmt,
 	},
 })
-
--- Add borders that are missing by default.
--- `vim.lsp.buf.hover`
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = border,
-})
--- `vim.lsp.buf.signature_help`
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-	border = border,
-})
--- `:LspInfo`
-local lspconfig_ui_windows_ok, lspconfig_ui_windows = pcall(require, "lspconfig.ui.windows")
-if not lspconfig_ui_windows_ok then
-	return
-end
-lspconfig_ui_windows.default_options.border = border
