@@ -2,8 +2,10 @@ local mason_ok, mason = pcall(require, "mason")
 if not mason_ok then
 	return
 end
+local border = "rounded"
 mason.setup({
 	ui = {
+		border = border,
 		icons = {
 			package_installed = "✓",
 			package_pending = "➜",
@@ -132,3 +134,19 @@ null_ls.setup({
 		null_ls.builtins.formatting.rustfmt,
 	},
 })
+
+-- Add borders that are missing by default.
+-- `vim.lsp.buf.hover`
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = border,
+})
+-- `vim.lsp.buf.signature_help`
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	border = border,
+})
+-- `:LspInfo`
+local lspconfig_ui_windows_ok, lspconfig_ui_windows = pcall(require, "lspconfig.ui.windows")
+if not lspconfig_ui_windows_ok then
+	return
+end
+lspconfig_ui_windows.default_options.border = border
