@@ -1,5 +1,4 @@
 require("user.options")
-require("user.border")
 require("user.custom_functions")
 require("user.keymaps")
 require("user.plugins")
