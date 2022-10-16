@@ -73,7 +73,7 @@ return packer.startup(function(use)
 	use("tpope/vim-surround")
 	use("tpope/vim-repeat")
 	use("lukas-reineke/indent-blankline.nvim")
-	use({ "numToStr/Comment.nvim" })
+	use("numToStr/Comment.nvim")
 	use("windwp/nvim-autopairs")
 	use({
 		"kyazdani42/nvim-tree.lua",
