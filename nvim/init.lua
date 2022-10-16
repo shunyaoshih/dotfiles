@@ -17,7 +17,6 @@ require("user.lualine")
 require("user.nvim-tree")
 require("user.telescope")
 require("user.treesitter")
-require("custom")
 
 if vim.fn.has("mac") == 1 then
 	require("user.lsp")
