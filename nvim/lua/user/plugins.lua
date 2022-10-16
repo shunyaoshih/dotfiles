@@ -66,7 +66,7 @@ return packer.startup(function(use)
 	})
 
 	-- Easy motion.
-	use({ "phaazon/hop.nvim", branch = "v1" })
+	use({ "phaazon/hop.nvim", branch = "v2" })
 
 	-- Basic editing.
 	use("djoshea/vim-autoread")
