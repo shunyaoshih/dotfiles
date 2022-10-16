@@ -57,7 +57,7 @@ local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not ok then
 	return
 end
-local capabilities = cmp_nvim_lsp.update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Copy from https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua.
 lspconfig.sumneko_lua.setup({
