@@ -3,8 +3,8 @@ if not ok then
 	return
 end
 
-vim.cmd([[highlight IndentBlanklineContextChar guifg=#9E9E9E gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent1 guifg=#424242 gui=nocombine]])
+vim.api.nvim_set_hl(0, "IndentBlanklineContextChar", { fg = "#9E9E9E", nocombine = true })
+vim.api.nvim_set_hl(0, "IndentBlanklineIndent1", { fg = "#424242", nocombine = true })
 
 indent_blankline.setup({
 	char = "▏", -- bold version: "▎"
