@@ -96,12 +96,15 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 -- Jump to the last position when reopening a file.
-vim.cmd([[
-  augroup restore_cursor
-    autocmd!
-    autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  augroup end
-]])
+-- :h last-position-jump
+vim.api.nvim_create_autocmd("BufReadPost", {
+	group = vim.api.nvim_create_augroup("restore_cursor", { clear = true }),
+	callback = function()
+		if vim.fn.line("'\"") > 1 and vim.fn.line("'\"") <= vim.fn.line("$") then
+			vim.cmd([[normal! g`"]])
+		end
+	end,
+})
 
 -- Python3 executable path.
 vim.g.python3_host_prog = "/usr/local/bin/python3"
