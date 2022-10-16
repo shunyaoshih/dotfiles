@@ -45,9 +45,6 @@ return packer.startup(function(use)
 	-- General speedup.
 	use("lewis6991/impatient.nvim")
 
-	-- Popup window.
-	use({ "nvim-lua/popup.nvim", requires = "nvim-lua/plenary.nvim" })
-
 	-- Color theme.
 	use("shunyaoshih/pikacode.nvim")
 	use("norcalli/nvim-colorizer.lua")
