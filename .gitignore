@@ -1,5 +1,3 @@
 .DS_Store
 fish/fish_variables
 packer_compiled.lua
-nvim/local
-nvim/custom
