@@ -9,10 +9,10 @@ if not dashboard_ok then
 end
 
 dashboard.section.buttons.val = {
-	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.vim <CR>"),
-	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+	dashboard.button("f", "  Find file", "<CMD>Telescope find_files <CR>"),
+	dashboard.button("e", "  New file", "<CMD>ene <BAR> startinsert <CR>"),
+	dashboard.button("c", "  Configuration", "<CMD>e ~/.config/nvim/init.lua<CR>"),
+	dashboard.button("q", "  Quit Neovim", "<CMD>qa<CR>"),
 }
 
 alpha.setup(dashboard.config)
