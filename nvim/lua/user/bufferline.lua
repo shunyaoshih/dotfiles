@@ -37,20 +37,16 @@ bufferline.setup({
 	},
 	highlights = {
 		indicator_selected = {
-			fg = { attribute = "fg", highlight = "Normal" },
-			bg = { attribute = "bg", highlight = "Normal" },
+      fg = "#E0E0E0",
 		},
 		modified = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "Normal" },
+      fg = "#9E9E9E",
 		},
 		modified_visible = {
-			fg = { attribute = "fg", highlight = "TabLine" },
-			bg = { attribute = "bg", highlight = "Normal" },
+      fg = "#9E9E9E",
 		},
 		modified_selected = {
-			fg = { attribute = "fg", highlight = "Normal" },
-			bg = { attribute = "bg", highlight = "Normal" },
+      fg = "#E0E0E0",
 		},
 	},
 })

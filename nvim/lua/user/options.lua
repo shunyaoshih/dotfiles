@@ -108,11 +108,3 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 
 -- Python3 executable path.
 vim.g.python3_host_prog = "/usr/local/bin/python3"
-
--- File type specific autocmd.
-vim.cmd([[
-  augroup sh_config
-    autocmd!
-    autocmd FileType sh silent execute "!chmod +x <afile>"
-  augroup end
-]])

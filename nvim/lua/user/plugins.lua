@@ -1,9 +1,7 @@
-local fn = vim.fn
-
 -- Automatically install packer.
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+	PACKER_BOOTSTRAP = vim.fn.system({
 		"git",
 		"clone",
 		"--depth",
@@ -30,10 +28,14 @@ vim.cmd([[
 ]])
 
 -- Have packer use a popup window.
+local border_ok, border = pcall(require, "user.border")
+if not border_ok then
+	return
+end
 packer.init({
 	display = {
 		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
+			return require("packer.util").float({ border = border.border })
 		end,
 	},
 })
@@ -50,7 +52,7 @@ return packer.startup(function(use)
 	use("norcalli/nvim-colorizer.lua")
 	use({
 		"akinsho/bufferline.nvim",
-		tag = "*",
+		tag = "v2.*",
 		requires = { "kyazdani42/nvim-web-devicons" },
 	})
 	use({
@@ -104,6 +106,7 @@ return packer.startup(function(use)
 	-- Fuzzy finder.
 	use({
 		"nvim-telescope/telescope.nvim",
+		tag = "0.1.0",
 		requires = {
 			{ "nvim-lua/plenary.nvim" },
 			{ "kyazdani42/nvim-web-devicons", opt = true },
@@ -116,13 +119,13 @@ return packer.startup(function(use)
 	-- Golang.
 	use({ "fatih/vim-go", ft = "go" })
 
-	if fn.has("mac") == 1 then
+	if vim.fn.has("mac") == 1 then
 		-- Formatting.
 		use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
 	end
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
+	-- Automatically set up your configuration after cloning packer.nvim.
+	-- Put this at the end after all plugins.
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
 	end

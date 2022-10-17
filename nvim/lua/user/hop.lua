@@ -4,15 +4,13 @@ if not ok then
 end
 
 local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+vim.api.nvim_set_keymap("n", "<leader>hw", ":HopChar2<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>hl", ":HopLine<CR>", opts)
 
-keymap("n", "<leader>hw", ":HopChar2<CR>", opts)
-keymap("n", "<leader>hl", ":HopLine<CR>", opts)
+vim.api.nvim_set_keymap("v", "<leader>hw", "<CMD>HopChar2<CR>", opts)
+vim.api.nvim_set_keymap("v", "<leader>hl", "<CMD>HopLine<CR>", opts)
 
-keymap("v", "<leader>hw", "<CMD>HopChar2<CR>", opts)
-keymap("v", "<leader>hl", "<CMD>HopLine<CR>", opts)
-
-keymap("x", "<leader>hw", "<CMD>HopChar2<CR>", opts)
-keymap("x", "<leader>hl", "<CMD>HopLine<CR>", opts)
+vim.api.nvim_set_keymap("x", "<leader>hw", "<CMD>HopChar2<CR>", opts)
+vim.api.nvim_set_keymap("x", "<leader>hl", "<CMD>HopLine<CR>", opts)
 
 hop.setup({})

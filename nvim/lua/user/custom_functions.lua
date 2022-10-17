@@ -1,60 +1,56 @@
 local M = {}
 
-local fn = vim.fn
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
-local buf_keymap = vim.api.nvim_buf_set_keymap
-
 function M.AddEmptyLineBelow()
-	fn.append(fn.line("."), "")
+	vim.fn.append(vim.fn.line("."), "")
 end
 
 function M.AddEmptyLineAbove()
-	fn.append(fn.line(".") - 1, "")
+	vim.fn.append(vim.fn.line(".") - 1, "")
 end
 
 function M.DeleteEmptyLineBelow()
-	if fn.line(".") == fn.line("$") then
+	if vim.fn.line(".") == vim.fn.line("$") then
 		return
 	end
-	local line = fn.getline(fn.line(".") + 1)
+	local line = vim.fn.getline(vim.fn.line(".") + 1)
 	if string.match(line, "^%s*$") ~= nil then
-		local colsave = fn.col(".")
+		local colsave = vim.fn.col(".")
 		vim.cmd([[
           :+1d
           ''
         ]])
-		fn.cursor(fn.line("."), colsave)
+		vim.fn.cursor(vim.fn.line("."), colsave)
 	end
 end
 
 function M.DeleteEmptyLineAbove()
-	if fn.line(".") == 1 then
+	if vim.fn.line(".") == 1 then
 		return
 	end
-	local line = fn.getline(fn.line(".") - 1)
+	local line = vim.fn.getline(vim.fn.line(".") - 1)
 	if string.match(line, "^%s*$") ~= nil then
-		local colsave = fn.col(".")
+		local colsave = vim.fn.col(".")
 		vim.cmd([[
           :-1d
           ''
         ]])
-		fn.cursor(fn.line("."), colsave)
+		vim.fn.cursor(vim.fn.line("."), colsave)
 	end
 end
 
 function M.SetWrapKeyMapping()
 	if vim.wo.wrap then
-		buf_keymap(0, "n", "j", "gj", opts)
-		buf_keymap(0, "n", "k", "gk", opts)
-		buf_keymap(0, "n", "0", "g^", opts)
-		buf_keymap(0, "n", "$", "g$", opts)
-		buf_keymap(0, "o", "j", "gj", opts)
-		buf_keymap(0, "o", "k", "gk", opts)
+		local opts = { noremap = true, silent = true }
+		vim.api.nvim_buf_set_keymap(0, "n", "j", "gj", opts)
+		vim.api.nvim_buf_set_keymap(0, "n", "k", "gk", opts)
+		vim.api.nvim_buf_set_keymap(0, "n", "0", "g^", opts)
+		vim.api.nvim_buf_set_keymap(0, "n", "$", "g$", opts)
+		vim.api.nvim_buf_set_keymap(0, "o", "j", "gj", opts)
+		vim.api.nvim_buf_set_keymap(0, "o", "k", "gk", opts)
 	else
 		-- Only check if there is a key mapping for "j" since
 		-- it should be enough.
-		if fn.maparg("j", "n") ~= "" then
+		if vim.fn.maparg("j", "n") ~= "" then
 			vim.api.nvim_buf_del_keymap(0, "n", "j")
 			vim.api.nvim_buf_del_keymap(0, "n", "k")
 			vim.api.nvim_buf_del_keymap(0, "n", "0")
@@ -83,10 +79,11 @@ vim.cmd([[
   augroup end
 ]])
 
-keymap("n", "<A-j>", ':lua require("user.custom_functions").AddEmptyLineBelow()<CR>', opts)
-keymap("n", "<A-k>", ':lua require("user.custom_functions").AddEmptyLineAbove()<CR>', opts)
-keymap("n", "<A-J>", ':lua require("user.custom_functions").DeleteEmptyLineBelow()<CR>', opts)
-keymap("n", "<A-K>", ':lua require("user.custom_functions").DeleteEmptyLineAbove()<CR>', opts)
-keymap("n", "<F3>", ':lua require("user.custom_functions").ToggleWrap()<CR>', opts)
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", "<A-j>", '<CMD>lua require("user.custom_functions").AddEmptyLineBelow()<CR>', opts)
+vim.api.nvim_set_keymap("n", "<A-k>", '<CMD>lua require("user.custom_functions").AddEmptyLineAbove()<CR>', opts)
+vim.api.nvim_set_keymap("n", "<A-J>", '<CMD>lua require("user.custom_functions").DeleteEmptyLineBelow()<CR>', opts)
+vim.api.nvim_set_keymap("n", "<A-K>", '<CMD>lua require("user.custom_functions").DeleteEmptyLineAbove()<CR>', opts)
+vim.api.nvim_set_keymap("n", "<F3>", '<CMD>lua require("user.custom_functions").ToggleWrap()<CR>', opts)
 
 return M

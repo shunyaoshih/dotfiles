@@ -20,7 +20,5 @@ configs.setup({
 })
 
 local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
-
-keymap("n", "<leader>tsh", ":TSHighlightCapturesUnderCursor<CR>", opts)
-keymap("n", "<leader>tsp", ":TSPlaygroundToggle<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>tsh", ":TSHighlightCapturesUnderCursor<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>tsp", ":TSPlaygroundToggle<CR>", opts)
