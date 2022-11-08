@@ -24,7 +24,7 @@ if not mason_lspconfig_ok then
 	return
 end
 mason_lspconfig.setup({
-	ensure_installed = { "sumneko_lua", "rust_analyzer", "stylua" },
+	ensure_installed = { "sumneko_lua", "rust_analyzer" },
 })
 
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
