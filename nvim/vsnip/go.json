@@ -12,7 +12,7 @@
 		},
 		"proto diff": {
 			"prefix": "pd",
-			"body": "if diff := cmp.Diff(${1:got}, ${2:want}, protocmp.Transform()); diff != {\n\tt.Errorf(\"${3:Foo()} returned unexpected difference in protobuf message (-got +want):\\n%s\", ${0}diff)\n}",
+			"body": "if diff := cmp.Diff(${1:got}, ${2:want}, protocmp.Transform()); diff != \"\" {\n\tt.Errorf(\"${3:Foo()} returned unexpected difference in protobuf message (-got +want):\\n%s\", ${0}diff)\n}",
 			"description": "Snippet for proto diff"
 		}
 	}
