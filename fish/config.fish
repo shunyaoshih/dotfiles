@@ -15,3 +15,5 @@ alias gcm='git commit -m'
 set fish_greeting
 
 fish_add_path $HOME/.cargo/bin
+
+source ~/.config/op/plugins.sh
