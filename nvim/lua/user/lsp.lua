@@ -24,7 +24,7 @@ if not mason_lspconfig_ok then
 	return
 end
 mason_lspconfig.setup({
-	ensure_installed = { "sumneko_lua", "rust_analyzer" },
+	ensure_installed = { "rust_analyzer" },
 })
 
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
@@ -58,32 +58,6 @@ if not ok then
 	return
 end
 local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
--- Copy from https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#sumneko_lua.
-lspconfig.sumneko_lua.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
-	settings = {
-		Lua = {
-			runtime = {
-				-- Tell the language server which version of Lua you're using
-				-- (most likely LuaJIT in the case of Neovim).
-				version = "LuaJIT",
-			},
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				globals = { "vim", "pcall" },
-			},
-			workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-			-- Do not send telemetry data containing
-			-- a randomized but unique identifier.
-			telemetry = { enable = false },
-		},
-	},
-})
 
 -- Use "rust-tools" to get type inlay hints.
 -- This plugin already sets up lspconfig for rust
@@ -130,7 +104,6 @@ null_ls.setup({
 	end,
 
 	sources = {
-		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.rustfmt,
 	},
 })
