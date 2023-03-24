@@ -16,4 +16,6 @@ set fish_greeting
 
 fish_add_path $HOME/.cargo/bin
 
-source ~/.config/op/plugins.sh
+if test -e ~/.config/op/plugins.sh
+  source ~/.config/op/plugins.sh
+end
