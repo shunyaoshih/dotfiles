@@ -35,18 +35,4 @@ bufferline.setup({
 		enforce_regular_tabs = false,
 		always_show_bufferline = true,
 	},
-	highlights = {
-		indicator_selected = {
-      fg = "#E0E0E0",
-		},
-		modified = {
-      fg = "#9E9E9E",
-		},
-		modified_visible = {
-      fg = "#9E9E9E",
-		},
-		modified_selected = {
-      fg = "#E0E0E0",
-		},
-	},
 })
