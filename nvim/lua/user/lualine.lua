@@ -3,57 +3,6 @@ if not ok then
 	return
 end
 
-local colors = {
-	light_red = "#FF548C",
-	orange = "#FFAF5F",
-	yellow = "#FFEE68",
-	green = "#87D700",
-	dark_blue = "#0080CB",
-	purple = "#AF87FF",
-
-	white = "#E0E0E0",
-	gray_1 = "#BDBDBD",
-	gray_2 = "#9E9E9E",
-	gray_3 = "#757575",
-	gray_4 = "#616161",
-	gray_5 = "#424242",
-	gray_6 = "#212121",
-	black = "#000000",
-}
-
-local theme = {
-	normal = {
-		a = { bg = colors.dark_blue, fg = colors.black },
-		b = { bg = colors.gray_5, fg = colors.gray_2 },
-		c = { bg = colors.gray_6, fg = colors.gray_3 },
-	},
-	insert = {
-		a = { bg = colors.green, fg = colors.black },
-		b = { bg = colors.gray_5, fg = colors.gray_2 },
-		c = { bg = colors.gray_6, fg = colors.gray_3 },
-	},
-	visual = {
-		a = { bg = colors.orange, fg = colors.black },
-		b = { bg = colors.gray_5, fg = colors.gray_2 },
-		c = { bg = colors.gray_6, fg = colors.gray_3 },
-	},
-	replace = {
-		a = { bg = colors.light_red, fg = colors.black },
-		b = { bg = colors.gray_5, fg = colors.gray_2 },
-		c = { bg = colors.gray_6, fg = colors.gray_3 },
-	},
-	command = {
-		a = { bg = colors.dark_blue, fg = colors.black },
-		b = { bg = colors.gray_5, fg = colors.gray_2 },
-		c = { bg = colors.gray_6, fg = colors.gray_3 },
-	},
-	inactive = {
-		a = { bg = colors.gray_6, fg = colors.gray_3 },
-		b = { bg = colors.gray_6, fg = colors.gray_3 },
-		c = { bg = colors.gray_6, fg = colors.gray_3 },
-	},
-}
-
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
