@@ -17,10 +17,6 @@ vim.opt.cursorline = true
 -- Folding behavior
 vim.opt.foldmethod = "marker"
 
--- Disable the cursor style configured by Neovim.
--- Use the one configured by the terminal emulator.
-vim.opt.guicursor = ""
-
 -- Search behavior.
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
