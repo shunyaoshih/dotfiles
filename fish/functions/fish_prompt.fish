@@ -1,17 +1,13 @@
 function fish_prompt
-  set_color 808080
+  set_color c0caf5
   echo -n "["(date "+%H:%M")"] "
-  set_color 6c6c6c
-  echo -n (hostname)
   if [ $PWD != $HOME ]
-    set_color 808080
-    echo -n ':'
-    set_color fffc87
+    set_color e0af68
     echo -n (prompt_pwd)
   end
-  set_color green
+  set_color 9ece6a
   printf '%s ' (__fish_git_prompt)
-  set_color normal
+  set_color c0caf5
   printf '\n'
   echo -n '$ '
 end

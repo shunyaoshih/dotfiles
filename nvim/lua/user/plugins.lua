@@ -48,7 +48,8 @@ return packer.startup(function(use)
 	use("lewis6991/impatient.nvim")
 
 	-- Color theme.
-	use("shunyaoshih/pikacode.nvim")
+	use("folke/tokyonight.nvim")
+
 	use("norcalli/nvim-colorizer.lua")
 	use({
 		"akinsho/bufferline.nvim",
