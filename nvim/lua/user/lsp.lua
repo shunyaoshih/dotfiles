@@ -24,7 +24,10 @@ if not mason_lspconfig_ok then
 	return
 end
 mason_lspconfig.setup({
-	ensure_installed = { "rust_analyzer" },
+	ensure_installed = {
+		"lua_ls",
+		"rust_analyzer",
+	},
 })
 
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
@@ -58,6 +61,22 @@ if not ok then
 	return
 end
 local capabilities = cmp_nvim_lsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+lspconfig.lua_ls.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		Lua = {
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global.
+				globals = {
+					"pcall",
+					"vim",
+				},
+			},
+		},
+	},
+})
 
 -- Use "rust-tools" to get type inlay hints.
 -- This plugin already sets up lspconfig for rust
@@ -102,7 +121,6 @@ null_ls.setup({
 			})
 		end
 	end,
-
 	sources = {
 		null_ls.builtins.formatting.rustfmt,
 		null_ls.builtins.formatting.stylua,
