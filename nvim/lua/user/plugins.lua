@@ -83,6 +83,13 @@ return packer.startup(function(use)
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 	use("goolord/alpha-nvim")
+	use({
+		"Wansmer/treesj",
+		requires = { "nvim-treesitter" },
+		config = function()
+			require("treesj").setup({})
+		end,
+	})
 
 	-- Semantic language support.
 	-- External tooling manager such as
