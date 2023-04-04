@@ -35,7 +35,19 @@ if not lspconfig_ok then
 	return
 end
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
+	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = augroup,
+			buffer = bufnr,
+			callback = function()
+				vim.lsp.buf.format({ bufnr = bufnr })
+			end,
+		})
+	end
+
 	-- Enable completion triggered by <c-x><c-o>
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
@@ -96,33 +108,5 @@ rt.setup({
 				completion = { postfix = { enable = false } },
 			},
 		},
-	},
-})
-
--- Formatting setup.
--- Formatter can be installed by ":LspInstall".
-local null_ls_ok, null_ls = pcall(require, "null-ls")
-if not null_ls_ok then
-	return
-end
-null_ls.setup({
-	on_attach = function(client, bufnr)
-		-- Format on save.
-		-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Formatting-on-save#sync-formatting.
-		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-		if client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({ bufnr = bufnr })
-				end,
-			})
-		end
-	end,
-	sources = {
-		null_ls.builtins.formatting.rustfmt,
-		null_ls.builtins.formatting.stylua,
 	},
 })
