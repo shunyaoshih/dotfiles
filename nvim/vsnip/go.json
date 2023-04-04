@@ -1,13 +1,8 @@
 {
 	".source.go": {
-		"test function": {
-			"prefix": "tf",
-			"body": "func Test$1(t *testing.T) {\n\t$0\n}",
-			"description": "Snippet for Test function"
-		},
 		"table driven test": {
 			"prefix": "tdt",
-			"body": "func Test$1(t *testing.T) {\n\ttests := []struct {\n\t\tname\tstring\n\t\t$2\n\t}{\n\t\t{\n\t\t\tname: \"$3\",\n\t\t\t$4\n\t\t},\n\t}\n\tfor _, tc := range tests {\n\t\ttc := tc\n\t\tt.Run(tc.name, func(t *testing.T) {\n\t\t\tt.Parallel()\n\n\t\t\t$0\n\t\t})\n\t}\n}",
+			"body": "\ttests := []struct {\n\t\tname\tstring\n\t\t$2\n\t}{\n\t\t{\n\t\t\tname: \"$3\",\n\t\t\t$4\n\t\t},\n\t}\n\tfor _, tc := range tests {\n\t\ttc := tc\n\t\tt.Run(tc.name, func(t *testing.T) {\n\t\t\tt.Parallel()\n\n\t\t\t$0\n\t\t})\n\t}",
 			"description": "Snippet for table driven test"
 		},
 		"proto diff": {
