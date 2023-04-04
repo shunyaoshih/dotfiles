@@ -1,6 +1,6 @@
 local ok, hop = pcall(require, "hop")
 if not ok then
-	return
+  return
 end
 
 local opts = { noremap = true, silent = true }

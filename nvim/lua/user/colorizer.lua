@@ -1,7 +1,7 @@
 -- Setup nvim-colorizer.
 local ok, colorizer = pcall(require, "colorizer")
 if not ok then
-	return
+  return
 end
 
 colorizer.setup()
