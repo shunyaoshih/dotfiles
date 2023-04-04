@@ -101,12 +101,5 @@ end
 rt.setup({
   server = {
     on_attach = on_attach,
-    capabilities = capabilities,
-    settings = {
-      ["rust-analyzer"] = {
-        cargo = { allFeatures = true },
-        completion = { postfix = { enable = false } },
-      },
-    },
   },
 })
