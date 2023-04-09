@@ -66,13 +66,13 @@ return {
       -- Set key mappings.
       -- See `:help vim.lsp.*` for documentation on any of the below functions
       vim.keymap.set("n", "gd", vim.lsp.buf.definition,
-        { desc = "Go to definition", noremap = true, silent = true, buffer = bufnr })
+        { desc = "[LSP] Go to definition", noremap = true, silent = true, buffer = bufnr })
       vim.keymap.set("n", "K", vim.lsp.buf.hover,
-        { desc = "More info under cursor", noremap = true, silent = true, buffer = bufnr })
+        { desc = "[LSP] More info under cursor", noremap = true, silent = true, buffer = bufnr })
       vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next,
-        { desc = "Next diagnostics", noremap = true, silent = true, buffer = bufnr })
+        { desc = "[LSP] Next diagnostics", noremap = true, silent = true, buffer = bufnr })
       vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev,
-        { desc = "Prev diagnostics", noremap = true, silent = true, buffer = bufnr })
+        { desc = "[LSP] Prev diagnostics", noremap = true, silent = true, buffer = bufnr })
     end
     -- }}}
     -- LSP server behaviors {{{
