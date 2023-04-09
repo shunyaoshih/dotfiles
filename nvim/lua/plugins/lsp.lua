@@ -13,10 +13,11 @@ return {
     { "<leader>l", "<cmd>Mason<cr>", desc = "Show LSP manager" },
   },
   config = function()
+    local border = require("user.border").border
     -- LSP manager {{{
     require('mason').setup({
       ui = {
-        border = require("user.border").border,
+        border = border,
         icons = {
           package_installed = "✓",
           package_pending = "➜",
@@ -34,7 +35,6 @@ return {
     -- Set border for nvim-lspconfig globally {{{
     -- including vim.lsp.buf.hover, vim.lsp.buf.signature_help, etc.
     -- Reference: https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#borders.
-    local border = require("user.border").border
     local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
     function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
       opts = opts or {}
@@ -43,10 +43,7 @@ return {
     end
 
     -- Set border for `:LspInfo`.
-    local lspconfig_ui_windows_ok, lspconfig_ui_windows = pcall(require, "lspconfig.ui.windows")
-    if lspconfig_ui_windows_ok then
-      lspconfig_ui_windows.default_options.border = border
-    end
+    require("lspconfig.ui.windows").default_options.border = border
     -- }}}
     -- Define behaviors when LSP attaches to the buffer (`on_attach`) {{{
     local on_attach = function(client, bufnr)
@@ -69,9 +66,9 @@ return {
         { desc = "[LSP] Go to definition", noremap = true, silent = true, buffer = bufnr })
       vim.keymap.set("n", "K", vim.lsp.buf.hover,
         { desc = "[LSP] More info under cursor", noremap = true, silent = true, buffer = bufnr })
-      vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next,
+      vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next,
         { desc = "[LSP] Next diagnostics", noremap = true, silent = true, buffer = bufnr })
-      vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev,
+      vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev,
         { desc = "[LSP] Prev diagnostics", noremap = true, silent = true, buffer = bufnr })
     end
     -- }}}

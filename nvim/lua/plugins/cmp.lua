@@ -19,7 +19,11 @@ return {
         end,
       },
       window = {
-        documentation = cmp.config.window.bordered(),
+        documentation = {
+          border = require("user.border").border,
+          -- Make the documentation border be the same as other borders.
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+        },
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(),
