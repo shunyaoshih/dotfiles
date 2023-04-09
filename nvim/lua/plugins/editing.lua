@@ -7,7 +7,20 @@ return {
     "tpope/vim-repeat",
     event = "VeryLazy",
   },
-  { "tpope/vim-surround" },
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        keymaps = {
+          -- Disable conflicintg keymaps by assigning all of them to <_>.
+          normal_cur = "_",
+          normal_cur_line = "_",
+        },
+      })
+    end,
+  },
   {
     "wakatime/vim-wakatime",
     event = "VeryLazy",
