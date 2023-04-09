@@ -15,10 +15,10 @@ return {
       "                                                     ",
     }
     dashboard.section.buttons.val = {
-      dashboard.button("f", " " .. " Find file", "<cmd>Telescope find_files<cr>"),
-      dashboard.button("b", " " .. " File browser", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>"),
+      dashboard.button("f", " " .. " Find file", "<cmd>Telescope find_files<cr>"),
+      dashboard.button("b", " " .. " File browser", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>"),
       dashboard.button("c", " " .. " Config", "<cmd>e $MYVIMRC <CR>"),
-      dashboard.button("p", "󰒲 " .. " Plugin manager", "<cmd>Lazy<CR>"),
+      dashboard.button("p", " " .. " Plugin manager", "<cmd>Lazy<CR>"),
       dashboard.button("q", " " .. " Quit", "<cmd>qa<CR>"),
     }
     for _, button in ipairs(dashboard.section.buttons.val) do
