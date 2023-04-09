@@ -1,5 +1,6 @@
 -- Show plugin manager.
-vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Lazy<cr>", { desc = "Show plugin manager", noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Lazy<cr>",
+  { desc = "Show plugin manager", noremap = true, silent = true })
 
 -- Make it easier to save and quit.
 vim.api.nvim_set_keymap("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file", noremap = true, silent = true })
@@ -13,7 +14,8 @@ vim.api.nvim_set_keymap("n", "Q", "@q", { desc = "Execute macro <q>", noremap = 
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
 
 -- Automatically clear highlight.
-vim.api.nvim_set_keymap("n", "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch", noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<esc>", "<cmd>noh<cr><esc>",
+  { desc = "Escape and clear hlsearch", noremap = true, silent = true })
 
 -- Keep the register the same after pasting.
 vim.api.nvim_set_keymap("v", "p", '"_dP', { noremap = true, silent = true })
@@ -28,4 +30,3 @@ vim.api.nvim_set_keymap("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up", no
 
 -- Search word under cursor but stay on the current word.
 vim.api.nvim_set_keymap("n", "gw", "*N", { desc = "Search word under cursor", noremap = true, silent = true })
-

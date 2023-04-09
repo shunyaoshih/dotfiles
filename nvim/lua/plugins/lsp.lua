@@ -67,6 +67,8 @@ return {
         { desc = "[LSP] Go to definition", noremap = true, silent = true, buffer = bufnr })
       vim.keymap.set("n", "K", vim.lsp.buf.hover,
         { desc = "[LSP] More info under cursor", noremap = true, silent = true, buffer = bufnr })
+      vim.keymap.set("n", "<leader>do", vim.diagnostic.open_float,
+        { desc = "[LSP] Show diagnostics", noremap = true, silent = true, buffer = bufnr })
       vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next,
         { desc = "[LSP] Next diagnostics", noremap = true, silent = true, buffer = bufnr })
       vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev,

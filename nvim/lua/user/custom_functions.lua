@@ -72,11 +72,15 @@ function M.ToggleWrap()
   M.SetWrapKeyMapping()
 end
 
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<A-j>", '<cmd>lua require("user.custom_functions").AddEmptyLineBelow()<cr>', { desc = "Add one line below", noremap = true, silent = true })
-vim.keymap.set("n", "<A-k>", '<cmd>lua require("user.custom_functions").AddEmptyLineAbove()<cr>', { desc = "Add one line above", noremap = true, silent = true })
-vim.keymap.set("n", "<A-J>", '<cmd>lua require("user.custom_functions").DeleteEmptyLineBelow()<cr>', { desc = "Delete one line below", noremap = true, silent = true })
-vim.keymap.set("n", "<A-K>", '<cmd>lua require("user.custom_functions").DeleteEmptyLineAbove()<cr>', { desc = "Delete one line above", noremap = true, silent = true })
-vim.keymap.set("n", "<F3>", '<cmd>lua require("user.custom_functions").ToggleWrap()<cr>', { desc = "Toggle wrap", noremap = true, silent = true })
+vim.keymap.set("n", "<A-j>", '<cmd>lua require("user.custom_functions").AddEmptyLineBelow()<cr>',
+  { desc = "Add one line below", noremap = true, silent = true })
+vim.keymap.set("n", "<A-k>", '<cmd>lua require("user.custom_functions").AddEmptyLineAbove()<cr>',
+  { desc = "Add one line above", noremap = true, silent = true })
+vim.keymap.set("n", "<A-J>", '<cmd>lua require("user.custom_functions").DeleteEmptyLineBelow()<cr>',
+  { desc = "Delete one line below", noremap = true, silent = true })
+vim.keymap.set("n", "<A-K>", '<cmd>lua require("user.custom_functions").DeleteEmptyLineAbove()<cr>',
+  { desc = "Delete one line above", noremap = true, silent = true })
+vim.keymap.set("n", "<F3>", '<cmd>lua require("user.custom_functions").ToggleWrap()<cr>',
+  { desc = "Toggle wrap", noremap = true, silent = true })
 
 return M
