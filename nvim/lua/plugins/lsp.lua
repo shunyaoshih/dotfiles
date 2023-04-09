@@ -108,6 +108,37 @@ return {
       },
     })
     -- }}}
+    -- CiderLSP {{{
+    if vim.fn.has('mac') == 0 then
+      require("lspconfig.configs").ciderlsp = {
+        default_config = {
+          cmd = {
+            "/google/bin/releases/cider/ciderlsp/ciderlsp",
+            "--tooltag=nvim-cmp",
+            "--noforward_sync_responses",
+          },
+          filetypes = {
+            "bzl",
+            "cpp",
+            "go",
+            "java",
+            "kotlin",
+            "objc",
+            "proto",
+            "python",
+            "python",
+            "textproto",
+          },
+          root_dir = require("lspconfig").util.root_pattern("BUILD"),
+          settings = {},
+        }
+      }
+      require("lspconfig").ciderlsp.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+    end
+    -- }}}
     -- }}}
   end
 }
