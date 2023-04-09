@@ -37,5 +37,16 @@ return {
         use_default_keymaps = false,
       })
     end,
-  }
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    lazy = false,
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    keys = {
+      { "<leader>fb", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", desc = "File browser" },
+    },
+    config = function()
+      require("telescope").load_extension("file_browser")
+    end,
+  },
 }

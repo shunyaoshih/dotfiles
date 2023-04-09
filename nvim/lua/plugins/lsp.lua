@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  event = "VeryLazy",
+  lazy = false,
   dependencies = {
     -- Easily install and manage LSP servers, DAP servers, linters, and formatters.
     "williamboman/mason.nvim",
