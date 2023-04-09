@@ -1,7 +1,3 @@
-if vim.fn.has("mac") == 0 then
-  return {}
-end
-
 return {
   "neovim/nvim-lspconfig",
   lazy = false,
