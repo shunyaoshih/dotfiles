@@ -5,6 +5,7 @@ return {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
@@ -36,6 +37,7 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
+        { name = 'nvim_lsp_signature_help' },
         { name = "path" },
         { name = "vsnip" },
         { name = "buffer" },
@@ -50,6 +52,7 @@ return {
           ellipsis_char = "...",
           menu = {
             nvim_lsp = "[LSP]",
+            nvim_lsp_signature_help = "[Signature]",
             buffer = "[Buffer]",
             path = "[Path]",
             vim_vsnip = "[Snippet]",
