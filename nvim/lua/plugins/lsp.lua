@@ -17,9 +17,6 @@ return {
     { "<leader>l", "<cmd>Mason<cr>", desc = "Show LSP manager" },
   },
   config = function()
-    if vim.fn.has('mac') == 0 then
-      return true
-    end
     -- LSP manager {{{
     require('mason').setup({
       ui = {
