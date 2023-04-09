@@ -7,5 +7,9 @@ return {
     { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer"},
     { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer"},
   },
-  config = true,
+  opts = {
+    options = {
+      always_show_bufferline = false,
+    },
+  },
 }
