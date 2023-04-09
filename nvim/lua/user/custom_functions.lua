@@ -16,9 +16,9 @@ function M.DeleteEmptyLineBelow()
   if string.match(line, "^%s*$") ~= nil then
     local colsave = vim.fn.col(".")
     vim.cmd([[
-          :+1d
-          ''
-        ]])
+      :+1d
+      ''
+    ]])
     vim.fn.cursor(vim.fn.line("."), colsave)
   end
 end
@@ -31,9 +31,9 @@ function M.DeleteEmptyLineAbove()
   if string.match(line, "^%s*$") ~= nil then
     local colsave = vim.fn.col(".")
     vim.cmd([[
-          :-1d
-          ''
-        ]])
+      :-1d
+      ''
+    ]])
     vim.fn.cursor(vim.fn.line("."), colsave)
   end
 end
@@ -72,18 +72,11 @@ function M.ToggleWrap()
   M.SetWrapKeyMapping()
 end
 
-vim.cmd([[
-  augroup wrap_line
-    autocmd!
-    autocmd BufRead,BufNewFile * execute "lua require(\"user.custom_functions\").SetWrapKeyMapping()"
-  augroup end
-]])
-
 local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("n", "<A-j>", '<CMD>lua require("user.custom_functions").AddEmptyLineBelow()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<A-k>", '<CMD>lua require("user.custom_functions").AddEmptyLineAbove()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<A-J>", '<CMD>lua require("user.custom_functions").DeleteEmptyLineBelow()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<A-K>", '<CMD>lua require("user.custom_functions").DeleteEmptyLineAbove()<CR>', opts)
-vim.api.nvim_set_keymap("n", "<F3>", '<CMD>lua require("user.custom_functions").ToggleWrap()<CR>', opts)
+vim.keymap.set("n", "<A-j>", '<cmd>lua require("user.custom_functions").AddEmptyLineBelow()<cr>', { desc = "Add one line below", noremap = true, silent = true })
+vim.keymap.set("n", "<A-k>", '<cmd>lua require("user.custom_functions").AddEmptyLineAbove()<cr>', { desc = "Add one line above", noremap = true, silent = true })
+vim.keymap.set("n", "<A-J>", '<cmd>lua require("user.custom_functions").DeleteEmptyLineBelow()<cr>', { desc = "Delete one line below", noremap = true, silent = true })
+vim.keymap.set("n", "<A-K>", '<cmd>lua require("user.custom_functions").DeleteEmptyLineAbove()<cr>', { desc = "Delete one line above", noremap = true, silent = true })
+vim.keymap.set("n", "<F3>", '<cmd>lua require("user.custom_functions").ToggleWrap()<cr>', { desc = "Toggle wrap", noremap = true, silent = true })
 
 return M

@@ -1,4 +1,14 @@
--- Please use ":help options" for more details.
+-- Set <leader> key.
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- Disable optional language providers so that
+-- we do not see annoying warnings in ":checkhealth".
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+
 -- Make indenting smarter.
 vim.opt.cindent = true
 
@@ -9,7 +19,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "80"
 
 -- Auto-Completion behavior.
-vim.opt.completeopt = { "menuone", "noselect" }
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- Show the screen line of the cursor. Useful to easily spot the cursor.
 vim.opt.cursorline = true
@@ -27,9 +37,6 @@ vim.opt.listchars = "tab:»·,trail:·"
 
 -- Enable mouse in all modes.
 vim.opt.mouse = "a"
-
--- Paste toggle.
-vim.opt.pastetoggle = "<F2>"
 
 -- Maximum height of the pop-up menu.
 vim.opt.pumheight = 5
@@ -58,7 +65,7 @@ vim.opt.swapfile = false
 vim.opt.termguicolors = true
 
 -- Time to wait for a mapped sequence to complete (in milliseconds).
-vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 0
 
 -- Enable persistent undo.
 vim.opt.undofile = true
@@ -90,17 +97,3 @@ vim.opt.signcolumn = "yes"
 -- Space left for scrolling vertically and horizontally.
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
-
--- Jump to the last position when reopening a file.
--- :h last-position-jump
-vim.api.nvim_create_autocmd("BufReadPost", {
-  group = vim.api.nvim_create_augroup("restore_cursor", { clear = true }),
-  callback = function()
-    if vim.fn.line("'\"") > 1 and vim.fn.line("'\"") <= vim.fn.line("$") then
-      vim.cmd([[normal! g`"]])
-    end
-  end,
-})
-
--- Python3 executable path.
-vim.g.python3_host_prog = "/usr/local/bin/python3"
