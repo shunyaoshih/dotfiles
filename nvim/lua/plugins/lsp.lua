@@ -10,7 +10,8 @@ return {
     "simrat39/rust-tools.nvim",
   },
   keys = {
-    { "<leader>l", "<cmd>Mason<cr>", desc = "Show LSP manager" },
+    { "<leader>lm", "<cmd>Mason<cr>",   desc = "Show LSP manager" },
+    { "<leader>li", "<cmd>LspInfo<cr>", desc = "Show LSP info" },
   },
   config = function()
     local border = require("user.border").border
