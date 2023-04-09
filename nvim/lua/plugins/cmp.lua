@@ -18,6 +18,9 @@ return {
           vim.fn["vsnip#anonymous"](args.body)
         end,
       },
+      window = {
+        documentation = cmp.config.window.bordered(),
+      },
       mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
