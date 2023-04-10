@@ -13,6 +13,7 @@ return {
         "lua",
         "python",
         "rust",
+        "toml",
         "vim",
       },
       highlight = {
