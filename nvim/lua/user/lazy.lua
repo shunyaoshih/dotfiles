@@ -16,4 +16,9 @@ require("lazy").setup("plugins", {
 	ui = {
 		border = require("user.border").border,
 	},
+	icons = {
+		event = "ﰌ",
+		lazy = "⏾",
+		start = "",
+	},
 })
