@@ -1,6 +1,5 @@
 -- Show plugin manager.
-vim.keymap.set("n", "<leader>p", "<cmd>Lazy<cr>",
-  { desc = "Show plugin manager", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>p", "<cmd>Lazy<cr>", { desc = "Show plugin manager", noremap = true, silent = true })
 
 -- Make it easier to save and quit.
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file", noremap = true, silent = true })
@@ -14,8 +13,7 @@ vim.keymap.set("n", "Q", "@q", { desc = "Execute macro <q>", noremap = true, sil
 vim.keymap.set("n", "Y", "y$", { noremap = true, silent = true })
 
 -- Automatically clear highlight.
-vim.keymap.set("n", "<esc>", "<cmd>noh<cr><esc>",
-  { desc = "Escape and clear hlsearch", noremap = true, silent = true })
+vim.keymap.set("n", "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch", noremap = true, silent = true })
 
 -- Keep the register the same after pasting.
 vim.keymap.set("v", "p", '"_dP', { noremap = true, silent = true })
