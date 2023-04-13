@@ -8,6 +8,8 @@ return {
 			{ "<leader>of", "<cmd>Telescope find_files<cr>", desc = "Find files" },
 			{ "<leader>og", "<cmd>Telescope live_grep<cr>", desc = "Find in files (Grep)" },
 			{ "<leader>ob", "<cmd>Telescope buffers<cr>", desc = "Find buffers" },
+			{ "<leader>olf", "<cmd>Telescope filetypes<cr>", desc = "List file types" },
+			{ "<leader>ok", "<cmd>Telescope keymaps<cr>", desc = "Find keymaps" },
 		},
 	},
 	{
