@@ -38,6 +38,18 @@ local on_attach = function(client, bufnr)
 	)
 	vim.keymap.set(
 		"n",
+		"<leader>lrn",
+		vim.lsp.buf.rename,
+		{ desc = "[LSP] Rename", noremap = true, silent = true, buffer = bufnr }
+	)
+	vim.keymap.set(
+		"n",
+		"<leader>lfr",
+		vim.lsp.buf.references,
+		{ desc = "[LSP] Find references", noremap = true, silent = true, buffer = bufnr }
+	)
+	vim.keymap.set(
+		"n",
 		"<leader>do",
 		vim.diagnostic.open_float,
 		{ desc = "[LSP] Show diagnostics", noremap = true, silent = true, buffer = bufnr }
