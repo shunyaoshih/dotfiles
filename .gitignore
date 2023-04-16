@@ -1,7 +1,6 @@
 .DS_Store
 fish/fish_variables
 packer_compiled.lua
-nvim/custom
 fish/completions/
 fish/conf.d/
 fish/fish_plugins
