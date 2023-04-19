@@ -3,13 +3,7 @@
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
 		filter = function(client)
-			if client.name == "null-ls" then
-				return true
-			end
-			if client.name == "ciderlsp" then
-				return vim.bo.filetype ~= "go"
-			end
-			return false
+			return client.name == "null-ls" or client.name == "ciderlsp"
 		end,
 		bufnr = bufnr,
 	})
@@ -196,8 +190,6 @@ return {
 				sources = {
 					null_ls.builtins.formatting.rustfmt,
 					null_ls.builtins.formatting.stylua,
-					null_ls.builtins.formatting.gofmt,
-					null_ls.builtins.formatting.goimports,
 				},
 			})
 		end,
