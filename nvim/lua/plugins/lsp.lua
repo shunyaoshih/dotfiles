@@ -3,7 +3,13 @@
 local lsp_formatting = function(bufnr)
 	vim.lsp.buf.format({
 		filter = function(client)
-			return client.name == "null-ls" or client.name == "ciderlsp"
+			if client.name == "null-ls" then
+				return true
+			end
+			if client.name == "ciderlsp" then
+				return vim.bo.filetype ~= "go"
+			end
+			return false
 		end,
 		bufnr = bufnr,
 	})
