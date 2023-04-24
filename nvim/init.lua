@@ -5,5 +5,3 @@ require("user.keymaps")
 require("user.custom_functions")
 require("user.local")
 require("user.lazy")
-
-vim.api.nvim_create_autocmd("VimEnter", { command = "runtime custom/local.vim" })
