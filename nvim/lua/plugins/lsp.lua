@@ -53,6 +53,12 @@ local on_attach = function(client, bufnr)
 	)
 	vim.keymap.set(
 		"n",
+		"<leader>lca",
+		vim.lsp.buf.code_action,
+		{ desc = "[LSP] Code action", noremap = true, silent = true, buffer = bufnr }
+	)
+	vim.keymap.set(
+		"n",
 		"<leader>do",
 		vim.diagnostic.open_float,
 		{ desc = "[LSP] Show diagnostics", noremap = true, silent = true, buffer = bufnr }
