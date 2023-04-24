@@ -169,6 +169,7 @@ return {
 							"go",
 							"java",
 							"kotlin",
+							"markdown",
 							"objc",
 							"proto",
 							"python",
