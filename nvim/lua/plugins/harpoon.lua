@@ -17,6 +17,10 @@ return {
 		{ "<F10>", "<cmd>lua require('harpoon.ui').nav_file(10)<cr>", desc = "Swithc to Harpoon file 10" },
 	},
 	config = function()
-		require("harpoon").setup({})
+		require("harpoon").setup({
+			menu = {
+				width = vim.api.nvim_win_get_width(0) - 30,
+			},
+		})
 	end,
 }
