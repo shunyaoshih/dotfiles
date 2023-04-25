@@ -50,7 +50,7 @@ vim.opt.shiftround = true
 vim.opt.showmode = false
 
 -- Always show tabs.
-vim.opt.showtabline = 2
+vim.opt.showtabline = 0
 
 -- Force all horizontal splits to go below current window.
 vim.opt.splitbelow = true

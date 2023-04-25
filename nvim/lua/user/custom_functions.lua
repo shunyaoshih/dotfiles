@@ -98,7 +98,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<F3>",
+	"<leader>tw",
 	'<cmd>lua require("user.custom_functions").ToggleWrap()<cr>',
 	{ desc = "Toggle wrap", noremap = true, silent = true }
 )
