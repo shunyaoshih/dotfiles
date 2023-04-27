@@ -198,7 +198,6 @@ return {
 			require("null-ls").setup({
 				on_attach = on_attach,
 				sources = {
-					null_ls.builtins.formatting.goimports,
 					null_ls.builtins.formatting.rustfmt,
 					null_ls.builtins.formatting.stylua,
 				},
