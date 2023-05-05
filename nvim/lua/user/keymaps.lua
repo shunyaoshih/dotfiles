@@ -28,3 +28,7 @@ vim.keymap.set("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up", noremap = t
 
 -- Search word under cursor but stay on the current word.
 vim.keymap.set("n", "gw", "*N", { desc = "Search word under cursor", noremap = true, silent = true })
+
+-- Jump between items in quickfix.
+vim.keymap.set("n", "<leader>cn", ":cnext<cr>", { desc = "Next item in quickfix", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>cp", ":cprev<cr>", { desc = "Previous item in quickfix", noremap = true, silent = true })
