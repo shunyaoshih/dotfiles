@@ -43,7 +43,7 @@ function M.SetWrapKeyMapping()
 		local opts = { noremap = true, silent = true }
 		vim.api.nvim_buf_set_keymap(0, "n", "j", "gj", opts)
 		vim.api.nvim_buf_set_keymap(0, "n", "k", "gk", opts)
-		vim.api.nvim_buf_set_keymap(0, "n", "0", "g^", opts)
+		vim.api.nvim_buf_set_keymap(0, "n", "^", "g^", opts)
 		vim.api.nvim_buf_set_keymap(0, "n", "$", "g$", opts)
 		vim.api.nvim_buf_set_keymap(0, "o", "j", "gj", opts)
 		vim.api.nvim_buf_set_keymap(0, "o", "k", "gk", opts)
