@@ -40,23 +40,24 @@ end
 
 function M.SetWrapKeyMapping()
 	if vim.wo.wrap then
-		local opts = { noremap = true, silent = true }
-		vim.api.nvim_buf_set_keymap(0, "n", "j", "gj", opts)
-		vim.api.nvim_buf_set_keymap(0, "n", "k", "gk", opts)
-		vim.api.nvim_buf_set_keymap(0, "n", "^", "g^", opts)
-		vim.api.nvim_buf_set_keymap(0, "n", "$", "g$", opts)
-		vim.api.nvim_buf_set_keymap(0, "o", "j", "gj", opts)
-		vim.api.nvim_buf_set_keymap(0, "o", "k", "gk", opts)
+		local opts = { noremap = true, silent = true, buffer = 0 }
+		vim.keymap.set("n", "j", "gj", opts)
+		vim.keymap.set("n", "k", "gk", opts)
+		vim.keymap.set("n", "^", "g^", opts)
+		vim.keymap.set("n", "$", "g$", opts)
+		vim.keymap.set("o", "j", "gj", opts)
+		vim.keymap.set("o", "k", "gk", opts)
 	else
 		-- Only check if there is a key mapping for "j" since
 		-- it should be enough.
 		if vim.fn.maparg("j", "n") ~= "" then
-			vim.api.nvim_buf_del_keymap(0, "n", "j")
-			vim.api.nvim_buf_del_keymap(0, "n", "k")
-			vim.api.nvim_buf_del_keymap(0, "n", "0")
-			vim.api.nvim_buf_del_keymap(0, "n", "$")
-			vim.api.nvim_buf_del_keymap(0, "o", "j")
-			vim.api.nvim_buf_del_keymap(0, "o", "k")
+			local opts = { buffer = 0 }
+			vim.keymap.del("n", "j", opts)
+			vim.keymap.del("n", "k", opts)
+			vim.keymap.del("n", "^", opts)
+			vim.keymap.del("n", "$", opts)
+			vim.keymap.del("o", "j", opts)
+			vim.keymap.del("o", "k", opts)
 		end
 	end
 end
