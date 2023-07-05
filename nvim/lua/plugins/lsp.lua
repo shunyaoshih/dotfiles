@@ -109,6 +109,7 @@ return {
 			})
 			require("mason-lspconfig").setup({
 				ensure_installed = {
+					"gopls",
 					"lua_ls",
 					"rust_analyzer",
 				},
@@ -154,6 +155,12 @@ return {
 				},
 			})
 			-- }}}
+			-- Golang (gopls) {{{
+			require("lspconfig").gopls.setup({
+				on_attach = on_attach,
+				capabilities = capabilities,
+			})
+			-- }}}
 			-- CiderLSP {{{
 			if vim.fn.has("mac") == 0 then
 				require("lspconfig.configs").ciderlsp = {
@@ -195,12 +202,17 @@ return {
 		config = function()
 			local null_ls = require("null-ls")
 
+			local sources = {
+				null_ls.builtins.formatting.rustfmt,
+				null_ls.builtins.formatting.stylua,
+			}
+			if vim.fn.has("mac") == 1 then
+				table.insert(sources, null_ls.builtins.formatting.goimports)
+			end
+
 			require("null-ls").setup({
 				on_attach = on_attach,
-				sources = {
-					null_ls.builtins.formatting.rustfmt,
-					null_ls.builtins.formatting.stylua,
-				},
+				sources = sources,
 			})
 		end,
 	},
