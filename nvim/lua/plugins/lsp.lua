@@ -156,10 +156,12 @@ return {
 			})
 			-- }}}
 			-- Golang (gopls) {{{
-			require("lspconfig").gopls.setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-			})
+			if vim.fn.has("mac") == 1 then
+				require("lspconfig").gopls.setup({
+					on_attach = on_attach,
+					capabilities = capabilities,
+				})
+			end
 			-- }}}
 			-- CiderLSP {{{
 			if vim.fn.has("mac") == 0 then
