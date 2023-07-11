@@ -1,30 +1,5 @@
 -- Define behaviors when LSP attaches to the buffer (`on_attach`) {{{
--- Reference: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08.
-local lsp_formatting = function(bufnr)
-	vim.lsp.buf.format({
-		filter = function(client)
-			if vim.bo.filetype == "go" then
-				return client.name == "null-ls"
-			end
-			return client.name == "null-ls" or client.name == "ciderlsp"
-		end,
-		bufnr = bufnr,
-	})
-end
-
-local on_attach = function(client, bufnr)
-	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-	if client.supports_method("textDocument/formatting") then
-		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = augroup,
-			buffer = bufnr,
-			callback = function()
-				lsp_formatting(bufnr)
-			end,
-		})
-	end
-
+local on_attach = function(_, bufnr)
 	-- Set key mappings.
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	vim.keymap.set(
@@ -196,26 +171,6 @@ return {
 			end
 			-- }}}
 			-- }}}
-		end,
-	},
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			local null_ls = require("null-ls")
-
-			local sources = {
-				null_ls.builtins.formatting.rustfmt,
-				null_ls.builtins.formatting.stylua,
-			}
-			if vim.fn.has("mac") == 1 then
-				table.insert(sources, null_ls.builtins.formatting.goimports)
-			end
-
-			require("null-ls").setup({
-				on_attach = on_attach,
-				sources = sources,
-			})
 		end,
 	},
 }
