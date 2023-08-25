@@ -8,7 +8,6 @@ if vim.fn.has("mac") == 0 then
       augroup autoformat_settings
         autocmd FileType go AutoFormatBuffer gofmt
         autocmd FileType bzl AutoFormatBuffer buildifier
-        autocmd FileType proto AutoFormatBuffer protofmt
         autocmd FileType python,piccolo AutoFormatBuffer pyformat
         autocmd FileType cpp,proto AutoFormatBuffer clang-format
         autocmd FileType markdown AutoFormatBuffer mdformat
