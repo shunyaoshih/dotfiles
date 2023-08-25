@@ -1,6 +1,7 @@
 if vim.fn.has("mac") == 0 then
 	vim.api.nvim_exec(
 		[[
+      source /usr/share/vim/google/google.vim
       source /usr/share/vim/google/glug/bootstrap.vim
       Glug google-filetypes
       Glug codefmt plugin[mappings] gofmt_executable="goimports"
@@ -9,7 +10,8 @@ if vim.fn.has("mac") == 0 then
         autocmd FileType bzl AutoFormatBuffer buildifier
         autocmd FileType proto AutoFormatBuffer protofmt
         autocmd FileType python,piccolo AutoFormatBuffer pyformat
-        autocmd FileType cpp AutoFormatBuffer clang-format
+        autocmd FileType cpp,proto AutoFormatBuffer clang-format
+        autocmd FileType markdown AutoFormatBuffer mdformat
       augroup END
       Glug blazedeps auto_filetypes=`['go']`
     ]],
