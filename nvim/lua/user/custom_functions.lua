@@ -73,6 +73,117 @@ function M.ToggleWrap()
 	M.SetWrapKeyMapping()
 end
 
+function M.set(table)
+	local set = {}
+	for _, v in ipairs(table) do
+		set[v] = true
+	end
+	return set
+end
+
+-- Check if the file in the current buffer is a test file.
+function M.isTestFile()
+	local path_without_extension = vim.fn.expand("%:r")
+	if path_without_extension:match("_test$") then
+		return true
+	end
+	return false
+end
+
+function M.GoToTestFile()
+	-- Check if the file type is supported.
+	local supported_file_types = M.set({ "cpp", "go" })
+	if not supported_file_types[vim.bo.filetype] then
+		print("Filetype [" .. vim.bo.filetype .. "] is not supported!")
+		return
+	end
+
+	-- Check if we are already at the test file.
+	if M.isTestFile() then
+		print("You are already at test file!")
+		return
+	end
+
+	-- Edit the test file.
+	-- Note that we could be either at the test file or header file at this point.
+	local test_file_path = vim.fn.expand("%:r") .. "_test."
+	if vim.bo.filetype == "cpp" then
+		test_file_path = test_file_path .. "cpp"
+	elseif vim.bo.filetype == "go" then
+		test_file_path = test_file_path .. "go"
+	end
+	vim.cmd(":edit " .. test_file_path)
+	print("Jumped to test file [" .. vim.fn.expand("%") .. "]!")
+end
+
+function M.isSourceFile()
+	if M.isTestFile() then
+		return false
+	end
+	if vim.bo.filetype == "go" then
+		return true
+	end
+	local cpp_source_file_extensions = M.set({ "cpp", "cc" })
+	if cpp_source_file_extensions[vim.fn.expand("%:e")] then
+		return true
+	end
+	return false
+end
+
+function M.GoToSourceFile()
+	-- Check if the file type is supported.
+	local supported_file_types = M.set({ "cpp", "go" })
+	if not supported_file_types[vim.bo.filetype] then
+		print("Filetype [" .. vim.bo.filetype .. "] is not supported!")
+		return
+	end
+
+	-- Check if we are already at the source file.
+	if M.isSourceFile() then
+		print("You are already at source file!")
+		return
+	end
+
+	-- Edit the test file.
+	-- Note that we could be either at the test file or header file at this point.
+	local source_file_path = ""
+	if vim.bo.filetype == "go" then
+		source_file_path = vim.fn.expand("%:r"):sub(1, -6) .. ".go"
+	elseif vim.bo.filetype == "cpp" then
+		if vim.fn.expand("%:r"):match("_test$") then
+			source_file_path = vim.fn.expand("%:r"):sub(1, -6) .. ".cpp"
+		else
+			source_file_path = vim.fn.expand("%:r") .. ".cpp"
+		end
+	end
+	vim.cmd(":edit " .. source_file_path)
+	print("Jumped to source file [" .. source_file_path .. "]!")
+end
+
+function M.GoToHeaderFile()
+	-- Check if the file type is supported.
+	local supported_file_types = M.set({ "cpp" })
+	if not supported_file_types[vim.bo.filetype] then
+		print("Filetype [" .. vim.bo.filetype .. "] is not supported!")
+		return
+	end
+
+	-- Check if we are already at the header file.
+	if vim.fn.expand("%:e"):match("^h") then
+		print("You are already at header file!")
+		return
+	end
+
+	local header_file_path = ""
+	if vim.fn.expand("%:r"):match("_test$") then
+		header_file_path = vim.fn.expand("%:r"):sub(1, -6) .. ".h"
+	else
+		header_file_path = vim.fn.expand("%:r") .. ".h"
+	end
+	vim.cmd(":edit " .. header_file_path)
+	print("Jumped to header file [" .. header_file_path .. "]!")
+end
+
 vim.keymap.set(
 	"n",
 	"<A-j>",
@@ -102,6 +213,25 @@ vim.keymap.set(
 	"<leader>tw",
 	'<cmd>lua require("user.custom_functions").ToggleWrap()<cr>',
 	{ desc = "Toggle wrap", noremap = true, silent = true }
+)
+
+vim.keymap.set(
+	"n",
+	"gt",
+	'<cmd>lua require("user.custom_functions").GoToTestFile()<cr>',
+	{ desc = "Go to test file", noremap = true, silent = true }
+)
+vim.keymap.set(
+	"n",
+	"gs",
+	'<cmd>lua require("user.custom_functions").GoToSourceFile()<cr>',
+	{ desc = "Go to source file", noremap = true, silent = true }
+)
+vim.keymap.set(
+	"n",
+	"gh",
+	'<cmd>lua require("user.custom_functions").GoToHeaderFile()<cr>',
+	{ desc = "Go to header file", noremap = true, silent = true }
 )
 
 return M
