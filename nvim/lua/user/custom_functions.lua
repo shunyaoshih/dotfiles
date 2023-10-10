@@ -108,7 +108,7 @@ function M.GoToTestFile()
 	-- Note that we could be either at the test file or header file at this point.
 	local test_file_path = vim.fn.expand("%:r") .. "_test."
 	if vim.bo.filetype == "cpp" then
-		test_file_path = test_file_path .. "cpp"
+		test_file_path = test_file_path .. "cc"
 	elseif vim.bo.filetype == "go" then
 		test_file_path = test_file_path .. "go"
 	end
@@ -151,9 +151,9 @@ function M.GoToSourceFile()
 		source_file_path = vim.fn.expand("%:r"):sub(1, -6) .. ".go"
 	elseif vim.bo.filetype == "cpp" then
 		if vim.fn.expand("%:r"):match("_test$") then
-			source_file_path = vim.fn.expand("%:r"):sub(1, -6) .. ".cpp"
+			source_file_path = vim.fn.expand("%:r"):sub(1, -6) .. ".cc"
 		else
-			source_file_path = vim.fn.expand("%:r") .. ".cpp"
+			source_file_path = vim.fn.expand("%:r") .. ".cc"
 		end
 	end
 	vim.cmd(":edit " .. source_file_path)
