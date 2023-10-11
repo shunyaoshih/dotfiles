@@ -123,8 +123,7 @@ function M.isSourceFile()
 	if vim.bo.filetype == "go" then
 		return true
 	end
-	local cpp_source_file_extensions = M.set({ "cpp", "cc" })
-	if cpp_source_file_extensions[vim.fn.expand("%:e")] then
+	if vim.fn.expand("%:e") == "cc" then
 		return true
 	end
 	return false
