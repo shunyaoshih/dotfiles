@@ -12,6 +12,37 @@ return {
 		"onsails/lspkind.nvim",
 	},
 	config = function()
+		local lspkind = require("lspkind")
+		lspkind.init({
+			symbol_map = {
+				Text = "󰉿",
+				Method = "󰆧",
+				Function = "󰊕",
+				Constructor = "",
+				Field = "󰜢",
+				Variable = "󰀫",
+				Class = "󰠱",
+				Interface = "",
+				Module = "",
+				Property = "󰜢",
+				Unit = "󰑭",
+				Value = "󰎠",
+				Enum = "",
+				Keyword = "󰌋",
+				Snippet = "",
+				Color = "󰏘",
+				File = "󰈙",
+				Reference = "󰈇",
+				Folder = "󰉋",
+				EnumMember = "",
+				Constant = "󰏿",
+				Struct = "󰙅",
+				Event = "",
+				Operator = "󰆕",
+				TypeParameter = "",
+			},
+		})
+
 		local cmp = require("cmp")
 		cmp.setup({
 			snippet = {
@@ -47,7 +78,7 @@ return {
 				native_menu = false,
 			},
 			formatting = {
-				format = require("lspkind").cmp_format({
+				format = lspkind.cmp_format({
 					maxwidth = 50,
 					ellipsis_char = "...",
 					menu = {
