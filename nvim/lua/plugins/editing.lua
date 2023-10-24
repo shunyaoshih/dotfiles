@@ -38,4 +38,11 @@ return {
 			})
 		end,
 	},
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		event = "VeryLazy",
+		keys = {
+			{ "gx", '<cmd>lua require("treesitter-context").go_to_context()<cr>', desc = "Go to context" },
+		},
+	},
 }
