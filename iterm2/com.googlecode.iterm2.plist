@@ -1636,6 +1636,8 @@
 	<real>0.40000000000000002</real>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
+	<key>TimeBetweenTips</key>
+	<real>604800</real>
 	<key>UseBorder</key>
 	<true/>
 	<key>VisualIndicatorForEsc</key>

@@ -64,7 +64,7 @@ return {
 				["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 				["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<Tab>"] = cmp.mapping.confirm({ select = true }),
+				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
