@@ -41,6 +41,7 @@ alias vinit='v ~/.config/nvim/init.lua'
 alias tinit='v ~/.tmux.conf'
 alias st='tmux source ~/.tmux.conf'
 alias finit='v ~/.config/fish/config.fish'
+alias sf='source ~/.config/fish/config.fish'
 alias lla='ls -a -l'
 alias t='tmux new-session -A -s 0'
 
