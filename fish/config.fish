@@ -42,6 +42,7 @@ alias tinit='v ~/.tmux.conf'
 alias st='tmux source ~/.tmux.conf'
 alias finit='v ~/.config/fish/config.fish'
 alias lla='ls -a -l'
+alias t='tmux new-session -A -s 0'
 
 # Remove default Fish greeting.
 set fish_greeting
