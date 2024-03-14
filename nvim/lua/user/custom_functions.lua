@@ -113,7 +113,6 @@ function M.GoToTestFile()
 		test_file_path = test_file_path .. "go"
 	end
 	vim.cmd(":edit " .. test_file_path)
-	print("Jumped to test file [" .. vim.fn.expand("%") .. "]!")
 end
 
 function M.isSourceFile()
@@ -156,7 +155,6 @@ function M.GoToSourceFile()
 		end
 	end
 	vim.cmd(":edit " .. source_file_path)
-	print("Jumped to source file [" .. source_file_path .. "]!")
 end
 
 function M.GoToHeaderFile()
@@ -180,7 +178,6 @@ function M.GoToHeaderFile()
 		header_file_path = vim.fn.expand("%:r") .. ".h"
 	end
 	vim.cmd(":edit " .. header_file_path)
-	print("Jumped to header file [" .. header_file_path .. "]!")
 end
 
 vim.keymap.set(
