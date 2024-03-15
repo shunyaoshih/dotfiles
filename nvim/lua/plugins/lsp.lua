@@ -16,9 +16,9 @@ local on_attach = function(_, bufnr)
 	)
 	vim.keymap.set(
 		"n",
-		"<leader>lrn",
+		"<leader>rn",
 		vim.lsp.buf.rename,
-		{ desc = "[LSP] Rename", noremap = true, silent = true, buffer = bufnr }
+		{ desc = "[R]e[n]ame", noremap = true, silent = true, buffer = bufnr }
 	)
 	vim.keymap.set(
 		"n",
@@ -28,9 +28,9 @@ local on_attach = function(_, bufnr)
 	)
 	vim.keymap.set(
 		"n",
-		"<leader>lca",
+		"<leader>ca",
 		vim.lsp.buf.code_action,
-		{ desc = "[LSP] Code action", noremap = true, silent = true, buffer = bufnr }
+		{ desc = "[C]ode [a]ction", noremap = true, silent = true, buffer = bufnr }
 	)
 	vim.keymap.set(
 		"n",

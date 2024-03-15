@@ -1,11 +1,17 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
-	dependencies = "nvim-treesitter/nvim-treesitter",
+	main = "ibl",
 	config = function()
-		require("indent_blankline").setup({
-			char = "│",
-			show_current_context = true,
-			show_first_indent_level = false,
+		require("ibl").setup({
+			indent = {
+				char = "│",
+			},
+			scope = {
+				enabled = true,
+			},
 		})
+
+		local hooks = require("ibl.hooks")
+		hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
 	end,
 }
