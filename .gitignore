@@ -19,4 +19,3 @@ fish/functions/_fzf_search_variables.fish
 fish/functions/_fzf_wrapper.fish
 fish/functions/fisher.fish
 fish/functions/fzf_configure_bindings.fish
-nvim/lua/plugins/local.lua
