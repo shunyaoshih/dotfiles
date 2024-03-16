@@ -1,5 +1,6 @@
 return {
 	"hrsh7th/nvim-cmp",
+	event = "InsertEnter",
 	lazy = false,
 	dependencies = {
 		"hrsh7th/cmp-buffer",
@@ -77,6 +78,7 @@ return {
 				ghost_text = true,
 				native_menu = false,
 			},
+			---@diagnostic disable-next-line: missing-fields
 			formatting = {
 				format = lspkind.cmp_format({
 					maxwidth = 50,

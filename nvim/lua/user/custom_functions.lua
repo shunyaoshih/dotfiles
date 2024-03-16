@@ -208,7 +208,7 @@ vim.keymap.set(
 	"n",
 	"<leader>tw",
 	'<cmd>lua require("user.custom_functions").ToggleWrap()<cr>',
-	{ desc = "Toggle wrap", noremap = true, silent = true }
+	{ desc = "[T]oggle [w]rap", noremap = true, silent = true }
 )
 
 vim.keymap.set(

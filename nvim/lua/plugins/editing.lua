@@ -30,7 +30,7 @@ return {
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		event = "VeryLazy",
 		keys = {
-			{ "<leader>ts", "<cmd>TSJToggle<cr>", desc = "Split/join code block" },
+			{ "<leader>tb", "<cmd>TSJToggle<cr>", desc = "[T]oggle split/join code [b]lock" },
 		},
 		config = function()
 			require("treesj").setup({

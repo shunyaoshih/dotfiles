@@ -1,6 +1,27 @@
-if vim.fn.has("mac") == 0 then
-	vim.api.nvim_exec(
-		[[
+if vim.fn.has("mac") == 1 then
+	return {
+		{
+			"stevearc/conform.nvim",
+			opts = {
+				notify_on_error = false,
+				format_on_save = {
+					timeout_ms = 500,
+					lsp_fallback = true,
+				},
+				formatters_by_ft = {
+					lua = { "stylua" },
+					-- Conform can also run multiple formatters sequentially
+					-- python = { "isort", "black" },
+					--
+					-- You can use a sub-list to tell conform to run *until* a formatter
+					-- is found.
+					-- javascript = { { "prettierd", "prettier" } },
+				},
+			},
+		},
+	}
+else
+	vim.api.nvim_exec2([[
       source /usr/share/vim/google/google.vim
       source /usr/share/vim/google/glug/bootstrap.vim
       Glug google-filetypes
@@ -13,44 +34,6 @@ if vim.fn.has("mac") == 0 then
         autocmd FileType markdown AutoFormatBuffer mdformat
       augroup END
       Glug blazedeps auto_filetypes=`['go']`
-    ]],
-		false
-	)
+    ]])
 	return {}
 end
-
-return {
-	{
-		"ckipp01/stylua-nvim",
-		config = function()
-			-- Format on save.
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = vim.api.nvim_create_augroup("format_lua_file", { clear = true }),
-				pattern = { "*.lua" },
-				callback = function()
-					require("stylua-nvim").format_file()
-				end,
-			})
-		end,
-	},
-	{
-		"google/vim-codefmt",
-		dependencies = {
-			"google/vim-maktaba",
-			"google/vim-glaive",
-		},
-		config = function()
-			vim.api.nvim_exec(
-				[[
-          Glaive codefmt plugin[mappings]
-          Glaive codefmt gofmt_executable="goimports"
-          augroup autoformat_settings
-            autocmd FileType go AutoFormatBuffer gofmt
-            autocmd FileType rust AutoFormatBuffer rustfmt
-          augroup END
-        ]],
-				false
-			)
-		end,
-	},
-}

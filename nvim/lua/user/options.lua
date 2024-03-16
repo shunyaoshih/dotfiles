@@ -49,6 +49,9 @@ vim.opt.shiftround = true
 -- Do not display mode in the bottom line.
 vim.opt.showmode = false
 
+-- Share the same indent level for wrapped lines.
+vim.opt.breakindent = true
+
 -- Always show tabs.
 vim.opt.showtabline = 0
 

@@ -3,8 +3,8 @@ return {
 	lazy = false,
 	dependencies = "nvim-lua/plenary.nvim",
 	keys = {
-		{ "<leader>th", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Toggle Harpoon" },
-		{ "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Add file to Harpoon" },
+		{ "<leader>th", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "[T]oggle [H]arpoon" },
+		{ "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "[A]dd file to Harpoon" },
 		{ "<F1>", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Swithc to Harpoon file 1" },
 		{ "<F2>", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "Swithc to Harpoon file 2" },
 		{ "<F3>", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "Swithc to Harpoon file 3" },

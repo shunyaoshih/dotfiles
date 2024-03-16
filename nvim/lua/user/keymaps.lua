@@ -30,5 +30,34 @@ vim.keymap.set("v", "<S-k>", ":m '<-2<cr>gv=gv", { desc = "Move up", noremap = t
 vim.keymap.set("n", "gw", "*N", { desc = "Search word under cursor", noremap = true, silent = true })
 
 -- Jump between items in quickfix.
-vim.keymap.set("n", "<leader>cn", ":cnext<cr>", { desc = "Next item in quickfix", noremap = true, silent = true })
-vim.keymap.set("n", "<leader>cp", ":cprev<cr>", { desc = "Previous item in quickfix", noremap = true, silent = true })
+vim.keymap.set("n", "]q", ":cnext<cr>", { desc = "Go to next [q]uickfix", noremap = true, silent = true })
+vim.keymap.set("n", "[q", ":cprev<cr>", { desc = "Go to previous [q]uickfix", noremap = true, silent = true })
+
+-- Keybinds to make split navigation easier.
+--  Use CTRL+<hjkl> to switch between windows
+--
+--  See `:help wincmd` for a list of all window commands
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+-- Diagnostics.
+vim.keymap.set(
+	"n",
+	"<leader>e",
+	vim.diagnostic.open_float,
+	{ desc = "Show diagnostics [e]rror messages", noremap = true, silent = true }
+)
+vim.keymap.set(
+	"n",
+	"]d",
+	vim.diagnostic.goto_next,
+	{ desc = "Go to next [d]iagnostics", noremap = true, silent = true }
+)
+vim.keymap.set(
+	"n",
+	"[d",
+	vim.diagnostic.goto_prev,
+	{ desc = "Go to previous [d]iagnostics", noremap = true, silent = true }
+)
