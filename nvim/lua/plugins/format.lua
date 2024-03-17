@@ -21,7 +21,8 @@ if vim.fn.has("mac") == 1 then
 		},
 	}
 else
-	vim.api.nvim_exec2([[
+	vim.api.nvim_exec2(
+		[[
       source /usr/share/vim/google/google.vim
       source /usr/share/vim/google/glug/bootstrap.vim
       Glug google-filetypes
@@ -34,6 +35,8 @@ else
         autocmd FileType markdown AutoFormatBuffer mdformat
       augroup END
       Glug blazedeps auto_filetypes=`['go']`
-    ]])
+    ]],
+		{ output = false }
+	)
 	return {}
 end

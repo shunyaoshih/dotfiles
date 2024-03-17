@@ -1,46 +1,3 @@
--- Define behaviors when LSP attaches to the buffer (`on_attach`) {{{
-local on_attach = function(_, bufnr)
-	-- Set key mappings.
-	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	vim.keymap.set(
-		"n",
-		"gd",
-		vim.lsp.buf.definition,
-		{ desc = "[G]o to [d]efinition", noremap = true, silent = true, buffer = bufnr }
-	)
-	vim.keymap.set(
-		"n",
-		"gD",
-		vim.lsp.buf.declaration,
-		{ desc = "[G]o to [D]eclaration", noremap = true, silent = true, buffer = bufnr }
-	)
-	vim.keymap.set(
-		"n",
-		"K",
-		vim.lsp.buf.hover,
-		{ desc = "[LSP] More info under cursor", noremap = true, silent = true, buffer = bufnr }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>rn",
-		vim.lsp.buf.rename,
-		{ desc = "[R]e[n]ame", noremap = true, silent = true, buffer = bufnr }
-	)
-	vim.keymap.set(
-		"n",
-		"gr",
-		vim.lsp.buf.references,
-		{ desc = "[G]o to [r]eferences", noremap = true, silent = true, buffer = bufnr }
-	)
-	vim.keymap.set(
-		"n",
-		"<leader>ca",
-		vim.lsp.buf.code_action,
-		{ desc = "[C]ode [a]ction", noremap = true, silent = true, buffer = bufnr }
-	)
-end
--- }}}
-
 return {
 	{
 		"neovim/nvim-lspconfig",
@@ -185,16 +142,16 @@ return {
 					},
 				},
 				-- }}}
-				rust_analyzer = {},
 			}
 			if vim.fn.has("mac") == 1 then
 				vim.list_extend(servers, {
 					gopls = {},
+					rust_analyzer = {},
 				})
 			else
-				vim.list_extend(servers, {
-					-- ciderlsp {{{
-					ciderlsp = {
+				-- CiderLSP {{{
+				require("lspconfig.configs").ciderlsp = {
+					default_config = {
 						cmd = {
 							"/google/bin/releases/cider/ciderlsp/ciderlsp",
 							"--tooltag=nvim-cmp",
@@ -217,8 +174,11 @@ return {
 						root_dir = require("lspconfig").util.root_pattern("google3/*BUILD"),
 						settings = {},
 					},
-					-- }}}
+				}
+				require("lspconfig").ciderlsp.setup({
+					capabilities = vim.tbl_deep_extend("force", {}, capabilities, ciderlsp.capabilities or {}),
 				})
+				-- }}}
 			end
 			--- }}}
 
