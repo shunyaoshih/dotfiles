@@ -11,7 +11,7 @@ return {
 
 			-- Allow autocompletion from LSPs.
 			"hrsh7th/cmp-nvim-lsp",
-			"simrat39/rust-tools.nvim",
+			{ "simrat39/rust-tools.nvim", enabled = vim.fn.has("mac") == 1 },
 
 			-- Useful status updates for LSP.
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`.
