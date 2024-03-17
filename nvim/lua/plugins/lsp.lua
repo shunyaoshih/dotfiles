@@ -176,7 +176,7 @@ return {
 					},
 				}
 				require("lspconfig").ciderlsp.setup({
-					capabilities = vim.tbl_deep_extend("force", {}, capabilities, ciderlsp.capabilities or {}),
+					capabilities = capabilities,
 				})
 				-- }}}
 			end
