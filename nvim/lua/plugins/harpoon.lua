@@ -1,26 +1,51 @@
 return {
 	"ThePrimeagen/harpoon",
-	lazy = false,
+	branch = "harpoon2",
+	event = "VimEnter",
 	dependencies = "nvim-lua/plenary.nvim",
-	keys = {
-		{ "<leader>th", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "[T]oggle [H]arpoon" },
-		{ "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "[A]dd file to Harpoon" },
-		{ "<F1>", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "Swithc to Harpoon file 1" },
-		{ "<F2>", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "Swithc to Harpoon file 2" },
-		{ "<F3>", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "Swithc to Harpoon file 3" },
-		{ "<F4>", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = "Swithc to Harpoon file 4" },
-		{ "<F5>", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", desc = "Swithc to Harpoon file 5" },
-		{ "<F6>", "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", desc = "Swithc to Harpoon file 6" },
-		{ "<F7>", "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", desc = "Swithc to Harpoon file 7" },
-		{ "<F8>", "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", desc = "Swithc to Harpoon file 8" },
-		{ "<F9>", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", desc = "Swithc to Harpoon file 9" },
-		{ "<F10>", "<cmd>lua require('harpoon.ui').nav_file(10)<cr>", desc = "Swithc to Harpoon file 10" },
-	},
 	config = function()
-		require("harpoon").setup({
-			menu = {
-				width = vim.api.nvim_win_get_width(0) - 30,
-			},
-		})
+		local harpoon = require("harpoon")
+
+		---@diagnostic disable-next-line: missing-parameter, missing-fields
+		harpoon.setup({})
+
+		vim.keymap.set("n", "<leader>a", function()
+			harpoon:list():append()
+		end, { desc = "[A]dd file to Harpoon", noremap = true, silent = true })
+
+		vim.keymap.set("n", "<leader>th", function()
+			harpoon.ui:toggle_quick_menu(harpoon:list())
+		end, { desc = "[T]oggle [H]arpoon", noremap = true, silent = true })
+
+		vim.keymap.set("n", "<F1>", function()
+			harpoon:list():select(1)
+		end, { desc = "Swithc to Harpoon file 1", noremap = true, silent = true })
+		vim.keymap.set("n", "<F2>", function()
+			harpoon:list():select(2)
+		end, { desc = "Swithc to Harpoon file 2", noremap = true, silent = true })
+		vim.keymap.set("n", "<F3>", function()
+			harpoon:list():select(3)
+		end, { desc = "Swithc to Harpoon file 3", noremap = true, silent = true })
+		vim.keymap.set("n", "<F4>", function()
+			harpoon:list():select(4)
+		end, { desc = "Swithc to Harpoon file 4", noremap = true, silent = true })
+		vim.keymap.set("n", "<F5>", function()
+			harpoon:list():select(5)
+		end, { desc = "Swithc to Harpoon file 5", noremap = true, silent = true })
+		vim.keymap.set("n", "<F6>", function()
+			harpoon:list():select(6)
+		end, { desc = "Swithc to Harpoon file 6", noremap = true, silent = true })
+		vim.keymap.set("n", "<F7>", function()
+			harpoon:list():select(7)
+		end, { desc = "Swithc to Harpoon file 7", noremap = true, silent = true })
+		vim.keymap.set("n", "<F8>", function()
+			harpoon:list():select(8)
+		end, { desc = "Swithc to Harpoon file 8", noremap = true, silent = true })
+		vim.keymap.set("n", "<F9>", function()
+			harpoon:list():select(9)
+		end, { desc = "Swithc to Harpoon file 9", noremap = true, silent = true })
+		vim.keymap.set("n", "<F10>", function()
+			harpoon:list():select(10)
+		end, { desc = "Swithc to Harpoon file 10", noremap = true, silent = true })
 	end,
 }
