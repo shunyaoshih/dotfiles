@@ -38,4 +38,12 @@ return {
 			})
 		end,
 	},
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		keys = {
+			{ "<leader>ls", "<cmd>Oil --float .<cr>", desc = "[L]i[s]t" },
+		},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 }
