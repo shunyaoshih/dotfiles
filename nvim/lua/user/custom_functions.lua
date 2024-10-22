@@ -194,13 +194,13 @@ vim.keymap.set(
 )
 vim.keymap.set(
 	"n",
-	"<S-c>",
+	"<C-s>",
 	'<cmd>lua require("user.custom_functions").DeleteEmptyLineBelow()<cr>',
 	{ desc = "Delete one line below", noremap = true, silent = true }
 )
 vim.keymap.set(
 	"n",
-	"<S-m>",
+	"<C-a>",
 	'<cmd>lua require("user.custom_functions").DeleteEmptyLineAbove()<cr>',
 	{ desc = "Delete one line above", noremap = true, silent = true }
 )
