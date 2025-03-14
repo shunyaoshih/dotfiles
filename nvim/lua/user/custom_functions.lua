@@ -15,11 +15,13 @@ function M.DeleteEmptyLineBelow()
 	local line = vim.fn.getline(vim.fn.line(".") + 1)
 	if string.match(line, "^%s*$") ~= nil then
 		local colsave = vim.fn.col(".")
+		local content_in_clipboard = vim.fn.getreg("+")
 		vim.cmd([[
       :+1d
       ''
     ]])
 		vim.fn.cursor(vim.fn.line("."), colsave)
+		vim.fn.setreg("+", content_in_clipboard)
 	end
 end
 
@@ -30,11 +32,13 @@ function M.DeleteEmptyLineAbove()
 	local line = vim.fn.getline(vim.fn.line(".") - 1)
 	if string.match(line, "^%s*$") ~= nil then
 		local colsave = vim.fn.col(".")
+		local content_in_clipboard = vim.fn.getreg("+")
 		vim.cmd([[
       :-1d
       ''
     ]])
 		vim.fn.cursor(vim.fn.line("."), colsave)
+		vim.fn.setreg("+", content_in_clipboard)
 	end
 end
 
