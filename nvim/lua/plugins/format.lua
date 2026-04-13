@@ -15,6 +15,9 @@ if vim.fn.has("mac") == 1 then
 					go = {
 						"goimports",
 					},
+					sh = {
+						"bashls",
+					},
 					-- Conform can also run multiple formatters sequentially
 					-- python = { "isort", "black" },
 					--
